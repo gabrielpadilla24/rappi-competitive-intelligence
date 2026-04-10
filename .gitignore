@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# Data (keep structure, ignore content)
+data/raw/*.json
+data/raw/*.log
+data/processed/*.csv
+data/processed/*.json
+data/screenshots/**/*.png
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/screenshots/.gitkeep
+
+# Reports
+reports/*.pdf
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (if docx-js used)
+node_modules/
