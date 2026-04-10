@@ -1,0 +1,50 @@
+{
+  "scrape_id": "acf590d1-1f48-433b-a53d-1ddd6fec90f9",
+  "timestamp": "2026-04-10T19:34:30.707744+00:00",
+  "platform": "rappi",
+  "location_id": "santa_fe",
+  "location_address": "Av. Santa Fe 440, Santa Fe, Cuajimalpa, CDMX",
+  "location_lat": 19.3592,
+  "location_lng": -99.2741,
+  "zone_type": "high_income",
+  "zone_label": "Santa Fe",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King",
+    "platform_id": "rappi_burger_king_santa_fe",
+    "available": true,
+    "rating": 4.3,
+    "review_count": 669
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 116,
+      "available": true,
+      "description": "",
+      "original_name": "Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 174,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper Mediano"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 25,
+    "service_fee_mxn": 18,
+    "estimated_time_min": 10,
+    "estimated_time_max": 37,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 19.57
+}

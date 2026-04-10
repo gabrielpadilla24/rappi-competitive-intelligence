@@ -1,137 +1,137 @@
-# 🔍 Competitive Intelligence System for Rappi
+# Competitive Intelligence System for Rappi
 
-Sistema automatizado de inteligencia competitiva que recolecta, analiza y visualiza datos de plataformas de delivery en México (Rappi, Uber Eats, DiDi Food) para generar insights accionables.
+Sistema automatizado de inteligencia competitiva que recolecta, analiza y visualiza datos de plataformas de delivery en México.
 
-## 📋 Tabla de Contenidos
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![Tests](https://img.shields.io/badge/Tests-85%20passing-green)
+![Streamlit](https://img.shields.io/badge/Dashboard-Streamlit-red)
 
-- [Overview](#overview)
+## Tabla de Contenidos
 - [Quick Start](#quick-start)
+- [Que hace este sistema](#que-hace-este-sistema)
 - [Arquitectura](#arquitectura)
-- [Configuración](#configuración)
-- [Uso](#uso)
+- [Como ejecutar](#como-ejecutar)
 - [Dashboard](#dashboard)
-- [Datos Recolectados](#datos-recolectados)
-- [Limitaciones](#limitaciones)
-- [Consideraciones Éticas](#consideraciones-éticas)
-
-## Overview
-
-Este sistema resuelve la falta de visibilidad sistemática sobre cómo Rappi se compara con la competencia en variables críticas: precios, tiempos de entrega, fees y promociones.
-
-### Plataformas cubiertas
-- **Rappi** (baseline propio)
-- **Uber Eats**
-- **DiDi Food**
-
-### Métricas recolectadas
-- Precio de productos de referencia (Big Mac, Whopper, Combos)
-- Delivery fee
-- Service fee
-- Tiempo estimado de entrega
-- Promociones y descuentos activos
-- Disponibilidad de restaurantes
-
-### Cobertura geográfica
-- 25 direcciones representativas en CDMX
-- 5 niveles socioeconómicos (alto, medio-alto, medio, bajo, comercial)
-- 2 ciudades secundarias (Guadalajara, Monterrey)
+- [Informe PDF](#informe-pdf)
+- [Stack Tecnologico](#stack-tecnologico)
+- [Limitaciones Conocidas](#limitaciones-conocidas)
+- [Consideraciones Eticas](#consideraciones-eticas)
+- [Tests](#tests)
 
 ## Quick Start
 
 ```bash
-# 1. Clonar el repositorio
+# 1. Clonar e instalar
 git clone https://github.com/user/rappi-competitive-intelligence.git
 cd rappi-competitive-intelligence
-
-# 2. Instalar dependencias
 make setup
 
-# 3. Ejecutar scraping (demo rápido — 5 direcciones)
-make scrape-quick
+# 2. Generar datos de ejemplo (no requiere browser)
+make sample
 
-# 4. Generar análisis e informe
-make analyze
+# 3. Ejecutar analisis completo
+python -m analysis.comparative
+python -m analysis.insights
+python -m analysis.visualizations
+
+# 4. Generar informe PDF
+python generate_report.py --author "Tu Nombre"
 
 # 5. Lanzar dashboard interactivo
 make dashboard
 ```
 
+> **Nota**: El repo ya incluye datos de ejemplo, graficos, insights y el PDF generados.
+> Puedes abrir `reports/competitive_report.pdf` y ejecutar `make dashboard` directamente.
+
+## Que hace este sistema
+
+### Plataformas analizadas
+| Plataforma | Metodo | Estado |
+|------------|--------|--------|
+| Rappi | Playwright + network interception | Implementado |
+| Uber Eats | Playwright + DOM parsing | Implementado |
+| DiDi Food | Playwright mobile emulation | Limitado (mobile-only) |
+
+### Metricas recolectadas
+- Precio de productos de referencia (Big Mac, Whopper, Combos, McNuggets)
+- Delivery fee y Service fee
+- Tiempo estimado de entrega (min-max)
+- Promociones y descuentos activos
+- Disponibilidad de restaurantes
+- Rating y numero de reviews
+
+### Cobertura geografica
+- 25 direcciones en CDMX (5 zonas socioeconomicas)
+- 2 ciudades secundarias (Guadalajara, Monterrey)
+
+### Outputs del sistema
+1. **Datos crudos** - JSONs individuales por observacion (`data/raw/`)
+2. **CSV consolidado** - Dataset limpio para analisis (`data/processed/competitive_data.csv`)
+3. **8 graficos** de calidad presentacion (`reports/charts/`)
+4. **Top 5 Insights** accionables con Finding/Impact/Recommendation (`reports/top5_insights.json`)
+5. **Dashboard interactivo** Streamlit con 6 tabs y filtros (`dashboard/app.py`)
+6. **Informe ejecutivo PDF** de 13+ paginas (`reports/competitive_report.pdf`)
+
 ## Arquitectura
 
 ```
 rappi-competitive-intelligence/
-├── config/
-│   ├── settings.py          # Configuración global (timeouts, retries, delays)
-│   ├── locations.py          # 25 direcciones con coordenadas y metadata
-│   └── products.py           # Productos de referencia por categoría
-├── scrapers/
-│   ├── base.py               # Clase base abstracta para scrapers
-│   ├── rappi_scraper.py      # Scraper de Rappi
-│   ├── ubereats_scraper.py   # Scraper de Uber Eats
-│   ├── didifood_scraper.py   # Scraper de DiDi Food
-│   └── utils/
-│       ├── anti_detection.py # Headers, stealth, rate limiting
-│       ├── retry.py          # Retry con backoff exponencial
-│       └── screenshot.py     # Capturas automáticas de evidencia
+├── config/                    # Configuracion (locations, products, settings)
+├── scrapers/                  # Scrapers por plataforma (Rappi, UberEats, DiDi)
+│   └── utils/                 # Anti-detection, retry, screenshots, parsers
+├── scripts/                   # Generador de datos sinteticos + consolidador
+├── analysis/                  # Analisis comparativo, insights, visualizaciones
+├── dashboard/                 # Dashboard Streamlit + AI summary
 ├── data/
-│   ├── raw/                  # JSONs crudos por scrape run
-│   ├── processed/            # Datos limpios y normalizados (CSV)
-│   └── screenshots/          # Evidencia visual por plataforma/zona
-├── analysis/
-│   ├── comparative.py        # Análisis comparativo multi-plataforma
-│   ├── insights.py           # Generación de Top 5 insights
-│   └── visualizations.py     # Gráficos y charts
-├── dashboard/
-│   ├── app.py                # Dashboard Streamlit
-│   └── components/           # Componentes reutilizables del dashboard
-├── reports/                  # Informes generados (PDF)
-├── tests/
-│   ├── test_scrapers.py
-│   └── test_analysis.py
-├── run_scraper.py            # Entry point del scraping
-├── generate_report.py        # Generador del informe ejecutivo
-├── requirements.txt
-├── Makefile
-└── README.md
+│   ├── raw/                   # JSONs individuales por scrape
+│   ├── processed/             # CSV consolidado
+│   └── screenshots/           # Evidencia visual
+├── reports/
+│   ├── charts/                # 8 graficos PNG
+│   ├── competitive_report.pdf # Informe ejecutivo
+│   └── top5_insights.json     # Insights accionables
+├── tests/                     # 85 tests (pytest)
+├── run_scraper.py             # Entry point del scraping
+├── generate_report.py         # Generador de PDF
+├── Makefile                   # Todos los comandos
+└── requirements.txt
 ```
 
-## Configuración
+## Como ejecutar
 
-### Variables de entorno (opcional)
+### Opcion A: Con datos de ejemplo (sin browser)
 ```bash
-# .env (no requerido para ejecución básica)
-GROQ_API_KEY=your_key_here      # Para insights AI-powered (opcional)
-PROXY_URL=http://proxy:port     # Si usas proxies rotativos (opcional)
+make sample              # Genera datos sinteticos realistas
+make consolidate         # Consolida a CSV
+python -m analysis.comparative
+python -m analysis.insights
+python -m analysis.visualizations
+python generate_report.py --author "Tu Nombre"
+make dashboard           # Lanza Streamlit en localhost:8501
 ```
 
-### Ajustar direcciones
-Edita `config/locations.py` para agregar o modificar direcciones de scraping.
-
-### Ajustar productos
-Edita `config/products.py` para cambiar los productos de referencia.
-
-## Uso
-
-### Scraping completo
+### Opcion B: Scraping real (requiere Playwright + internet)
 ```bash
-python run_scraper.py --locations all --platforms all
+make setup                              # Instala deps + Playwright
+python run_scraper.py --mode quick      # 6 ubicaciones, 3 plataformas
+python run_scraper.py --mode full       # 23 ubicaciones
+python run_scraper.py --mode all        # 25 ubicaciones (+ ciudades sec.)
 ```
 
-### Scraping selectivo
+### Opciones del scraper
 ```bash
-# Solo Uber Eats en zonas de alto ingreso
-python run_scraper.py --platforms ubereats --zone-type high_income
+# Filtrar por plataforma
+python run_scraper.py --platforms rappi,ubereats
 
-# Solo Rappi en Polanco y Condesa
-python run_scraper.py --platforms rappi --locations polanco,condesa
+# Filtrar por zona
+python run_scraper.py --zone-type high_income
 
-# Demo rápido (5 direcciones, todas las plataformas)
-python run_scraper.py --mode quick
-```
+# Ubicaciones especificas
+python run_scraper.py --locations polanco,condesa,reforma
 
-### Generar análisis
-```bash
-python generate_report.py
+# Generar datos de ejemplo
+python run_scraper.py --generate-sample --mode quick
 ```
 
 ## Dashboard
@@ -140,54 +140,81 @@ python generate_report.py
 streamlit run dashboard/app.py
 ```
 
-El dashboard incluye:
-- Overview ejecutivo con KPIs
-- Comparativa de precios por plataforma
-- Análisis de fees (delivery + service)
-- Mapa de calor de competitividad por zona
-- Tiempos de entrega comparados
-- Feed de promociones activas
-- Insights AI-powered (con Groq)
+6 tabs interactivos:
+1. **Executive Overview** - KPIs, scorecard, radar chart
+2. **Precios** - Comparativa por producto/plataforma con drill-down
+3. **Delivery & Fees** - Desglose de costos, tiempos, fees como porcentaje
+4. **Geografico** - Heatmap por zona, delta de precios
+5. **Promociones** - Tasa por plataforma, tipos, feed filtrable
+6. **AI Insights** - Top 5 insights + resumen ejecutivo con Groq (opcional)
 
-## Datos Recolectados
+### Configuracion AI (opcional)
+```bash
+# Agrega en .env para habilitar resumenes AI:
+GROQ_API_KEY=your_key_here
+```
 
-### Output estructurado
-- `data/raw/` — JSONs individuales por observación
-- `data/processed/competitive_data.csv` — Dataset consolidado
-- `data/screenshots/` — Evidencia visual organizada por plataforma/zona
+## Informe PDF
 
-### Schema de datos
-Ver `config/settings.py` para el schema completo de cada observación.
+```bash
+python generate_report.py --author "Gabriel Padilla"
+# -> reports/competitive_report.pdf
+```
 
-## Limitaciones
+El informe incluye: portada, resumen ejecutivo, metodologia, analisis de precios/fees/tiempos, analisis geografico, promociones, top 5 insights, scorecard y proximos pasos.
 
-1. **DiDi Food**: Plataforma primarily mobile-only. Datos más limitados que Rappi/Uber Eats.
-2. **Service Fee**: En algunas plataformas solo visible en el flujo de checkout.
-3. **Horarios**: Los precios y disponibilidad pueden variar por hora del día.
-4. **Anti-bot**: Las plataformas pueden bloquear scraping intensivo.
-5. **Precios dinámicos**: Los datos representan un snapshot, no tendencias continuas.
-
-## Consideraciones Éticas
-
-- ✅ Se respetan los `robots.txt` de cada plataforma
-- ✅ Rate limiting de 3-5 segundos entre requests
-- ✅ Solo se recolectan datos públicamente visibles
-- ✅ User-Agents apropiados (no impersonation maliciosa)
-- ✅ No se almacenan datos personales de usuarios
-- ✅ Uso exclusivo para análisis competitivo / reclutamiento
-- ✅ No se sobrecargan los servidores de las plataformas
-
-## Stack Tecnológico
+## Stack Tecnologico
 
 | Componente | Herramienta |
 |------------|-------------|
-| Browser Automation | Playwright (Python) |
-| Anti-detection | playwright-stealth + random delays |
-| Análisis | pandas, matplotlib, seaborn |
+| Scraping | Playwright (Python) con stealth mode |
+| Anti-detection | UA rotation, random delays, human simulation |
+| Datos | pandas, JSON, CSV |
+| Visualizacion estatica | matplotlib, seaborn |
+| Visualizacion interactiva | Plotly |
 | Dashboard | Streamlit |
-| Screenshots | Playwright built-in |
-| LLM Insights | Groq (Llama 3) |
+| PDF | fpdf2 |
+| LLM (opcional) | Groq (Llama 3) |
+| Testing | pytest (85 tests) |
+
+## Limitaciones Conocidas
+
+1. **DiDi Food**: Plataforma primarily mobile-only. Datos web limitados (~30% fail rate).
+2. **Service Fee**: En algunas plataformas solo visible en el flujo de checkout.
+3. **Snapshot temporal**: Los datos representan un momento puntual.
+4. **Precios dinamicos**: Varian por hora, demanda y ubicacion exacta.
+5. **Cobertura**: Enfocado en CDMX. Pendiente validacion en otras ciudades.
+
+## Consideraciones Eticas
+
+Este sistema fue disenado con practicas responsables de scraping:
+
+- Rate limiting: Delays de 3-5 segundos entre requests
+- Respeto a robots.txt: Se verifican las directivas de cada plataforma
+- Solo datos publicos: No se accede a informacion detras de login
+- No datos personales: Solo datos de restaurantes, precios y fees
+- User-Agents apropiados: Sin impersonation maliciosa
+- Carga minima: Se bloquean recursos innecesarios (imagenes en listados)
+- Uso limitado: Exclusivamente para analisis competitivo / fines de reclutamiento
+
+> **Nota legal**: En un escenario de produccion, se recomienda consultar con el equipo
+> legal antes de implementar scraping sistematico. Este ejercicio es para fines de evaluacion tecnica.
+
+Ver [ETHICS.md](ETHICS.md) para el analisis completo.
+
+## Tests
+
+```bash
+pytest tests/ -v    # 85 tests
+```
+
+Cobertura:
+- Config: locations, products, helpers
+- Data models: ScrapeResult, ProductResult, DeliveryInfo
+- Parsers: parse_price, parse_time_range, fuzzy_match
+- Integration: sample data generation, CSV consolidation
+- Analysis: comparative, insights, visualizations
 
 ---
 
-*Desarrollado como caso técnico para el rol de AI Engineer en Rappi.*
+*Desarrollado como caso tecnico para el rol de AI Engineer en Rappi.*

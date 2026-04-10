@@ -21,18 +21,27 @@ env/
 .env
 .env.local
 
-# Data (keep structure, ignore content)
-data/raw/*.json
-data/raw/*.log
-data/processed/*.csv
-data/processed/*.json
+# Data - sample data and reports are committed for demo purposes.
+# Uncomment lines below to ignore generated outputs:
+# data/raw/*.json
+# data/raw/*.log
+# data/processed/*.csv
+# data/processed/*.json
+# reports/*.pdf
+# reports/charts/*.png
+# reports/analysis_*.csv
+# reports/top5_insights.*
+
+# Always ignore screenshots (too large)
 data/screenshots/**/*.png
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 !data/screenshots/.gitkeep
 
-# Reports
-reports/*.pdf
+# pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
 
 # OS
 .DS_Store

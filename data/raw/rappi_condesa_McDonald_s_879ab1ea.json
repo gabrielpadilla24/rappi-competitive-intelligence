@@ -1,0 +1,58 @@
+{
+  "scrape_id": "879ab1ea-e7f6-43ae-a014-fb84d24ed2af",
+  "timestamp": "2026-04-10T19:45:05.018054+00:00",
+  "platform": "rappi",
+  "location_id": "condesa",
+  "location_address": "Ámsterdam 240, Hipódromo, Cuauhtémoc, CDMX",
+  "location_lat": 19.4113,
+  "location_lng": -99.1722,
+  "zone_type": "high_income",
+  "zone_label": "Condesa",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "rappi_mcdonalds_condesa",
+    "available": true,
+    "rating": 4.2,
+    "review_count": 483
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 99,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 177,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Big Mac Mediano"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 128,
+      "available": true,
+      "description": "",
+      "original_name": "McNuggets 10 piezas"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 18,
+    "service_fee_mxn": 10,
+    "estimated_time_min": 14,
+    "estimated_time_max": 38,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 11.01
+}

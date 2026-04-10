@@ -1,0 +1,65 @@
+{
+  "scrape_id": "7fca1d28-bd55-4ebe-ba72-88350692377e",
+  "timestamp": "2026-04-10T19:43:51.429506+00:00",
+  "platform": "rappi",
+  "location_id": "santa_fe",
+  "location_address": "Av. Santa Fe 440, Santa Fe, Cuajimalpa, CDMX",
+  "location_lat": 19.3592,
+  "location_lng": -99.2741,
+  "zone_type": "high_income",
+  "zone_label": "Santa Fe",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "rappi_mcdonalds_santa_fe",
+    "available": true,
+    "rating": 4.4,
+    "review_count": 293
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 104,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 172,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Big Mac Mediano"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 126,
+      "available": true,
+      "description": "",
+      "original_name": "McNuggets 10 piezas"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 42,
+    "service_fee_mxn": 18,
+    "estimated_time_min": 15,
+    "estimated_time_max": 36,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "free_delivery",
+      "description": "Envío gratis en pedidos +$149",
+      "value": "$0 envío",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 26.48
+}

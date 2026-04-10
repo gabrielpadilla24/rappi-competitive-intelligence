@@ -1,0 +1,50 @@
+{
+  "scrape_id": "94276bcd-5341-42c5-9fd7-a1670207d819",
+  "timestamp": "2026-04-10T19:43:06.528606+00:00",
+  "platform": "rappi",
+  "location_id": "polanco",
+  "location_address": "Av. Presidente Masaryk 340, Polanco V Sección, Miguel Hidalgo, CDMX",
+  "location_lat": 19.4326,
+  "location_lng": -99.1942,
+  "zone_type": "high_income",
+  "zone_label": "Polanco",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King",
+    "platform_id": "rappi_burger_king_polanco",
+    "available": true,
+    "rating": 4.1,
+    "review_count": 769
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 121,
+      "available": true,
+      "description": "",
+      "original_name": "Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 182,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper Mediano"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 41,
+    "service_fee_mxn": 10,
+    "estimated_time_min": 11,
+    "estimated_time_max": 36,
+    "free_delivery_threshold_mxn": 149.0,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 31.27
+}

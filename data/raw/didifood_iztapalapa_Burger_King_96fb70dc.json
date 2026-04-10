@@ -1,0 +1,50 @@
+{
+  "scrape_id": "96fb70dc-8a37-4f0a-86fe-6fd5fd700f53",
+  "timestamp": "2026-04-10T19:49:11.517334+00:00",
+  "platform": "didifood",
+  "location_id": "iztapalapa",
+  "location_address": "Av. Ermita Iztapalapa 3000, Santa Cruz Meyehualco, Iztapalapa, CDMX",
+  "location_lat": 19.3579,
+  "location_lng": -99.052,
+  "zone_type": "low_income",
+  "zone_label": "Iztapalapa",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King",
+    "platform_id": "didifood_burger_king_iztapalapa",
+    "available": true,
+    "rating": 4.1,
+    "review_count": 1434
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 110,
+      "available": true,
+      "description": "",
+      "original_name": "Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 179,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper Mediano"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 9,
+    "service_fee_mxn": null,
+    "estimated_time_min": 27,
+    "estimated_time_max": 49,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [],
+  "data_completeness": "partial",
+  "scrape_duration_seconds": 16.49
+}

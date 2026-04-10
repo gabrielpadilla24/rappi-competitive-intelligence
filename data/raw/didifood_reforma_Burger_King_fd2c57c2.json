@@ -1,0 +1,57 @@
+{
+  "scrape_id": "fd2c57c2-4672-46d8-8892-79ad710be423",
+  "timestamp": "2026-04-10T20:11:05.692822+00:00",
+  "platform": "didifood",
+  "location_id": "reforma",
+  "location_address": "Av. Paseo de la Reforma 500, Juárez, Cuauhtémoc, CDMX",
+  "location_lat": 19.427,
+  "location_lng": -99.1616,
+  "zone_type": "commercial",
+  "zone_label": "Reforma (Oficinas)",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King",
+    "platform_id": "didifood_burger_king_reforma",
+    "available": true,
+    "rating": 4.2,
+    "review_count": 1142
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 102,
+      "available": true,
+      "description": "",
+      "original_name": "Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 172,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper Mediano"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 14,
+    "service_fee_mxn": 0.0,
+    "estimated_time_min": 12,
+    "estimated_time_max": 34,
+    "free_delivery_threshold_mxn": 149.0,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "$40 de descuento con DiDi Club",
+      "value": "$40 off",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "",
+  "errors": [],
+  "data_completeness": "partial",
+  "scrape_duration_seconds": 16.06
+}

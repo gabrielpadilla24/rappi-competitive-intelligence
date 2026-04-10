@@ -1,0 +1,50 @@
+{
+  "scrape_id": "86d476a7-6b32-4946-b5dc-0f12466d3778",
+  "timestamp": "2026-04-10T20:01:00.835651+00:00",
+  "platform": "didifood",
+  "location_id": "narvarte",
+  "location_address": "Eje Central 500, Narvarte Poniente, Benito Juárez, CDMX",
+  "location_lat": 19.396,
+  "location_lng": -99.1496,
+  "zone_type": "medium_income",
+  "zone_label": "Narvarte",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King",
+    "platform_id": "didifood_burger_king_narvarte",
+    "available": true,
+    "rating": 3.9,
+    "review_count": 936
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 111,
+      "available": true,
+      "description": "",
+      "original_name": "Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 166,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper Mediano"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 18,
+    "estimated_time_max": 45,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [],
+  "data_completeness": "partial",
+  "scrape_duration_seconds": 30.32
+}

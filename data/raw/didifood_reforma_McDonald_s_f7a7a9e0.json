@@ -1,0 +1,65 @@
+{
+  "scrape_id": "f7a7a9e0-1a73-4644-85a6-4ae6a3eb2c57",
+  "timestamp": "2026-04-10T20:45:27.663971+00:00",
+  "platform": "didifood",
+  "location_id": "reforma",
+  "location_address": "Av. Paseo de la Reforma 500, Juárez, Cuauhtémoc, CDMX",
+  "location_lat": 19.427,
+  "location_lng": -99.1616,
+  "zone_type": "commercial",
+  "zone_label": "Reforma (Oficinas)",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "didifood_mcdonalds_reforma",
+    "available": true,
+    "rating": 4.3,
+    "review_count": 102
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 93,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 158,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Big Mac Mediano"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 113,
+      "available": true,
+      "description": "",
+      "original_name": "McNuggets 10 piezas"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 15,
+    "service_fee_mxn": null,
+    "estimated_time_min": 12,
+    "estimated_time_max": 36,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": true
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "30% OFF hasta $70",
+      "value": "30%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "",
+  "errors": [],
+  "data_completeness": "partial",
+  "scrape_duration_seconds": 20.46
+}

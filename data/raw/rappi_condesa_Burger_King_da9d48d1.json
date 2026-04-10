@@ -1,0 +1,50 @@
+{
+  "scrape_id": "da9d48d1-7ae1-4217-b1a7-0cf7288db67f",
+  "timestamp": "2026-04-10T19:45:26.811945+00:00",
+  "platform": "rappi",
+  "location_id": "condesa",
+  "location_address": "Ámsterdam 240, Hipódromo, Cuauhtémoc, CDMX",
+  "location_lat": 19.4113,
+  "location_lng": -99.1722,
+  "zone_type": "high_income",
+  "zone_label": "Condesa",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King",
+    "platform_id": "rappi_burger_king_condesa",
+    "available": true,
+    "rating": 4.1,
+    "review_count": 1678
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 114,
+      "available": true,
+      "description": "",
+      "original_name": "Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 195,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper Mediano"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 46,
+    "service_fee_mxn": 14,
+    "estimated_time_min": 15,
+    "estimated_time_max": 37,
+    "free_delivery_threshold_mxn": 149.0,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 21.19
+}

@@ -1,0 +1,28 @@
+{
+  "scrape_id": "85474f06-c50b-4045-93e2-e3c1aa4c6c8d",
+  "timestamp": "2026-04-10T19:53:52.937979+00:00",
+  "platform": "didifood",
+  "location_id": "condesa",
+  "location_address": "Ámsterdam 240, Hipódromo, Cuauhtémoc, CDMX",
+  "location_lat": 19.4113,
+  "location_lng": -99.1722,
+  "zone_type": "high_income",
+  "zone_label": "Condesa",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "DiDi Food web scraping limited — mobile-only platform"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 7.16
+}

@@ -1,0 +1,52 @@
+{
+  "scrape_id": "7b70d9d5-2439-464f-9257-cec4d7824f09",
+  "timestamp": "2026-04-10T20:34:56.087258+00:00",
+  "platform": "didifood",
+  "location_id": "condesa",
+  "location_address": "Ámsterdam 240, Hipódromo, Cuauhtémoc, CDMX",
+  "location_lat": 19.4113,
+  "location_lng": -99.1722,
+  "zone_type": "high_income",
+  "zone_label": "Condesa",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King",
+    "platform_id": "didifood_burger_king_condesa",
+    "available": true,
+    "rating": 4.4,
+    "review_count": 1174
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 181,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper Mediano"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 10,
+    "estimated_time_max": 32,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Product 'Whopper' unavailable"
+  ],
+  "data_completeness": "partial",
+  "scrape_duration_seconds": 10.77
+}

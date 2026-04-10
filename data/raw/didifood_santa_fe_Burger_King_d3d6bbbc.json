@@ -1,0 +1,28 @@
+{
+  "scrape_id": "d3d6bbbc-9d8c-4b16-a59e-c7aa2d9ef6e6",
+  "timestamp": "2026-04-10T20:30:45.918452+00:00",
+  "platform": "didifood",
+  "location_id": "santa_fe",
+  "location_address": "Av. Santa Fe 440, Santa Fe, Cuajimalpa, CDMX",
+  "location_lat": 19.3592,
+  "location_lng": -99.2741,
+  "zone_type": "high_income",
+  "zone_label": "Santa Fe",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "DiDi Food web scraping limited — mobile-only platform"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 10.36
+}

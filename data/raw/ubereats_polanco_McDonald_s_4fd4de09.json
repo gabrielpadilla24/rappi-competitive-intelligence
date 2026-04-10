@@ -1,0 +1,58 @@
+{
+  "scrape_id": "4fd4de09-7063-41c9-9647-df8ee094d21c",
+  "timestamp": "2026-04-10T19:39:28.484102+00:00",
+  "platform": "ubereats",
+  "location_id": "polanco",
+  "location_address": "Av. Presidente Masaryk 340, Polanco V Sección, Miguel Hidalgo, CDMX",
+  "location_lat": 19.4326,
+  "location_lng": -99.1942,
+  "zone_type": "high_income",
+  "zone_label": "Polanco",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "ubereats_mcdonalds_polanco",
+    "available": true,
+    "rating": 4.4,
+    "review_count": 4003
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 105,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 190,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Big Mac Mediano"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 136,
+      "available": true,
+      "description": "",
+      "original_name": "McNuggets 10 piezas"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 18,
+    "service_fee_mxn": 21,
+    "estimated_time_min": 19,
+    "estimated_time_max": 40,
+    "free_delivery_threshold_mxn": 149.0,
+    "surge_active": true
+  },
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 31.62
+}

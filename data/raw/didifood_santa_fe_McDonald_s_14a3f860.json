@@ -1,0 +1,28 @@
+{
+  "scrape_id": "14a3f860-282f-4f4b-a4fb-51c08941a527",
+  "timestamp": "2026-04-10T19:57:50.885276+00:00",
+  "platform": "didifood",
+  "location_id": "santa_fe",
+  "location_address": "Av. Santa Fe 440, Santa Fe, Cuajimalpa, CDMX",
+  "location_lat": 19.3592,
+  "location_lng": -99.2741,
+  "zone_type": "high_income",
+  "zone_label": "Santa Fe",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "DiDi Food web scraping limited — mobile-only platform"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 6.21
+}

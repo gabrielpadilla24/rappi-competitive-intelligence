@@ -1,0 +1,58 @@
+{
+  "scrape_id": "13727f72-5bf3-4b7e-a9de-88e6ea33405c",
+  "timestamp": "2026-04-10T20:26:54.087832+00:00",
+  "platform": "ubereats",
+  "location_id": "santa_fe",
+  "location_address": "Av. Santa Fe 440, Santa Fe, Cuajimalpa, CDMX",
+  "location_lat": 19.3592,
+  "location_lng": -99.2741,
+  "zone_type": "high_income",
+  "zone_label": "Santa Fe",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "ubereats_mcdonalds_santa_fe",
+    "available": true,
+    "rating": 4.5,
+    "review_count": 2326
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 108,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 173,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Big Mac Mediano"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 126,
+      "available": true,
+      "description": "",
+      "original_name": "McNuggets 10 piezas"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 18,
+    "service_fee_mxn": 23,
+    "estimated_time_min": 15,
+    "estimated_time_max": 45,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 16.47
+}

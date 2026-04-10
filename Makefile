@@ -81,6 +81,6 @@ clean-all:
 all: setup scrape analyze report
 	@echo "🚀 Full pipeline complete"
 
-# Quick pipeline (for demo)
-demo: setup scrape-quick analyze report
-	@echo "🚀 Demo pipeline complete"
+# Quick pipeline (for demo — no browser required)
+demo: setup sample analyze report
+	@echo "Demo pipeline complete"

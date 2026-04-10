@@ -1,0 +1,57 @@
+{
+  "scrape_id": "2bb8ddbb-2670-4559-aee6-9cf817104f73",
+  "timestamp": "2026-04-10T20:20:26.654316+00:00",
+  "platform": "rappi",
+  "location_id": "narvarte",
+  "location_address": "Eje Central 500, Narvarte Poniente, Benito Juárez, CDMX",
+  "location_lat": 19.396,
+  "location_lng": -99.1496,
+  "zone_type": "medium_income",
+  "zone_label": "Narvarte",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King",
+    "platform_id": "rappi_burger_king_narvarte",
+    "available": true,
+    "rating": 3.9,
+    "review_count": 354
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 103,
+      "available": true,
+      "description": "",
+      "original_name": "Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 177,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper Mediano"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 23,
+    "service_fee_mxn": 14,
+    "estimated_time_min": 23,
+    "estimated_time_max": 49,
+    "free_delivery_threshold_mxn": 149.0,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "cashback",
+      "description": "10% de cashback en RappiPay",
+      "value": "10% cashback",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 15.7
+}

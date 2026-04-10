@@ -1,0 +1,50 @@
+{
+  "scrape_id": "3ca4cb08-d88b-451b-8d5c-38b4aadf8e77",
+  "timestamp": "2026-04-10T19:56:38.071581+00:00",
+  "platform": "ubereats",
+  "location_id": "condesa",
+  "location_address": "Ámsterdam 240, Hipódromo, Cuauhtémoc, CDMX",
+  "location_lat": 19.4113,
+  "location_lng": -99.1722,
+  "zone_type": "high_income",
+  "zone_label": "Condesa",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King",
+    "platform_id": "ubereats_burger_king_condesa",
+    "available": true,
+    "rating": 4.2,
+    "review_count": 1194
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 122,
+      "available": true,
+      "description": "",
+      "original_name": "Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 196,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper Mediano"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 32,
+    "service_fee_mxn": 13,
+    "estimated_time_min": 17,
+    "estimated_time_max": 44,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 23.54
+}

@@ -1,0 +1,28 @@
+{
+  "scrape_id": "fc1ebecb-edad-4140-a694-d655026ccac1",
+  "timestamp": "2026-04-10T20:38:21.887012+00:00",
+  "platform": "didifood",
+  "location_id": "narvarte",
+  "location_address": "Eje Central 500, Narvarte Poniente, Benito Juárez, CDMX",
+  "location_lat": 19.396,
+  "location_lng": -99.1496,
+  "zone_type": "medium_income",
+  "zone_label": "Narvarte",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "DiDi Food web scraping limited — mobile-only platform"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 5.81
+}

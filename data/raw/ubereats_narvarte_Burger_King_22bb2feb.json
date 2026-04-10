@@ -1,0 +1,50 @@
+{
+  "scrape_id": "22bb2feb-9656-4f92-b766-0671d6c1a81a",
+  "timestamp": "2026-04-10T19:46:37.632820+00:00",
+  "platform": "ubereats",
+  "location_id": "narvarte",
+  "location_address": "Eje Central 500, Narvarte Poniente, Benito Juárez, CDMX",
+  "location_lat": 19.396,
+  "location_lng": -99.1496,
+  "zone_type": "medium_income",
+  "zone_label": "Narvarte",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King",
+    "platform_id": "ubereats_burger_king_narvarte",
+    "available": true,
+    "rating": 3.9,
+    "review_count": 2297
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 123,
+      "available": true,
+      "description": "",
+      "original_name": "Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 182,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper Mediano"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 31,
+    "service_fee_mxn": 21,
+    "estimated_time_min": 27,
+    "estimated_time_max": 53,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 31.4
+}
