@@ -1,4 +1,4 @@
-.PHONY: setup scrape scrape-quick analyze report dashboard test clean all
+.PHONY: setup scrape scrape-quick analyze report dashboard test clean all sample sample-all consolidate
 
 # ============================================================
 # Rappi Competitive Intelligence System — Makefile
@@ -27,8 +27,24 @@ scrape-ubereats:
 	python run_scraper.py --platforms ubereats --locations all
 	@echo "✅ Uber Eats scrape complete"
 
+# Generate synthetic sample data (no browser required)
+sample:
+	python -m scripts.generate_sample_data
+	python -m scripts.consolidate_data
+	@echo "✅ Sample data generated (quick locations)"
+
+sample-all:
+	python -m scripts.generate_sample_data --all
+	python -m scripts.consolidate_data
+	@echo "✅ Full sample data generated (25 locations)"
+
+# Consolidate raw JSONs to CSV
+consolidate:
+	python -m scripts.consolidate_data
+	@echo "✅ Data consolidated to data/processed/competitive_data.csv"
+
 # Analysis
-analyze:
+analyze: consolidate
 	python -m analysis.comparative
 	python -m analysis.insights
 	python -m analysis.visualizations

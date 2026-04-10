@@ -3,6 +3,7 @@ Tests for scraper modules.
 """
 
 import pytest
+from scrapers.utils.parsers import parse_price, parse_time_range, fuzzy_match
 from config.locations import (
     LOCATIONS, QUICK_LOCATIONS, FULL_LOCATIONS,
     get_locations_by_zone, get_location_by_id, get_quick_locations,
@@ -167,3 +168,64 @@ class TestDataModels:
         assert d["restaurant"]["name"] == "McDonald's Polanco"
         assert d["delivery"]["fee_mxn"] == 29.0
         assert len(d["promotions"]) == 1
+
+
+# ============================================================
+# Parser Tests
+# ============================================================
+
+class TestParsers:
+    def test_parse_price_basic(self):
+        assert parse_price("$89.00") == 89.0
+
+    def test_parse_price_no_cents(self):
+        assert parse_price("$89") == 89.0
+
+    def test_parse_price_comma_thousands(self):
+        assert parse_price("$1,299.00") == 1299.0
+
+    def test_parse_price_mxn_prefix(self):
+        assert parse_price("MXN 89") == 89.0
+
+    def test_parse_price_no_symbol(self):
+        assert parse_price("89.00") == 89.0
+
+    def test_parse_price_empty(self):
+        assert parse_price("") is None
+
+    def test_parse_price_non_numeric(self):
+        assert parse_price("gratis") is None
+
+    def test_parse_price_none_input(self):
+        assert parse_price(None) is None
+
+    def test_parse_price_zero(self):
+        # Zero is not a valid price
+        assert parse_price("$0") is None
+
+    def test_parse_time_range_em_dash(self):
+        assert parse_time_range("25–35 min") == (25, 35)
+
+    def test_parse_time_range_hyphen(self):
+        assert parse_time_range("25-35 min") == (25, 35)
+
+    def test_parse_time_range_single(self):
+        assert parse_time_range("30 min") == (30, 30)
+
+    def test_parse_time_range_empty(self):
+        assert parse_time_range("") == (None, None)
+
+    def test_parse_time_range_no_match(self):
+        assert parse_time_range("sin tiempo") == (None, None)
+
+    def test_fuzzy_match_hit(self):
+        assert fuzzy_match(["Big Mac", "BigMac"], "Big Mac Individual") is True
+
+    def test_fuzzy_match_case_insensitive(self):
+        assert fuzzy_match(["big mac"], "BIG MAC COMBO") is True
+
+    def test_fuzzy_match_miss(self):
+        assert fuzzy_match(["Big Mac"], "Whopper") is False
+
+    def test_fuzzy_match_partial_term(self):
+        assert fuzzy_match(["McNuggets"], "Chicken McNuggets 10 piezas") is True

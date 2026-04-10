@@ -214,6 +214,11 @@ def parse_args():
         help="Filter by zone type: high_income, medium_income, etc.",
     )
     parser.add_argument(
+        "--generate-sample",
+        action="store_true",
+        help="Generate synthetic sample data instead of live scraping (for development)",
+    )
+    parser.add_argument(
         "--verbose", "-v",
         action="store_true",
         help="Enable debug logging",
@@ -253,13 +258,22 @@ def main():
     # Determine restaurants
     restaurants = PRIORITY_RESTAURANTS
 
-    # Run
-    results = asyncio.run(run_scraping(locations, platforms, restaurants))
+    # Generate sample data or run live scrapers
+    if args.generate_sample:
+        logger.info("Generating synthetic sample data (--generate-sample mode)")
+        from scripts.generate_sample_data import generate_sample_data
+        generate_sample_data(locations=locations)
+    else:
+        results = asyncio.run(run_scraping(locations, platforms, restaurants))
+        if results:
+            consolidated_path = save_consolidated_results(results)
+            logger.info(f"Consolidated results: {consolidated_path}")
 
-    # Consolidate
-    if results:
-        consolidated_path = save_consolidated_results(results)
-        logger.info(f"Consolidated results: {consolidated_path}")
+    # Always consolidate raw JSONs into CSV after any run
+    logger.info("Consolidating raw JSONs into CSV...")
+    from scripts.consolidate_data import consolidate
+    csv_path = consolidate()
+    logger.info(f"CSV ready: {csv_path}")
 
 
 if __name__ == "__main__":
