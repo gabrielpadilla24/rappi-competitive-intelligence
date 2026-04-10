@@ -65,8 +65,8 @@ def get_scraper(platform: str):
         from scrapers.ubereats_scraper import UberEatsScraper
         return UberEatsScraper()
     elif platform == "didifood":
-        from scrapers.didifood_scraper import DidiFloodScraper
-        return DidiFloodScraper()
+        from scrapers.didifood_scraper import DididFoodScraper
+        return DididFoodScraper()
     else:
         raise ValueError(f"Unknown platform: {platform}")
 

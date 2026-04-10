@@ -1,0 +1,28 @@
+{
+  "scrape_id": "e86db51d-e905-4837-b17a-9ad3d5dc816a",
+  "timestamp": "2026-04-10T21:15:12.643780+00:00",
+  "platform": "didifood",
+  "location_id": "polanco",
+  "location_address": "Av. Presidente Masaryk 340, Polanco V Sección, Miguel Hidalgo, CDMX",
+  "location_lat": 19.4326,
+  "location_lng": -99.1942,
+  "zone_type": "high_income",
+  "zone_label": "Polanco",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'McDonald's' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

@@ -1,0 +1,72 @@
+16:15:12 | asyncio                   | DEBUG   | Using selector: KqueueSelector
+16:15:12 | runner                    | INFO    | ============================================================
+16:15:12 | runner                    | INFO    | Starting scrape run
+16:15:12 | runner                    | INFO    |   Locations:   1
+16:15:12 | runner                    | INFO    |   Platforms:   didifood
+16:15:12 | runner                    | INFO    |   Restaurants: McDonald's, Burger King
+16:15:12 | runner                    | INFO    |   Total combinations: 2
+16:15:12 | runner                    | INFO    | ============================================================
+16:15:12 | runner                    | INFO    | 
+────────────────────────────────────────
+16:15:12 | runner                    | INFO    | Platform: DIDIFOOD
+16:15:12 | runner                    | INFO    | ────────────────────────────────────────
+16:15:12 | scraper.didifood          | INFO    | Starting DiDi Food browser
+16:15:12 | scraper.anti_detection    | INFO    | Stealth browser ready — UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
+16:15:12 | scraper.didifood          | INFO    | DiDi Food browser ready
+16:15:12 | runner                    | INFO    | 
+📍 Location: Polanco V Sección, Miguel Hidalgo (high_income)
+16:15:12 | runner                    | INFO    |   🏪 McDonald's — 3 products
+16:15:12 | scraper.didifood          | INFO    | Setting location: Polanco V Sección, Miguel Hidalgo
+16:15:12 | scraper.didifood          | INFO    | Geolocation set: (19.4326, -99.1942) for Polanco V Sección, Miguel Hidalgo
+16:15:12 | scraper.didifood          | INFO    | Navigating to https://didi-food.com/es-MX/food/
+16:15:14 | scraper.anti_detection    | DEBUG   | Waiting 3.0s
+16:15:17 | scraper.screenshot        | INFO    | Screenshot saved: polanco_home_landing_20260410_161517.png
+16:15:17 | scraper.didifood          | DEBUG   | Found address input: input[placeholder*="dirección"]
+16:15:24 | scraper.anti_detection    | DEBUG   | Waiting 2.2s
+16:15:50 | scraper.didifood          | DEBUG   | Autocomplete suggestion found: ul li
+16:15:50 | scraper.anti_detection    | DEBUG   | Waiting 2.9s
+16:15:53 | scraper.anti_detection    | DEBUG   | Waiting 2.8s
+16:15:56 | scraper.didifood          | INFO    | DiDi Food location set: Polanco V Sección, Miguel Hidalgo
+16:15:56 | scraper.screenshot        | INFO    | Screenshot saved: polanco_home_after_address_20260410_161556.png
+16:15:56 | scraper.didifood          | INFO    | Searching for: McDonald's
+16:16:20 | scraper.didifood          | DEBUG   | No search bar found on DiDi Food page
+16:16:20 | scraper.didifood          | INFO    | Search bar approach failed — scanning page for restaurant cards
+16:16:20 | scraper.didifood          | WARNING | Restaurant 'McDonald's' not found on DiDi Food
+16:16:20 | runner                    | INFO    |   ❌ failed (0.0s) → didifood_polanco_McDonald_s_e86db51d.json
+16:16:20 | scraper.anti_detection    | DEBUG   | Waiting 3.8s
+16:16:24 | runner                    | INFO    |   🏪 Burger King — 2 products
+16:16:24 | scraper.didifood          | INFO    | Setting location: Polanco V Sección, Miguel Hidalgo
+16:16:24 | scraper.didifood          | INFO    | Geolocation set: (19.4326, -99.1942) for Polanco V Sección, Miguel Hidalgo
+16:16:24 | scraper.didifood          | INFO    | Navigating to https://didi-food.com/es-MX/food/
+16:16:25 | scraper.anti_detection    | DEBUG   | Waiting 3.6s
+16:16:29 | scraper.screenshot        | INFO    | Screenshot saved: polanco_home_landing_20260410_161628.png
+16:16:29 | scraper.didifood          | DEBUG   | Found address input: input[placeholder*="dirección"]
+16:16:35 | scraper.anti_detection    | DEBUG   | Waiting 1.7s
+16:17:01 | scraper.didifood          | DEBUG   | Autocomplete suggestion found: ul li
+16:17:01 | scraper.anti_detection    | DEBUG   | Waiting 2.3s
+16:17:03 | scraper.anti_detection    | DEBUG   | Waiting 3.7s
+16:17:07 | scraper.didifood          | INFO    | DiDi Food location set: Polanco V Sección, Miguel Hidalgo
+16:17:07 | scraper.screenshot        | INFO    | Screenshot saved: polanco_home_after_address_20260410_161707.png
+16:17:07 | scraper.didifood          | INFO    | Searching for: Burger King
+16:17:07 | scraper.didifood          | INFO    | Extended anti-bot delay before restaurant #2 (Burger King)
+16:17:07 | scraper.anti_detection    | DEBUG   | Waiting 8.9s
+16:17:17 | scraper.anti_detection    | DEBUG   | Waiting 2.5s
+16:17:43 | scraper.didifood          | DEBUG   | No search bar found on DiDi Food page
+16:17:43 | scraper.didifood          | INFO    | Search bar approach failed — scanning page for restaurant cards
+16:17:43 | scraper.didifood          | DEBUG   | Selector 'a[href*="store"]' found 2 cards: ['Conoce más→', 'Abre una tienda en DiDi\xa0Food']
+16:17:43 | scraper.didifood          | WARNING | Restaurant 'Burger King' not found on DiDi Food
+16:17:43 | runner                    | INFO    |   ❌ failed (0.0s) → didifood_polanco_Burger_King_555a0320.json
+16:17:43 | scraper.anti_detection    | DEBUG   | Waiting 2.2s
+16:17:53 | scraper.didifood          | INFO    | DiDi Food browser closed
+16:17:55 | runner                    | INFO    | 
+============================================================
+16:17:55 | runner                    | INFO    | SCRAPE COMPLETE
+16:17:55 | runner                    | INFO    |   Total time:    164s (2.7m)
+16:17:55 | runner                    | INFO    |   Completed:     2/2
+16:17:55 | runner                    | INFO    |   Errors:        0
+16:17:55 | runner                    | INFO    |   Success rate:  100%
+16:17:55 | runner                    | INFO    |   Results saved: /Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/raw
+16:17:55 | runner                    | INFO    | ============================================================
+16:17:55 | runner                    | INFO    | Consolidated results: /Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/processed/consolidated_20260410_161755.json
+16:17:55 | runner                    | INFO    | Consolidating raw JSONs into CSV...
+16:17:55 | runner                    | INFO    | CSV ready: /Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/processed/competitive_data.csv

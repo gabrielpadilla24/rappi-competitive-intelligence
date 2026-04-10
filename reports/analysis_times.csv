@@ -1,0 +1,6 @@
+zone_type,rappi_avg_time,ubereats_avg_time,didifood_avg_time,rappi_std,ubereats_std,didifood_std,fastest_platform
+commercial,27.7,32.8,23.6,0.3,0.3,0.5,didifood
+high_income,24.7,29.8,20.8,1.2,0.6,0.3,didifood
+low_income,44.9,47.7,38.0,2.2,0.3,0.0,didifood
+medium_high_income,29.0,34.5,25.0,0.0,1.4,0.0,didifood
+medium_income,36.3,39.4,31.5,0.3,0.5,0.0,didifood
