@@ -6,6 +6,14 @@ Scrapes restaurant data from ubereats.com/mx using Playwright.
 import re
 from typing import Optional
 
+# Keywords that indicate a restaurant sub-category store (not the main branch).
+# "Pollos de McDonald's" or "McDonald's Postres" should rank below "McDonald's".
+_SUBCATEGORY_KEYWORDS = frozenset({
+    "postres", "desayunos", "helados", "bebidas", "café", "cafe",
+    "pollos", "ensaladas", "snacks", "malteadas", "mccafé", "mccafe",
+    "pollos de", "postres de", "desayunos de",
+})
+
 from scrapers.base import (
     BaseScraper, RestaurantResult, DeliveryInfo,
     ProductResult, PromotionInfo,
@@ -67,12 +75,30 @@ class UberEatsScraper(BaseScraper):
     # set_location
     # ------------------------------------------------------------------
 
+    def _is_subcategory_card(self, text: str) -> bool:
+        """Return True if card text indicates a sub-category store, not the main branch."""
+        text_lower = text.lower()
+        return any(
+            re.search(r'\b' + re.escape(kw) + r'\b', text_lower)
+            for kw in _SUBCATEGORY_KEYWORDS
+        )
+
     async def set_location(self, location: Location) -> bool:
         """
         Navigate to Uber Eats and set the delivery address.
         Returns True if the location was accepted.
         """
         try:
+            # Grant browser geolocation before navigating so UberEats can use
+            # the coordinates as a fallback when the address input is bypassed.
+            await self.context.grant_permissions(["geolocation"])
+            await self.context.set_geolocation(
+                {"latitude": location.lat, "longitude": location.lng}
+            )
+            self.logger.info(
+                f"Geolocation set: ({location.lat}, {location.lng}) for {location.short_name}"
+            )
+
             base_url = PLATFORM_URLS["ubereats"]["feed"]
             self.logger.info(f"Navigating to {base_url}")
             await self.page.goto(base_url, timeout=PAGE_LOAD_TIMEOUT, wait_until="domcontentloaded")
@@ -192,31 +218,42 @@ class UberEatsScraper(BaseScraper):
 
             self.logger.info(f"Found {len(store_cards)} store cards")
 
+            # Collect all matching cards so we can choose the best one.
+            matches: list[tuple[str, object]] = []
             for card in store_cards:
                 try:
-                    # Get the card text to match against restaurant name
                     card_text = await card.text_content() or ""
                     if fuzzy_match(restaurant.search_terms, card_text):
-                        self.logger.info(f"Matched restaurant card: {card_text[:80]}")
-                        # Navigate to the restaurant page
-                        href = await card.get_attribute("href")
-                        if href:
-                            if href.startswith("/"):
-                                href = f"https://www.ubereats.com{href}"
-                            self._current_restaurant_url = href
-                            await self.page.goto(href, timeout=PAGE_LOAD_TIMEOUT, wait_until="domcontentloaded")
-                            await random_delay(2, 3)
-                        else:
-                            await card.click()
-                            await random_delay(2, 3)
-
-                        return await self._extract_restaurant_info(restaurant)
+                        matches.append((card_text.strip(), card))
                 except Exception as e:
                     self.logger.debug(f"Card parsing error: {e}")
                     continue
 
-            self.logger.warning(f"Restaurant '{restaurant.name}' not found in search results")
-            return None
+            if not matches:
+                self.logger.warning(f"Restaurant '{restaurant.name}' not found in search results")
+                return None
+
+            # Prefer non-subcategory cards ("McDonald's Antara" over "Pollos de McDonald's"),
+            # then shortest name as a proxy for most-exact match.
+            matches.sort(key=lambda x: (self._is_subcategory_card(x[0]), len(x[0])))
+            best_text, best_card = matches[0]
+            if len(matches) > 1:
+                skipped = [t[:50] for t, _ in matches[1:]]
+                self.logger.debug(f"Skipped lower-ranked cards: {skipped}")
+
+            self.logger.info(f"Matched restaurant card: {best_text[:80]}")
+            href = await best_card.get_attribute("href")
+            if href:
+                if href.startswith("/"):
+                    href = f"https://www.ubereats.com{href}"
+                self._current_restaurant_url = href
+                await self.page.goto(href, timeout=PAGE_LOAD_TIMEOUT, wait_until="domcontentloaded")
+                await random_delay(2, 3)
+            else:
+                await best_card.click()
+                await random_delay(2, 3)
+
+            return await self._extract_restaurant_info(restaurant)
 
         except Exception as e:
             self.logger.error(f"search_restaurant failed: {e}")

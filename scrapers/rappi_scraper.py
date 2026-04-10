@@ -7,6 +7,13 @@ optional network response interception for JSON data.
 import re
 from typing import Optional
 
+# Keywords that indicate a restaurant sub-category card (not the main branch).
+# Used to prefer "McDonald's Antara" over "McDonald's Postres" when both match.
+_SUBCATEGORY_KEYWORDS = frozenset({
+    "postres", "desayunos", "helados", "bebidas", "café", "cafe",
+    "pollos", "ensaladas", "snacks", "malteadas", "mccafé", "mccafe",
+})
+
 from scrapers.base import (
     BaseScraper, RestaurantResult, DeliveryInfo,
     ProductResult, PromotionInfo,
@@ -34,6 +41,7 @@ class RappiScraper(BaseScraper):
         self._playwright = None
         self._api_responses: list[dict] = []
         self._current_restaurant_url: Optional[str] = None
+        self._restaurant_search_count = 0  # tracks calls to search_restaurant()
 
     # ------------------------------------------------------------------
     # Lifecycle
@@ -83,9 +91,28 @@ class RappiScraper(BaseScraper):
     # set_location
     # ------------------------------------------------------------------
 
+    def _is_subcategory_card(self, text: str) -> bool:
+        """Return True if the card text indicates a sub-category store, not the main branch."""
+        text_lower = text.lower()
+        return any(
+            re.search(r'\b' + re.escape(kw) + r'\b', text_lower)
+            for kw in _SUBCATEGORY_KEYWORDS
+        )
+
     async def set_location(self, location: Location) -> bool:
         """Navigate to Rappi and set the delivery address."""
         try:
+            # Grant browser geolocation so Rappi picks up the correct coordinates
+            # when it requests location permission — this is the most reliable way
+            # to set location on Rappi, which often ignores the address input.
+            await self.context.grant_permissions(["geolocation"])
+            await self.context.set_geolocation(
+                {"latitude": location.lat, "longitude": location.lng}
+            )
+            self.logger.info(
+                f"Geolocation set: ({location.lat}, {location.lng}) for {location.short_name}"
+            )
+
             base_url = PLATFORM_URLS["rappi"]["base"]
             self.logger.info(f"Navigating to {base_url}")
             await self.page.goto(base_url, timeout=PAGE_LOAD_TIMEOUT, wait_until="domcontentloaded")
@@ -212,7 +239,25 @@ class RappiScraper(BaseScraper):
     ) -> Optional[RestaurantResult]:
         """Search for a restaurant and navigate to its page."""
         try:
-            # Reset captured API responses for this session
+            self._restaurant_search_count += 1
+
+            # From the second restaurant onward, add a longer delay and return to
+            # the base URL so Rappi sees a fresh navigation rather than rapid
+            # same-session requests — reduces bot-detection false positives.
+            if self._restaurant_search_count > 1:
+                self.logger.info(
+                    f"Extended anti-bot delay before restaurant "
+                    f"#{self._restaurant_search_count} ({restaurant.name})"
+                )
+                await random_delay(8, 12)
+                await self.page.goto(
+                    PLATFORM_URLS["rappi"]["base"],
+                    timeout=PAGE_LOAD_TIMEOUT,
+                    wait_until="domcontentloaded",
+                )
+                await random_delay(2, 4)
+
+            # Reset captured API responses for this restaurant
             self._api_responses = []
 
             # Try the search bar first
@@ -302,22 +347,59 @@ class RappiScraper(BaseScraper):
         for selector in card_selectors:
             try:
                 cards = await self.page.query_selector_all(selector)
+
+                if not cards:
+                    continue
+
+                # Log all found cards at DEBUG so we can see what Rappi returns
+                all_texts = []
+                for card in cards:
+                    t = (await card.text_content() or "").strip()
+                    if t:
+                        all_texts.append(t[:60])
+                self.logger.debug(
+                    f"Selector '{selector}' found {len(cards)} cards: {all_texts}"
+                )
+
+                # Collect matching cards
+                matches: list[tuple[str, object]] = []
                 for card in cards:
                     text = await card.text_content() or ""
                     if fuzzy_match(restaurant.search_terms, text):
-                        self.logger.info(f"Matched Rappi card: {text[:60]}")
-                        href = await card.get_attribute("href") or ""
-                        if href:
-                            if href.startswith("/"):
-                                href = f"{PLATFORM_URLS['rappi']['base']}{href}"
-                            self._current_restaurant_url = href
-                            await self.page.goto(
-                                href, timeout=PAGE_LOAD_TIMEOUT, wait_until="domcontentloaded"
-                            )
-                        else:
-                            await card.click()
-                        await random_delay(2, 3)
-                        return await self._extract_restaurant_info(restaurant)
+                        matches.append((text.strip(), card))
+
+                if not matches:
+                    continue
+
+                # Sort: non-subcategory cards first, then shorter names (more exact).
+                matches.sort(key=lambda x: (self._is_subcategory_card(x[0]), len(x[0])))
+                best_text, best_card = matches[0]
+
+                if len(matches) > 1:
+                    skipped = [t[:40] for t, _ in matches[1:]]
+                    self.logger.debug(f"Skipped lower-ranked cards: {skipped}")
+
+                # Warn when the only option is a sub-category store — products like
+                # "Big Mac" may not appear in a "postres" or "desayunos" store.
+                if self._is_subcategory_card(best_text):
+                    self.logger.warning(
+                        f"Best match '{best_text[:60]}' looks like a sub-category store "
+                        f"(no main branch found). Proceeding anyway — product matches may fail."
+                    )
+                else:
+                    self.logger.info(f"Matched Rappi card: {best_text[:60]}")
+                href = await best_card.get_attribute("href") or ""
+                if href:
+                    if href.startswith("/"):
+                        href = f"{PLATFORM_URLS['rappi']['base']}{href}"
+                    self._current_restaurant_url = href
+                    await self.page.goto(
+                        href, timeout=PAGE_LOAD_TIMEOUT, wait_until="domcontentloaded"
+                    )
+                else:
+                    await best_card.click()
+                await random_delay(2, 3)
+                return await self._extract_restaurant_info(restaurant)
             except Exception as e:
                 self.logger.debug(f"Card selector '{selector}' error: {e}")
                 continue
