@@ -1,0 +1,89 @@
+15:48:49 | asyncio                   | DEBUG   | Using selector: KqueueSelector
+15:48:49 | runner                    | INFO    | ============================================================
+15:48:49 | runner                    | INFO    | Starting scrape run
+15:48:49 | runner                    | INFO    |   Locations:   1
+15:48:49 | runner                    | INFO    |   Platforms:   ubereats
+15:48:49 | runner                    | INFO    |   Restaurants: McDonald's, Burger King
+15:48:49 | runner                    | INFO    |   Total combinations: 2
+15:48:49 | runner                    | INFO    | ============================================================
+15:48:49 | runner                    | INFO    | 
+────────────────────────────────────────
+15:48:49 | runner                    | INFO    | Platform: UBEREATS
+15:48:49 | runner                    | INFO    | ────────────────────────────────────────
+15:48:49 | scraper.ubereats          | INFO    | Starting Uber Eats browser
+15:48:49 | scraper.anti_detection    | INFO    | Stealth browser ready — UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
+15:48:49 | scraper.ubereats          | INFO    | Uber Eats browser ready
+15:48:49 | runner                    | INFO    | 
+📍 Location: Polanco V Sección, Miguel Hidalgo (high_income)
+15:48:49 | runner                    | INFO    |   🏪 McDonald's — 3 products
+15:48:49 | scraper.ubereats          | INFO    | Setting location: Polanco V Sección, Miguel Hidalgo
+15:48:49 | scraper.ubereats          | INFO    | Navigating to https://www.ubereats.com/mx/feed
+15:48:53 | scraper.anti_detection    | DEBUG   | Waiting 2.4s
+15:49:00 | scraper.ubereats          | DEBUG   | Found address input with selector: input[placeholder*="dirección"]
+15:49:07 | scraper.anti_detection    | DEBUG   | Waiting 2.1s
+15:49:09 | scraper.anti_detection    | DEBUG   | Waiting 3.0s
+15:49:12 | scraper.ubereats          | INFO    | Location set: Polanco V Sección, Miguel Hidalgo
+15:49:12 | scraper.ubereats          | INFO    | Searching for: McDonald's
+15:49:12 | scraper.ubereats          | INFO    | Searching: https://www.ubereats.com/mx/search?q=McDonald's
+15:49:14 | scraper.anti_detection    | DEBUG   | Waiting 4.0s
+15:49:19 | scraper.ubereats          | INFO    | Found 79 store cards
+15:49:19 | scraper.ubereats          | INFO    | Matched restaurant card: Pollos de McDonald's Antara
+15:49:21 | scraper.anti_detection    | DEBUG   | Waiting 2.1s
+15:49:24 | scraper.ubereats          | INFO    | Restaurant info: name=Pollos de McDonald's Antara, rating=4.7, reviews=200
+15:49:24 | scraper.ubereats          | INFO    | Extracting delivery info
+15:49:24 | scraper.ubereats          | INFO    | Delivery info: fee=0.0, time=22-41 min
+15:49:24 | scraper.ubereats          | INFO    | Looking for product: Big Mac
+15:49:24 | scraper.ubereats          | DEBUG   | Found 42 items with 'li[data-testid^="store-item-"]'
+15:49:24 | scraper.ubereats          | WARNING | Product 'Big Mac' not found in menu items
+15:49:24 | scraper.ubereats          | INFO    | Looking for product: Combo Big Mac Mediano
+15:49:24 | scraper.ubereats          | DEBUG   | Found 42 items with 'li[data-testid^="store-item-"]'
+15:49:24 | scraper.ubereats          | WARNING | Product 'Combo Big Mac Mediano' not found in menu items
+15:49:24 | scraper.ubereats          | INFO    | Looking for product: McNuggets 10 piezas
+15:49:24 | scraper.ubereats          | DEBUG   | Found 42 items with 'li[data-testid^="store-item-"]'
+15:49:24 | scraper.ubereats          | INFO    | Product match: 'McTrio mediano McNuggets 10 pzas' → $129.0 (looking for McNuggets 10 piezas)
+15:49:24 | scraper.ubereats          | INFO    | Extracting promotions
+15:49:24 | scraper.ubereats          | INFO    | Found 4 promotions
+15:49:24 | scraper.ubereats          | INFO    | Screenshot saved: /Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/polanco_mcdonalds_20260410_154924.png
+15:49:24 | runner                    | INFO    |   ⚠️ partial (34.7s) → ubereats_polanco_Pollos_de_McDonald_s_Antara_54604f64.json
+15:49:24 | scraper.anti_detection    | DEBUG   | Waiting 3.5s
+15:49:28 | runner                    | INFO    |   🏪 Burger King — 2 products
+15:49:28 | scraper.ubereats          | INFO    | Setting location: Polanco V Sección, Miguel Hidalgo
+15:49:28 | scraper.ubereats          | INFO    | Navigating to https://www.ubereats.com/mx/feed
+15:49:30 | scraper.anti_detection    | DEBUG   | Waiting 3.3s
+15:49:53 | scraper.ubereats          | DEBUG   | Found address input with selector: input[type="text"][aria-autocomplete]
+15:50:00 | scraper.anti_detection    | DEBUG   | Waiting 2.2s
+15:50:02 | scraper.anti_detection    | DEBUG   | Waiting 2.9s
+15:50:05 | scraper.ubereats          | INFO    | Location set: Polanco V Sección, Miguel Hidalgo
+15:50:05 | scraper.ubereats          | INFO    | Searching for: Burger King
+15:50:05 | scraper.ubereats          | INFO    | Searching: https://www.ubereats.com/mx/search?q=Burger King
+15:50:07 | scraper.anti_detection    | DEBUG   | Waiting 2.7s
+15:50:11 | scraper.ubereats          | INFO    | Found 79 store cards
+15:50:11 | scraper.ubereats          | INFO    | Matched restaurant card: Burger King (Antara)
+15:50:14 | scraper.anti_detection    | DEBUG   | Waiting 2.5s
+15:50:17 | scraper.ubereats          | INFO    | Restaurant info: name=Burger King (Antara), rating=4.4, reviews=7000
+15:50:17 | scraper.ubereats          | INFO    | Extracting delivery info
+15:50:17 | scraper.ubereats          | INFO    | Delivery info: fee=0.0, time=29-48 min
+15:50:17 | scraper.ubereats          | INFO    | Looking for product: Whopper
+15:50:17 | scraper.ubereats          | DEBUG   | Found 58 items with 'li[data-testid^="store-item-"]'
+15:50:17 | scraper.ubereats          | INFO    | Product match: 'Combo Whopper + Pay o 4 Nuggets Gratis' → $159.0 (looking for Whopper)
+15:50:17 | scraper.ubereats          | INFO    | Looking for product: Combo Whopper Mediano
+15:50:17 | scraper.ubereats          | DEBUG   | Found 58 items with 'li[data-testid^="store-item-"]'
+15:50:17 | scraper.ubereats          | INFO    | Product match: 'Combo Whopper + Pay o 4 Nuggets Gratis' → $159.0 (looking for Combo Whopper Mediano)
+15:50:17 | scraper.ubereats          | INFO    | Extracting promotions
+15:50:17 | scraper.ubereats          | INFO    | Found 5 promotions
+15:50:17 | scraper.ubereats          | INFO    | Screenshot saved: /Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/polanco_burger_king_20260410_155017.png
+15:50:17 | runner                    | INFO    |   ✅ full (49.5s) → ubereats_polanco_Burger_King__Antara__2ee4daee.json
+15:50:17 | scraper.anti_detection    | DEBUG   | Waiting 3.9s
+15:50:29 | scraper.ubereats          | INFO    | Uber Eats browser closed
+15:50:31 | runner                    | INFO    | 
+============================================================
+15:50:31 | runner                    | INFO    | SCRAPE COMPLETE
+15:50:31 | runner                    | INFO    |   Total time:    102s (1.7m)
+15:50:31 | runner                    | INFO    |   Completed:     2/2
+15:50:31 | runner                    | INFO    |   Errors:        0
+15:50:31 | runner                    | INFO    |   Success rate:  100%
+15:50:31 | runner                    | INFO    |   Results saved: /Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/raw
+15:50:31 | runner                    | INFO    | ============================================================
+15:50:31 | runner                    | INFO    | Consolidated results: /Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/processed/consolidated_20260410_155031.json
+15:50:31 | runner                    | INFO    | Consolidating raw JSONs into CSV...
+15:50:31 | runner                    | INFO    | CSV ready: /Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/processed/competitive_data.csv

@@ -243,21 +243,26 @@ class UberEatsScraper(BaseScraper):
                 except Exception:
                     continue
 
-            # Rating — look for numeric text near a star symbol
-            rating_text = await self._find_text_by_pattern(r'\d\.\d')
-            if rating_text:
+            # Rating and reviews are extracted from the same page text scan.
+            # Format on UberEats MX: "4.4 ★ (7,000+)" near the restaurant name.
+            page_text = await self.page.text_content("body") or ""
+
+            # Rating: "X.X" immediately followed by a star/asterisk or "("
+            # Using a capturing group so we get just the number.
+            rating_match = re.search(r'(\d\.\d)\s*(?:[★*☆]|\()', page_text)
+            if rating_match:
                 try:
-                    rating = float(rating_text)
-                    if rating > 5.0:
-                        rating = None
+                    val = float(rating_match.group(1))
+                    if 0.0 < val <= 5.0:
+                        rating = val
                 except ValueError:
                     pass
 
-            # Review count — look for "(NNN)" or "NNN calificaciones"
-            review_text = await self._find_text_by_pattern(r'\((\d+)\)')
-            if review_text:
+            # Reviews: "(7,000+)" or "(700)" — strip commas and "+"
+            review_match = re.search(r'\((\d[\d,]*)\+?\)', page_text)
+            if review_match:
                 try:
-                    review_count = int(review_text)
+                    review_count = int(review_match.group(1).replace(',', ''))
                 except ValueError:
                     pass
 
@@ -283,25 +288,16 @@ class UberEatsScraper(BaseScraper):
         try:
             delivery_info = DeliveryInfo()
 
+            # ── Step 1: try DOM selectors for delivery fee ────────────────
+            delivery_info.fee_mxn = await self._extract_fee_from_dom()
+
+            # ── Step 2: regex on full page text ───────────────────────────
             page_text = await self.page.text_content("body") or ""
 
-            # Delivery fee — look for patterns like "$29 tarifa de envío"
-            fee_patterns = [
-                r'\$\s*(\d[\d,]*(?:\.\d{2})?)\s*(?:de\s+)?(?:tarifa\s+de\s+)?envío',
-                r'(?:tarifa\s+de\s+)?envío[:\s]+\$\s*(\d[\d,]*(?:\.\d{2})?)',
-                r'delivery\s+fee[:\s]+\$\s*(\d[\d,]*(?:\.\d{2})?)',
-                r'(?:envío|delivery)\s*(?:gratis|free)',
-            ]
-            for pattern in fee_patterns:
-                match = re.search(pattern, page_text, re.IGNORECASE)
-                if match:
-                    if 'gratis' in match.group(0).lower() or 'free' in match.group(0).lower():
-                        delivery_info.fee_mxn = 0.0
-                    else:
-                        delivery_info.fee_mxn = parse_price(match.group(1))
-                    break
+            if delivery_info.fee_mxn is None:
+                delivery_info.fee_mxn = self._extract_fee_from_text(page_text)
 
-            # Delivery time — look for "XX–YY min" or "XX min".
+            # ── Step 3: delivery time ─────────────────────────────────────
             # \d{1,3} prevents matching 4-digit numbers (years, timestamps).
             # Validate that lo <= hi and both are realistic (1–180 min).
             time_match = re.search(r'\b(\d{1,3})\s*[–\-]\s*(\d{1,3})\s*min\b', page_text, re.IGNORECASE)
@@ -318,13 +314,17 @@ class UberEatsScraper(BaseScraper):
                         delivery_info.estimated_time_min = val
                         delivery_info.estimated_time_max = val
 
-            # Service fee
-            svc_match = re.search(
-                r'(?:tarifa\s+de\s+)?servicio[:\s]+\$\s*(\d[\d,]*(?:\.\d{2})?)',
-                page_text, re.IGNORECASE
-            )
-            if svc_match:
-                delivery_info.service_fee_mxn = parse_price(svc_match.group(1))
+            # ── Step 4: service fee ───────────────────────────────────────
+            svc_patterns = [
+                r'(?:tarifa\s+de\s+)?servicio\s*[:\s•·]\s*\$\s*(\d[\d,]*(?:\.\d{1,2})?)',
+                r'\$\s*(\d[\d,]*(?:\.\d{1,2})?)\s*(?:tarifa\s+de\s+)?servicio',
+                r'service\s+fee\s*[:\s•·]\s*\$\s*(\d[\d,]*(?:\.\d{1,2})?)',
+            ]
+            for pat in svc_patterns:
+                m = re.search(pat, page_text, re.IGNORECASE)
+                if m:
+                    delivery_info.service_fee_mxn = parse_price(m.group(1))
+                    break
 
             self.logger.info(
                 f"Delivery info: fee={delivery_info.fee_mxn}, "
@@ -342,6 +342,121 @@ class UberEatsScraper(BaseScraper):
         except Exception as e:
             self.logger.error(f"get_delivery_info failed: {e}")
             return None
+
+    # Delivery fees in Mexico are typically $0–$49; anything above $80 is a
+    # false positive (likely a product price or order subtotal).
+    _MAX_DELIVERY_FEE_MXN = 80.0
+
+    def _validate_fee(self, value: Optional[float], source: str) -> Optional[float]:
+        """Return value if it's a plausible delivery fee, else log and return None."""
+        if value is None:
+            return None
+        if value > self._MAX_DELIVERY_FEE_MXN:
+            self.logger.warning(
+                f"Discarding implausible delivery fee ${value} from {source} "
+                f"(max allowed: ${self._MAX_DELIVERY_FEE_MXN})"
+            )
+            return None
+        return value
+
+    async def _extract_fee_from_dom(self) -> Optional[float]:
+        """
+        Try specific DOM selectors for the delivery fee widget on UberEats.
+        Avoids broad `*="fee"` selectors that can match product prices or totals.
+        Returns the fee in MXN, 0.0 for free delivery, or None if not found.
+        """
+        # Only use fully-qualified testid names — not wildcard "fee" which also
+        # matches cart totals, service fees, and item-level fee badges.
+        fee_selectors = [
+            '[data-testid="delivery-fee"]',
+            '[data-testid="deliveryFee"]',
+            '[data-testid="store-delivery-fee"]',
+            '[data-testid="delivery-fee-text"]',
+            '[data-testid="store-fulfillment-info"]',
+            '[class*="deliveryFee"]',
+            '[class*="delivery-fee"]',
+        ]
+        for selector in fee_selectors:
+            try:
+                el = await self.page.query_selector(selector)
+                if not el:
+                    continue
+                text = (await el.text_content() or "").strip()
+                if not text:
+                    continue
+                result = self._validate_fee(self._parse_fee_text(text), f"DOM '{selector}'")
+                if result is not None:
+                    self.logger.debug(f"Fee from DOM selector '{selector}': {result}")
+                    return result
+            except Exception:
+                continue
+        return None
+
+    def _extract_fee_from_text(self, page_text: str) -> Optional[float]:
+        """
+        Extract delivery fee from full page text using progressive regex patterns.
+        Handles formats like:
+          'Envío $29', 'Tarifa de envío $29', '$29 Delivery Fee',
+          'Envío·$29', 'Envío gratis', 'Free delivery'
+        All extracted values are validated against _MAX_DELIVERY_FEE_MXN.
+        """
+        # Free delivery check first (no amount to validate).
+        # Covers "$0", "MXN0", "gratis", "free".
+        if re.search(r'(?:env[íi]o|delivery|costo\s+de\s+env[íi]o)\s*(?:gratis|free)', page_text, re.IGNORECASE):
+            return 0.0
+        if re.search(r'gratis\b.{0,20}env[íi]o|free\b.{0,20}delivery', page_text, re.IGNORECASE):
+            return 0.0
+        # "Costo de envío a MXN0" / "MXN 0 nuevos usuarios"
+        if re.search(r'(?:costo\s+de\s+env[íi]o|env[íi]o).{0,40}MXN\s*0\b', page_text, re.IGNORECASE | re.DOTALL):
+            return 0.0
+
+        # Ordered from most-specific to broadest
+        fee_patterns = [
+            # "Costo de envío a MXN29" / "MXN 29" near envío keyword
+            r'(?:costo\s+de\s+)?env[íi]o.{0,40}?MXN\s*(\d[\d,]*(?:\.\d{1,2})?)',
+            r'MXN\s*(\d[\d,]*(?:\.\d{1,2})?)\s*(?:env[íi]o|delivery|tarifa)',
+            # "Envío $29" / "envío: $29" / "envío·$29"
+            r'env[íi]o\s*[:\s•·]\s*\$\s*(\d[\d,]*(?:\.\d{1,2})?)',
+            # "Tarifa de envío $29"
+            r'tarifa\s+de\s+env[íi]o\s*[:\s•·]?\s*\$\s*(\d[\d,]*(?:\.\d{1,2})?)',
+            # "$29 Envío" / "$29 tarifa de envío"
+            r'\$\s*(\d[\d,]*(?:\.\d{1,2})?)\s*(?:de\s+)?(?:tarifa\s+de\s+)?env[íi]o',
+            # "$29 Delivery" / "$29 Delivery Fee"
+            r'\$\s*(\d[\d,]*(?:\.\d{1,2})?)\s*delivery(?:\s+fee)?',
+            # "Delivery Fee $29" / "Delivery: $29"
+            r'delivery\s*(?:fee)?\s*[:\s•·]\s*\$\s*(\d[\d,]*(?:\.\d{1,2})?)',
+            # Broad proximity: keyword → $ within 80 chars (handles newlines/whitespace)
+            r'(?:env[íi]o|delivery|tarifa).{0,80}?\$\s*(\d[\d,]*(?:\.\d{1,2})?)',
+        ]
+        for pattern in fee_patterns:
+            m = re.search(pattern, page_text, re.IGNORECASE | re.DOTALL)
+            if m:
+                price = self._validate_fee(parse_price(m.group(1)), f"text pattern")
+                if price is not None:
+                    self.logger.debug(
+                        f"Fee from text pattern: {price} "
+                        f"(matched: {m.group(0)[:60]!r})"
+                    )
+                    return price
+        return None
+
+    def _parse_fee_text(self, text: str) -> Optional[float]:
+        """Parse a short DOM-extracted text snippet for a fee amount."""
+        text_lower = text.lower()
+        if 'gratis' in text_lower or 'free' in text_lower:
+            return 0.0
+        # "MXN0" or "MXN 0" means free delivery
+        if re.search(r'MXN\s*0\b', text, re.IGNORECASE):
+            return 0.0
+        # "$29" format
+        m = re.search(r'\$\s*(\d[\d,]*(?:\.\d{1,2})?)', text)
+        if m:
+            return parse_price(m.group(1))
+        # "MXN29" / "MXN 29" format
+        m = re.search(r'MXN\s*(\d[\d,]*(?:\.\d{1,2})?)', text, re.IGNORECASE)
+        if m:
+            return parse_price(m.group(1))
+        return None
 
     # ------------------------------------------------------------------
     # get_product_price

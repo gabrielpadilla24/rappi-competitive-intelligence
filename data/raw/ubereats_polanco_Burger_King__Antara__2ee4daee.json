@@ -1,6 +1,6 @@
 {
-  "scrape_id": "050762fd-d85b-4b03-9192-61ccf27a2e1e",
-  "timestamp": "2026-04-10T20:28:30.304342+00:00",
+  "scrape_id": "2ee4daee-c5b9-4cbc-ad01-16c8ac61a80a",
+  "timestamp": "2026-04-10T20:49:28.100170+00:00",
   "platform": "ubereats",
   "location_id": "polanco",
   "location_address": "Av. Presidente Masaryk 340, Polanco V Sección, Miguel Hidalgo, CDMX",
@@ -13,8 +13,8 @@
     "name": "Burger King (Antara)",
     "platform_id": "https://www.ubereats.com/mx/store/burger-king-antara/mB-ric9STWimRr-RmIwxeA",
     "available": true,
-    "rating": null,
-    "review_count": null
+    "rating": 4.4,
+    "review_count": 7000
   },
   "products": [
     {
@@ -35,10 +35,10 @@
     }
   ],
   "delivery": {
-    "fee_mxn": null,
+    "fee_mxn": 0.0,
     "service_fee_mxn": null,
-    "estimated_time_min": 26,
-    "estimated_time_max": 46,
+    "estimated_time_min": 29,
+    "estimated_time_max": 48,
     "free_delivery_threshold_mxn": null,
     "surge_active": false
   },
@@ -74,8 +74,8 @@
       "conditions": ""
     }
   ],
-  "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/polanco_burger_king_20260410_152917.png",
+  "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/polanco_burger_king_20260410_155017.png",
   "errors": [],
   "data_completeness": "full",
-  "scrape_duration_seconds": 46.87
+  "scrape_duration_seconds": 49.5
 }

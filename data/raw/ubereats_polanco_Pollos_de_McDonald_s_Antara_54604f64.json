@@ -1,6 +1,6 @@
 {
-  "scrape_id": "d7fe6da4-6095-4d4e-be9a-cf8f08b852b7",
-  "timestamp": "2026-04-10T20:27:53.843078+00:00",
+  "scrape_id": "54604f64-fbb6-4bf3-8ae7-bf1b5eed952f",
+  "timestamp": "2026-04-10T20:48:49.861321+00:00",
   "platform": "ubereats",
   "location_id": "polanco",
   "location_address": "Av. Presidente Masaryk 340, Polanco V Sección, Miguel Hidalgo, CDMX",
@@ -10,28 +10,28 @@
   "zone_label": "Polanco",
   "city": "CDMX",
   "restaurant": {
-    "name": "McDonald's Antara",
-    "platform_id": "https://www.ubereats.com/mx/store/mcdonalds-antara/Rbz1VPBPTvWsUiLtW5wsLg",
+    "name": "Pollos de McDonald's Antara",
+    "platform_id": "https://www.ubereats.com/mx/store/pollos-de-mcdonalds-antara/zK5sxKovVO-NIucd-lc0gA",
     "available": true,
-    "rating": null,
-    "review_count": null
+    "rating": 4.7,
+    "review_count": 200
   },
   "products": [
     {
       "name": "Big Mac",
       "reference_id": "big_mac",
-      "price_mxn": 99.0,
-      "available": true,
+      "price_mxn": null,
+      "available": false,
       "description": "",
-      "original_name": "Home Office con Big Mac"
+      "original_name": ""
     },
     {
       "name": "Combo Big Mac Mediano",
       "reference_id": "combo_big_mac",
-      "price_mxn": 169.0,
-      "available": true,
+      "price_mxn": null,
+      "available": false,
       "description": "",
-      "original_name": "McTrío Big Mac mediano+McFlurry Oreo"
+      "original_name": ""
     },
     {
       "name": "McNuggets 10 piezas",
@@ -43,24 +43,18 @@
     }
   ],
   "delivery": {
-    "fee_mxn": null,
+    "fee_mxn": 0.0,
     "service_fee_mxn": null,
-    "estimated_time_min": 19,
-    "estimated_time_max": 39,
+    "estimated_time_min": 22,
+    "estimated_time_max": 41,
     "free_delivery_threshold_mxn": null,
     "surge_active": false
   },
   "promotions": [
     {
       "type": "discount",
-      "description": "- 43%",
-      "value": "43%",
-      "conditions": ""
-    },
-    {
-      "type": "discount",
-      "description": "- 27%",
-      "value": "27%",
+      "description": "- 32%",
+      "value": "32%",
       "conditions": ""
     },
     {
@@ -71,8 +65,8 @@
     },
     {
       "type": "discount",
-      "description": "- 22%",
-      "value": "22%",
+      "description": "- 14%",
+      "value": "14%",
       "conditions": ""
     },
     {
@@ -82,8 +76,11 @@
       "conditions": ""
     }
   ],
-  "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/polanco_mcdonalds_20260410_152826.png",
-  "errors": [],
-  "data_completeness": "full",
-  "scrape_duration_seconds": 32.63
+  "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/polanco_mcdonalds_20260410_154924.png",
+  "errors": [
+    "Product 'Big Mac' not found",
+    "Product 'Combo Big Mac Mediano' not found"
+  ],
+  "data_completeness": "partial",
+  "scrape_duration_seconds": 34.7
 }

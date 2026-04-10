@@ -1,7 +1,7 @@
 [
   {
-    "scrape_id": "fb86fe8d-4a46-4748-a46c-c48d39bd5220",
-    "timestamp": "2026-04-10T20:19:51.091781+00:00",
+    "scrape_id": "54604f64-fbb6-4bf3-8ae7-bf1b5eed952f",
+    "timestamp": "2026-04-10T20:48:49.861321+00:00",
     "platform": "ubereats",
     "location_id": "polanco",
     "location_address": "Av. Presidente Masaryk 340, Polanco V Sección, Miguel Hidalgo, CDMX",
@@ -14,8 +14,8 @@
       "name": "Pollos de McDonald's Antara",
       "platform_id": "https://www.ubereats.com/mx/store/pollos-de-mcdonalds-antara/zK5sxKovVO-NIucd-lc0gA",
       "available": true,
-      "rating": null,
-      "review_count": null
+      "rating": 4.7,
+      "review_count": 200
     },
     "products": [
       {
@@ -37,17 +37,17 @@
       {
         "name": "McNuggets 10 piezas",
         "reference_id": "mcnuggets_10",
-        "price_mxn": null,
-        "available": false,
+        "price_mxn": 129.0,
+        "available": true,
         "description": "",
-        "original_name": ""
+        "original_name": "McTrio mediano McNuggets 10 pzas"
       }
     ],
     "delivery": {
-      "fee_mxn": null,
+      "fee_mxn": 0.0,
       "service_fee_mxn": null,
-      "estimated_time_min": 2218,
-      "estimated_time_max": 36,
+      "estimated_time_min": 22,
+      "estimated_time_max": 41,
       "free_delivery_threshold_mxn": null,
       "surge_active": false
     },
@@ -77,18 +77,17 @@
         "conditions": ""
       }
     ],
-    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/polanco_mcdonalds_20260410_152024.png",
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/polanco_mcdonalds_20260410_154924.png",
     "errors": [
       "Product 'Big Mac' not found",
-      "Product 'Combo Big Mac Mediano' not found",
-      "Product 'McNuggets 10 piezas' not found"
+      "Product 'Combo Big Mac Mediano' not found"
     ],
-    "data_completeness": "failed",
-    "scrape_duration_seconds": 33.58
+    "data_completeness": "partial",
+    "scrape_duration_seconds": 34.7
   },
   {
-    "scrape_id": "ce7644f1-6507-4c7e-9d67-64460e8b0b89",
-    "timestamp": "2026-04-10T20:20:28.565289+00:00",
+    "scrape_id": "2ee4daee-c5b9-4cbc-ad01-16c8ac61a80a",
+    "timestamp": "2026-04-10T20:49:28.100170+00:00",
     "platform": "ubereats",
     "location_id": "polanco",
     "location_address": "Av. Presidente Masaryk 340, Polanco V Sección, Miguel Hidalgo, CDMX",
@@ -101,32 +100,32 @@
       "name": "Burger King (Antara)",
       "platform_id": "https://www.ubereats.com/mx/store/burger-king-antara/mB-ric9STWimRr-RmIwxeA",
       "available": true,
-      "rating": null,
-      "review_count": null
+      "rating": 4.4,
+      "review_count": 7000
     },
     "products": [
       {
         "name": "Whopper",
         "reference_id": "whopper",
-        "price_mxn": 2109.0,
+        "price_mxn": 159.0,
         "available": true,
         "description": "",
-        "original_name": "Elige 2 x $109"
+        "original_name": "Combo Whopper + Pay o 4 Nuggets Gratis"
       },
       {
         "name": "Combo Whopper Mediano",
         "reference_id": "combo_whopper",
-        "price_mxn": null,
-        "available": false,
+        "price_mxn": 159.0,
+        "available": true,
         "description": "",
-        "original_name": ""
+        "original_name": "Combo Whopper + Pay o 4 Nuggets Gratis"
       }
     ],
     "delivery": {
-      "fee_mxn": null,
+      "fee_mxn": 0.0,
       "service_fee_mxn": null,
-      "estimated_time_min": 2219,
-      "estimated_time_max": 37,
+      "estimated_time_min": 29,
+      "estimated_time_max": 48,
       "free_delivery_threshold_mxn": null,
       "surge_active": false
     },
@@ -162,11 +161,9 @@
         "conditions": ""
       }
     ],
-    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/polanco_burger_king_20260410_152117.png",
-    "errors": [
-      "Product 'Combo Whopper Mediano' not found"
-    ],
-    "data_completeness": "partial",
-    "scrape_duration_seconds": 48.51
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/polanco_burger_king_20260410_155017.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 49.5
   }
 ]
