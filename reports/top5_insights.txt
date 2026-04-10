@@ -1,0 +1,43 @@
+════════════════════════════════════════════════════════════
+TOP 5 COMPETITIVE INSIGHTS — Rappi vs Competencia
+════════════════════════════════════════════════════════════
+
+INSIGHT #1 — PRICING
+────────────────────────────────────────
+Finding:        Uber Eats cobra en promedio +6.3% que Rappi en productos de fast food (más pronunciado en 'Whopper': +10.2%)
+Impact:         Rappi tiene ventaja competitiva en precio base vs Uber Eats. Con fees incluidos, la diferencia real al consumidor puede ser distinta.
+Recommendation: Destacar la ventaja de precio base en la app con badges 'Mejor Precio'. Revisar política de precios en productos de combo donde el diferencial es mayor.
+Data:           rappi_avg_price_mxn=134.81  |  uber_eats_avg_price_mxn=143.03  |  avg_delta_pct=6.3  |  worst_product=Whopper  |  worst_delta_pct=10.2
+
+
+INSIGHT #2 — FEES
+────────────────────────────────────────
+Finding:        El fee total de Rappi ($45 = 33.0% del producto) es 264.0% más alto que DiDi Food ($12 = 9.0%)
+Impact:         DiDi Food usa fees bajos como diferenciador clave. Esto puede influir en la decisión de compra cuando el precio del producto es similar.
+Recommendation: Evaluar programa de envío gratis con umbral mínimo (ej: envío $0 en pedidos >$149). Comunicar la propuesta de valor total, no solo el precio del producto.
+Data:           rappi_avg_total_fee_mxn=44.74  |  rappi_fee_pct_of_product=33.0  |  didifood_avg_total_fee_mxn=12.29  |  didifood_fee_pct_of_product=9.0  |  delta_mxn=32.45  |  delta_pct=264.0
+
+
+INSIGHT #3 — DELIVERY TIME
+────────────────────────────────────────
+Finding:        Rappi promedia 33 min de entrega vs Uber Eats 37 min y DiDi 28 min. Mayor ventaja en 'high_income' (4 min más rápido).
+Impact:         El tiempo de entrega es el segundo factor más importante para usuarios frecuentes. Rappi no lidera en velocidad a nivel global, con variación significativa por zona.
+Recommendation: Destacar ventaja de velocidad en la zona 'high_income' en comunicación local. Investigar causas del rezago en 'low_income' (posiblemente cobertura de repartidores).
+Data:           rappi_global_avg_min=32.5  |  ubereats_global_avg_min=36.8  |  didifood_global_avg_min=27.8  |  best_zone_for_rappi=high_income  |  rappi_advantage_min=-3.9  |  worst_zone_for_rappi=low_income
+
+
+INSIGHT #4 — GEOGRAPHIC
+────────────────────────────────────────
+Finding:        Rappi es la opción más cara en la zona 'high_income' (precio total $183), 5.7% más que DiDi Food ($174). Rappi tiene mejor posición en 'commercial'.
+Impact:         En zonas periféricas/de menor ingreso, el precio total es el factor decisivo. Perder competitividad aquí puede significar pérdida de cuota en segmentos de alto crecimiento.
+Recommendation: Implementar fees diferenciales por zona: reducir delivery fee en 'high_income' para mejorar competitividad. Evaluar partnerships locales con restaurantes en esa zona.
+Data:           worst_zone=high_income  |  rappi_avg_total_price_mxn=183.4  |  cheapest_platform=didifood  |  cheapest_avg_total_price_mxn=173.5  |  rappi_premium_pct=5.7  |  best_zone=commercial
+
+
+INSIGHT #5 — PROMOTIONS
+────────────────────────────────────────
+Finding:        Rappi lidera en agresividad promocional con 43% de observaciones con promo activa. Rappi registra 43% (discount es el tipo más frecuente).
+Impact:         Las promociones actúan como diferenciador en la decisión de plataforma, especialmente en primera compra y reactivación de usuarios inactivos.
+Recommendation: Mantener la presión promocional actual. Medir conversión por tipo de promo para optimizar el mix entre descuento, cashback y envío gratis.
+Data:           rappi_promo_rate_pct=42.9  |  most_aggressive_platform=rappi  |  most_aggressive_rate_pct=42.9  |  rappi_most_common_promo_type=discount  |  delta_vs_most_aggressive_pct=0.0
+
