@@ -1,0 +1,81 @@
+{
+  "scrape_id": "55aa1f5f-9efd-4613-825e-b6d193d94ca4",
+  "timestamp": "2026-04-10T21:29:31.477464+00:00",
+  "platform": "ubereats",
+  "location_id": "santa_fe",
+  "location_address": "Av. Santa Fe 440, Santa Fe, Cuajimalpa, CDMX",
+  "location_lat": 19.3592,
+  "location_lng": -99.2741,
+  "zone_type": "high_income",
+  "zone_label": "Santa Fe",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King (Antara)",
+    "platform_id": "https://www.ubereats.com/mx/store/burger-king-antara/mB-ric9STWimRr-RmIwxeA",
+    "available": true,
+    "rating": 4.4,
+    "review_count": 7000
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 159.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper + Pay o 4 Nuggets Gratis"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 159.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper + Pay o 4 Nuggets Gratis"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 22,
+    "estimated_time_max": 42,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "- 20%",
+      "value": "20%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 26%",
+      "value": "26%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 27%",
+      "value": "27%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 47%",
+      "value": "47%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 42%",
+      "value": "42%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/santa_fe_burger_king_20260410_163015.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 44.44
+}

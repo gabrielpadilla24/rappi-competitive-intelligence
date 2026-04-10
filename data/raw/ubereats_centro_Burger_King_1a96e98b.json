@@ -1,0 +1,28 @@
+{
+  "scrape_id": "1a96e98b-4272-4aa8-a7a1-acbd44e650ff",
+  "timestamp": "2026-04-10T22:00:14.339957+00:00",
+  "platform": "ubereats",
+  "location_id": "centro",
+  "location_address": "Av. 5 de Febrero 100, Centro Histórico, Cuauhtémoc, CDMX",
+  "location_lat": 19.4326,
+  "location_lng": -99.1332,
+  "zone_type": "commercial",
+  "zone_label": "Centro Histórico",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'Burger King' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

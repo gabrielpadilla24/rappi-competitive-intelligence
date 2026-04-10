@@ -1,0 +1,28 @@
+{
+  "scrape_id": "f925c563-145d-447e-9f83-75fbb9bcfaa1",
+  "timestamp": "2026-04-10T21:40:14.788948+00:00",
+  "platform": "ubereats",
+  "location_id": "florida",
+  "location_address": "Insurgentes Sur 1800, Florida, Álvaro Obregón, CDMX",
+  "location_lat": 19.3645,
+  "location_lng": -99.1871,
+  "zone_type": "medium_high_income",
+  "zone_label": "Insurgentes Sur",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'McDonald's' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

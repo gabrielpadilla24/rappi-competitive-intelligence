@@ -1,0 +1,28 @@
+{
+  "scrape_id": "817dfb41-d139-4b06-b96a-f8623453eee9",
+  "timestamp": "2026-04-10T21:50:43.265154+00:00",
+  "platform": "ubereats",
+  "location_id": "iztapalapa",
+  "location_address": "Av. Ermita Iztapalapa 3000, Santa Cruz Meyehualco, Iztapalapa, CDMX",
+  "location_lat": 19.3579,
+  "location_lng": -99.052,
+  "zone_type": "low_income",
+  "zone_label": "Iztapalapa",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'McDonald's' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

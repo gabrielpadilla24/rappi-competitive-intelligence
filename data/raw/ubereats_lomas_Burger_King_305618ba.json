@@ -1,0 +1,28 @@
+{
+  "scrape_id": "305618ba-6ee0-4515-ac31-5b5ea24748ba",
+  "timestamp": "2026-04-10T21:34:22.256155+00:00",
+  "platform": "ubereats",
+  "location_id": "lomas",
+  "location_address": "Blvd. Manuel Ávila Camacho 40, Lomas de Chapultepec, Miguel Hidalgo, CDMX",
+  "location_lat": 19.4251,
+  "location_lng": -99.2117,
+  "zone_type": "high_income",
+  "zone_label": "Lomas de Chapultepec",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'Burger King' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

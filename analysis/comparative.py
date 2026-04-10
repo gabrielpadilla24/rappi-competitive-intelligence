@@ -318,8 +318,10 @@ def print_summary(price_df, time_df, fee_df, promo_df, geo_df) -> None:
     if not price_df.empty:
         ue_delta = price_df["ue_vs_rappi_pct"].mean()
         didi_delta = price_df["didi_vs_rappi_pct"].mean()
-        print(f"  Uber Eats vs Rappi (avg): {ue_delta:+.1f}%")
-        print(f"  DiDi Food vs Rappi (avg): {didi_delta:+.1f}%")
+        ue_str = f"{ue_delta:+.1f}%" if pd.notna(ue_delta) else "sin datos"
+        didi_str = f"{didi_delta:+.1f}%" if pd.notna(didi_delta) else "sin datos"
+        print(f"  Uber Eats vs Rappi (avg): {ue_str}")
+        print(f"  DiDi Food vs Rappi (avg): {didi_str}")
         cheapest_counts = price_df["cheapest_platform"].value_counts()
         for plat, cnt in cheapest_counts.items():
             print(f"  Cheapest platform ({cnt} products): {plat}")
@@ -337,10 +339,12 @@ def print_summary(price_df, time_df, fee_df, promo_df, geo_df) -> None:
     print("\n--- FEE STRUCTURE ---")
     if not fee_df.empty:
         for _, row in fee_df.iterrows():
-            print(
-                f"  {row['platform']:<12} total fee: ${row['avg_total_fee']:.0f} "
-                f"({row['fee_as_pct_of_product']:.1f}% of product price)"
-            )
+            total_fee = row["avg_total_fee"]
+            if pd.isna(total_fee):
+                continue
+            fee_pct = row["fee_as_pct_of_product"]
+            pct_str = f"{fee_pct:.1f}% of product price" if pd.notna(fee_pct) else "% N/A"
+            print(f"  {row['platform']:<12} total fee: ${total_fee:.0f} ({pct_str})")
 
     # Promotions
     print("\n--- PROMOTIONS ---")

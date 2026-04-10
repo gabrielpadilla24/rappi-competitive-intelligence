@@ -1,0 +1,28 @@
+{
+  "scrape_id": "f5e04005-e3b3-4dd5-a930-2f11264d1a4e",
+  "timestamp": "2026-04-10T21:45:28.530868+00:00",
+  "platform": "ubereats",
+  "location_id": "narvarte_ote",
+  "location_address": "Av. Cuauhtémoc 800, Narvarte Oriente, Benito Juárez, CDMX",
+  "location_lat": 19.3915,
+  "location_lng": -99.144,
+  "zone_type": "medium_income",
+  "zone_label": "Narvarte Oriente",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'Burger King' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

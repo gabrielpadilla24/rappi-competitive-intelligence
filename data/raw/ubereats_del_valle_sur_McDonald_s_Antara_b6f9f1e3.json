@@ -1,0 +1,89 @@
+{
+  "scrape_id": "b6f9f1e3-d333-447e-8bcc-30c50987f00c",
+  "timestamp": "2026-04-10T21:36:42.677233+00:00",
+  "platform": "ubereats",
+  "location_id": "del_valle_sur",
+  "location_address": "Av. Coyoacán 1500, Del Valle Sur, Benito Juárez, CDMX",
+  "location_lat": 19.3723,
+  "location_lng": -99.1667,
+  "zone_type": "medium_high_income",
+  "zone_label": "Del Valle Sur",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's Antara",
+    "platform_id": "https://www.ubereats.com/mx/store/mcdonalds-antara/Rbz1VPBPTvWsUiLtW5wsLg",
+    "available": true,
+    "rating": 4.5,
+    "review_count": 15000
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 99.0,
+      "available": true,
+      "description": "",
+      "original_name": "Home Office con Big Mac"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 169.0,
+      "available": true,
+      "description": "",
+      "original_name": "McTrío Big Mac mediano+McFlurry Oreo"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 129.0,
+      "available": true,
+      "description": "",
+      "original_name": "McTrio mediano McNuggets 10 pzas"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 14,
+    "estimated_time_max": 34,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "- 43%",
+      "value": "43%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 27%",
+      "value": "27%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 41%",
+      "value": "41%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 22%",
+      "value": "22%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 19%",
+      "value": "19%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/del_valle_sur_mcdonalds_20260410_163727.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 44.94
+}

@@ -1,0 +1,4772 @@
+[
+  {
+    "scrape_id": "2ad92278-3987-49d3-8bf1-e21914a854d3",
+    "timestamp": "2026-04-10T21:27:03.682590+00:00",
+    "platform": "ubereats",
+    "location_id": "polanco",
+    "location_address": "Av. Presidente Masaryk 340, Polanco V Sección, Miguel Hidalgo, CDMX",
+    "location_lat": 19.4326,
+    "location_lng": -99.1942,
+    "zone_type": "high_income",
+    "zone_label": "Polanco",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's Antara",
+      "platform_id": "https://www.ubereats.com/mx/store/mcdonalds-antara/Rbz1VPBPTvWsUiLtW5wsLg",
+      "available": true,
+      "rating": 4.5,
+      "review_count": 15000
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": 99.0,
+        "available": true,
+        "description": "",
+        "original_name": "Home Office con Big Mac"
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": 169.0,
+        "available": true,
+        "description": "",
+        "original_name": "McTrío Big Mac mediano+McFlurry Oreo"
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": 129.0,
+        "available": true,
+        "description": "",
+        "original_name": "McTrio mediano McNuggets 10 pzas"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 24,
+      "estimated_time_max": 44,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [
+      {
+        "type": "discount",
+        "description": "- 43%",
+        "value": "43%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 27%",
+        "value": "27%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 41%",
+        "value": "41%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 22%",
+        "value": "22%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 19%",
+        "value": "19%",
+        "conditions": ""
+      }
+    ],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/polanco_mcdonalds_20260410_162740.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 36.49
+  },
+  {
+    "scrape_id": "5a4ace23-a271-4eaf-9374-9c3ee4e9a770",
+    "timestamp": "2026-04-10T21:27:43.077286+00:00",
+    "platform": "ubereats",
+    "location_id": "polanco",
+    "location_address": "Av. Presidente Masaryk 340, Polanco V Sección, Miguel Hidalgo, CDMX",
+    "location_lat": 19.4326,
+    "location_lng": -99.1942,
+    "zone_type": "high_income",
+    "zone_label": "Polanco",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King (Antara)",
+      "platform_id": "https://www.ubereats.com/mx/store/burger-king-antara/mB-ric9STWimRr-RmIwxeA",
+      "available": true,
+      "rating": 4.4,
+      "review_count": 7000
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 159.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo Whopper + Pay o 4 Nuggets Gratis"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 159.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo Whopper + Pay o 4 Nuggets Gratis"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 22,
+      "estimated_time_max": 42,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [
+      {
+        "type": "discount",
+        "description": "- 20%",
+        "value": "20%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 26%",
+        "value": "26%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 27%",
+        "value": "27%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 47%",
+        "value": "47%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 42%",
+        "value": "42%",
+        "conditions": ""
+      }
+    ],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/polanco_burger_king_20260410_162830.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 47.75
+  },
+  {
+    "scrape_id": "dc8bfc20-932d-4f84-8f5a-1b6b298785c5",
+    "timestamp": "2026-04-10T21:28:42.440255+00:00",
+    "platform": "ubereats",
+    "location_id": "santa_fe",
+    "location_address": "Av. Santa Fe 440, Santa Fe, Cuajimalpa, CDMX",
+    "location_lat": 19.3592,
+    "location_lng": -99.2741,
+    "zone_type": "high_income",
+    "zone_label": "Santa Fe",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's Antara",
+      "platform_id": "https://www.ubereats.com/mx/store/mcdonalds-antara/Rbz1VPBPTvWsUiLtW5wsLg",
+      "available": true,
+      "rating": 4.5,
+      "review_count": 15000
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": 99.0,
+        "available": true,
+        "description": "",
+        "original_name": "Home Office con Big Mac"
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": 169.0,
+        "available": true,
+        "description": "",
+        "original_name": "McTrío Big Mac mediano+McFlurry Oreo"
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": 129.0,
+        "available": true,
+        "description": "",
+        "original_name": "McTrio mediano McNuggets 10 pzas"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 14,
+      "estimated_time_max": 34,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [
+      {
+        "type": "discount",
+        "description": "- 43%",
+        "value": "43%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 27%",
+        "value": "27%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 41%",
+        "value": "41%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 22%",
+        "value": "22%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 19%",
+        "value": "19%",
+        "conditions": ""
+      }
+    ],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/santa_fe_mcdonalds_20260410_162928.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 46.38
+  },
+  {
+    "scrape_id": "55aa1f5f-9efd-4613-825e-b6d193d94ca4",
+    "timestamp": "2026-04-10T21:29:31.477464+00:00",
+    "platform": "ubereats",
+    "location_id": "santa_fe",
+    "location_address": "Av. Santa Fe 440, Santa Fe, Cuajimalpa, CDMX",
+    "location_lat": 19.3592,
+    "location_lng": -99.2741,
+    "zone_type": "high_income",
+    "zone_label": "Santa Fe",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King (Antara)",
+      "platform_id": "https://www.ubereats.com/mx/store/burger-king-antara/mB-ric9STWimRr-RmIwxeA",
+      "available": true,
+      "rating": 4.4,
+      "review_count": 7000
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 159.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo Whopper + Pay o 4 Nuggets Gratis"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 159.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo Whopper + Pay o 4 Nuggets Gratis"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 22,
+      "estimated_time_max": 42,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [
+      {
+        "type": "discount",
+        "description": "- 20%",
+        "value": "20%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 26%",
+        "value": "26%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 27%",
+        "value": "27%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 47%",
+        "value": "47%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 42%",
+        "value": "42%",
+        "conditions": ""
+      }
+    ],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/santa_fe_burger_king_20260410_163015.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 44.44
+  },
+  {
+    "scrape_id": "642fd4e5-7c34-4761-82c3-72fe89f8171e",
+    "timestamp": "2026-04-10T21:30:26.844107+00:00",
+    "platform": "ubereats",
+    "location_id": "condesa",
+    "location_address": "Ámsterdam 240, Hipódromo, Cuauhtémoc, CDMX",
+    "location_lat": 19.4113,
+    "location_lng": -99.1722,
+    "zone_type": "high_income",
+    "zone_label": "Condesa",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's Antara",
+      "platform_id": "https://www.ubereats.com/mx/store/mcdonalds-antara/Rbz1VPBPTvWsUiLtW5wsLg",
+      "available": true,
+      "rating": 4.5,
+      "review_count": 15000
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": 99.0,
+        "available": true,
+        "description": "",
+        "original_name": "Home Office con Big Mac"
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": 169.0,
+        "available": true,
+        "description": "",
+        "original_name": "McTrío Big Mac mediano+McFlurry Oreo"
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": 129.0,
+        "available": true,
+        "description": "",
+        "original_name": "McTrio mediano McNuggets 10 pzas"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 14,
+      "estimated_time_max": 34,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [
+      {
+        "type": "discount",
+        "description": "- 43%",
+        "value": "43%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 27%",
+        "value": "27%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 41%",
+        "value": "41%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 22%",
+        "value": "22%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 19%",
+        "value": "19%",
+        "conditions": ""
+      }
+    ],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/condesa_mcdonalds_20260410_163111.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 45.19
+  },
+  {
+    "scrape_id": "96bf7284-534e-4302-8c4a-26526356b6aa",
+    "timestamp": "2026-04-10T21:31:15.072855+00:00",
+    "platform": "ubereats",
+    "location_id": "condesa",
+    "location_address": "Ámsterdam 240, Hipódromo, Cuauhtémoc, CDMX",
+    "location_lat": 19.4113,
+    "location_lng": -99.1722,
+    "zone_type": "high_income",
+    "zone_label": "Condesa",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King (Antara)",
+      "platform_id": "https://www.ubereats.com/mx/store/burger-king-antara/mB-ric9STWimRr-RmIwxeA",
+      "available": true,
+      "rating": 4.4,
+      "review_count": 7000
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 159.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo Whopper + Pay o 4 Nuggets Gratis"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 159.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo Whopper + Pay o 4 Nuggets Gratis"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 22,
+      "estimated_time_max": 42,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [
+      {
+        "type": "discount",
+        "description": "- 20%",
+        "value": "20%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 26%",
+        "value": "26%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 27%",
+        "value": "27%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 47%",
+        "value": "47%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 42%",
+        "value": "42%",
+        "conditions": ""
+      }
+    ],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/condesa_burger_king_20260410_163200.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 45.32
+  },
+  {
+    "scrape_id": "8de343aa-f895-486a-9111-52dff6846062",
+    "timestamp": "2026-04-10T21:32:10.537987+00:00",
+    "platform": "ubereats",
+    "location_id": "roma_norte",
+    "location_address": "Av. Álvaro Obregón 120, Roma Norte, Cuauhtémoc, CDMX",
+    "location_lat": 19.4195,
+    "location_lng": -99.1619,
+    "zone_type": "high_income",
+    "zone_label": "Roma Norte",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "6b1f97cc-ca2e-4d7c-9692-06762c2c9ab1",
+    "timestamp": "2026-04-10T21:32:50.567774+00:00",
+    "platform": "ubereats",
+    "location_id": "roma_norte",
+    "location_address": "Av. Álvaro Obregón 120, Roma Norte, Cuauhtémoc, CDMX",
+    "location_lat": 19.4195,
+    "location_lng": -99.1619,
+    "zone_type": "high_income",
+    "zone_label": "Roma Norte",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "2e11f1be-59a2-422a-a06d-c7c45923568b",
+    "timestamp": "2026-04-10T21:33:38.821822+00:00",
+    "platform": "ubereats",
+    "location_id": "lomas",
+    "location_address": "Blvd. Manuel Ávila Camacho 40, Lomas de Chapultepec, Miguel Hidalgo, CDMX",
+    "location_lat": 19.4251,
+    "location_lng": -99.2117,
+    "zone_type": "high_income",
+    "zone_label": "Lomas de Chapultepec",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "305618ba-6ee0-4515-ac31-5b5ea24748ba",
+    "timestamp": "2026-04-10T21:34:22.256155+00:00",
+    "platform": "ubereats",
+    "location_id": "lomas",
+    "location_address": "Blvd. Manuel Ávila Camacho 40, Lomas de Chapultepec, Miguel Hidalgo, CDMX",
+    "location_lat": 19.4251,
+    "location_lng": -99.2117,
+    "zone_type": "high_income",
+    "zone_label": "Lomas de Chapultepec",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "1e9efc6e-45b3-4a53-bb5b-d1e4e854bbff",
+    "timestamp": "2026-04-10T21:35:12.391164+00:00",
+    "platform": "ubereats",
+    "location_id": "del_valle",
+    "location_address": "Av. Universidad 1200, Del Valle Centro, Benito Juárez, CDMX",
+    "location_lat": 19.3846,
+    "location_lng": -99.1736,
+    "zone_type": "medium_high_income",
+    "zone_label": "Del Valle",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "960221f0-6389-47ae-88ea-f91cdb8758e5",
+    "timestamp": "2026-04-10T21:35:53.664804+00:00",
+    "platform": "ubereats",
+    "location_id": "del_valle",
+    "location_address": "Av. Universidad 1200, Del Valle Centro, Benito Juárez, CDMX",
+    "location_lat": 19.3846,
+    "location_lng": -99.1736,
+    "zone_type": "medium_high_income",
+    "zone_label": "Del Valle",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "b6f9f1e3-d333-447e-8bcc-30c50987f00c",
+    "timestamp": "2026-04-10T21:36:42.677233+00:00",
+    "platform": "ubereats",
+    "location_id": "del_valle_sur",
+    "location_address": "Av. Coyoacán 1500, Del Valle Sur, Benito Juárez, CDMX",
+    "location_lat": 19.3723,
+    "location_lng": -99.1667,
+    "zone_type": "medium_high_income",
+    "zone_label": "Del Valle Sur",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's Antara",
+      "platform_id": "https://www.ubereats.com/mx/store/mcdonalds-antara/Rbz1VPBPTvWsUiLtW5wsLg",
+      "available": true,
+      "rating": 4.5,
+      "review_count": 15000
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": 99.0,
+        "available": true,
+        "description": "",
+        "original_name": "Home Office con Big Mac"
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": 169.0,
+        "available": true,
+        "description": "",
+        "original_name": "McTrío Big Mac mediano+McFlurry Oreo"
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": 129.0,
+        "available": true,
+        "description": "",
+        "original_name": "McTrio mediano McNuggets 10 pzas"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 14,
+      "estimated_time_max": 34,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [
+      {
+        "type": "discount",
+        "description": "- 43%",
+        "value": "43%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 27%",
+        "value": "27%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 41%",
+        "value": "41%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 22%",
+        "value": "22%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 19%",
+        "value": "19%",
+        "conditions": ""
+      }
+    ],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/del_valle_sur_mcdonalds_20260410_163727.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 44.94
+  },
+  {
+    "scrape_id": "e796be66-ba48-4ba5-9414-14765da1219b",
+    "timestamp": "2026-04-10T21:37:30.798930+00:00",
+    "platform": "ubereats",
+    "location_id": "del_valle_sur",
+    "location_address": "Av. Coyoacán 1500, Del Valle Sur, Benito Juárez, CDMX",
+    "location_lat": 19.3723,
+    "location_lng": -99.1667,
+    "zone_type": "medium_high_income",
+    "zone_label": "Del Valle Sur",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King (Antara)",
+      "platform_id": "https://www.ubereats.com/mx/store/burger-king-antara/mB-ric9STWimRr-RmIwxeA",
+      "available": true,
+      "rating": 4.4,
+      "review_count": 7000
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 159.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo Whopper + Pay o 4 Nuggets Gratis"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 159.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo Whopper + Pay o 4 Nuggets Gratis"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 22,
+      "estimated_time_max": 42,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [
+      {
+        "type": "discount",
+        "description": "- 20%",
+        "value": "20%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 26%",
+        "value": "26%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 27%",
+        "value": "27%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 47%",
+        "value": "47%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 42%",
+        "value": "42%",
+        "conditions": ""
+      }
+    ],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/del_valle_sur_burger_king_20260410_163816.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 45.7
+  },
+  {
+    "scrape_id": "9f7600eb-e84a-44ff-ae89-1335154ceb31",
+    "timestamp": "2026-04-10T21:38:26.835836+00:00",
+    "platform": "ubereats",
+    "location_id": "country_club",
+    "location_address": "Calz. de Tlalpan 2000, Country Club, Coyoacán, CDMX",
+    "location_lat": 19.3594,
+    "location_lng": -99.1534,
+    "zone_type": "medium_high_income",
+    "zone_label": "Coyoacán",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's Antara",
+      "platform_id": "https://www.ubereats.com/mx/store/mcdonalds-antara/Rbz1VPBPTvWsUiLtW5wsLg",
+      "available": true,
+      "rating": 4.5,
+      "review_count": 15000
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": 99.0,
+        "available": true,
+        "description": "",
+        "original_name": "Home Office con Big Mac"
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": 169.0,
+        "available": true,
+        "description": "",
+        "original_name": "McTrío Big Mac mediano+McFlurry Oreo"
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": 129.0,
+        "available": true,
+        "description": "",
+        "original_name": "McTrio mediano McNuggets 10 pzas"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 14,
+      "estimated_time_max": 34,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [
+      {
+        "type": "discount",
+        "description": "- 43%",
+        "value": "43%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 27%",
+        "value": "27%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 41%",
+        "value": "41%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 22%",
+        "value": "22%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 19%",
+        "value": "19%",
+        "conditions": ""
+      }
+    ],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/country_club_mcdonalds_20260410_163915.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 49.0
+  },
+  {
+    "scrape_id": "dfae042e-4c61-4539-a88a-5a304571e7d2",
+    "timestamp": "2026-04-10T21:39:17.983604+00:00",
+    "platform": "ubereats",
+    "location_id": "country_club",
+    "location_address": "Calz. de Tlalpan 2000, Country Club, Coyoacán, CDMX",
+    "location_lat": 19.3594,
+    "location_lng": -99.1534,
+    "zone_type": "medium_high_income",
+    "zone_label": "Coyoacán",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King (Antara)",
+      "platform_id": "https://www.ubereats.com/mx/store/burger-king-antara/mB-ric9STWimRr-RmIwxeA",
+      "available": true,
+      "rating": 4.4,
+      "review_count": 7000
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 159.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo Whopper + Pay o 4 Nuggets Gratis"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 159.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo Whopper + Pay o 4 Nuggets Gratis"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 22,
+      "estimated_time_max": 42,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [
+      {
+        "type": "discount",
+        "description": "- 20%",
+        "value": "20%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 26%",
+        "value": "26%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 27%",
+        "value": "27%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 47%",
+        "value": "47%",
+        "conditions": ""
+      },
+      {
+        "type": "discount",
+        "description": "- 42%",
+        "value": "42%",
+        "conditions": ""
+      }
+    ],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/country_club_burger_king_20260410_164003.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 45.5
+  },
+  {
+    "scrape_id": "f925c563-145d-447e-9f83-75fbb9bcfaa1",
+    "timestamp": "2026-04-10T21:40:14.788948+00:00",
+    "platform": "ubereats",
+    "location_id": "florida",
+    "location_address": "Insurgentes Sur 1800, Florida, Álvaro Obregón, CDMX",
+    "location_lat": 19.3645,
+    "location_lng": -99.1871,
+    "zone_type": "medium_high_income",
+    "zone_label": "Insurgentes Sur",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "ba3777b2-5752-43c1-a576-c87cd928c3b9",
+    "timestamp": "2026-04-10T21:40:58.591669+00:00",
+    "platform": "ubereats",
+    "location_id": "florida",
+    "location_address": "Insurgentes Sur 1800, Florida, Álvaro Obregón, CDMX",
+    "location_lat": 19.3645,
+    "location_lng": -99.1871,
+    "zone_type": "medium_high_income",
+    "zone_label": "Insurgentes Sur",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "f2af1bdf-971a-42d4-b550-e939a9ce2192",
+    "timestamp": "2026-04-10T21:41:49.012259+00:00",
+    "platform": "ubereats",
+    "location_id": "mixcoac",
+    "location_address": "Av. Revolución 1300, Mixcoac, Benito Juárez, CDMX",
+    "location_lat": 19.3768,
+    "location_lng": -99.1872,
+    "zone_type": "medium_high_income",
+    "zone_label": "Mixcoac",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "14aa5751-6ca8-48ca-8dcf-4d82a2269a93",
+    "timestamp": "2026-04-10T21:42:29.890414+00:00",
+    "platform": "ubereats",
+    "location_id": "mixcoac",
+    "location_address": "Av. Revolución 1300, Mixcoac, Benito Juárez, CDMX",
+    "location_lat": 19.3768,
+    "location_lng": -99.1872,
+    "zone_type": "medium_high_income",
+    "zone_label": "Mixcoac",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "91c7d207-92c1-4f31-a964-0e4f71d476a3",
+    "timestamp": "2026-04-10T21:43:17.262843+00:00",
+    "platform": "ubereats",
+    "location_id": "narvarte",
+    "location_address": "Eje Central 500, Narvarte Poniente, Benito Juárez, CDMX",
+    "location_lat": 19.396,
+    "location_lng": -99.1496,
+    "zone_type": "medium_income",
+    "zone_label": "Narvarte",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "2d78e283-d8fa-4bf6-8360-e8edb5a7d46c",
+    "timestamp": "2026-04-10T21:43:59.927048+00:00",
+    "platform": "ubereats",
+    "location_id": "narvarte",
+    "location_address": "Eje Central 500, Narvarte Poniente, Benito Juárez, CDMX",
+    "location_lat": 19.396,
+    "location_lng": -99.1496,
+    "zone_type": "medium_income",
+    "zone_label": "Narvarte",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "3df4ce49-8fc7-42d5-8ce7-970c2eef196a",
+    "timestamp": "2026-04-10T21:44:49.007346+00:00",
+    "platform": "ubereats",
+    "location_id": "narvarte_ote",
+    "location_address": "Av. Cuauhtémoc 800, Narvarte Oriente, Benito Juárez, CDMX",
+    "location_lat": 19.3915,
+    "location_lng": -99.144,
+    "zone_type": "medium_income",
+    "zone_label": "Narvarte Oriente",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "f5e04005-e3b3-4dd5-a930-2f11264d1a4e",
+    "timestamp": "2026-04-10T21:45:28.530868+00:00",
+    "platform": "ubereats",
+    "location_id": "narvarte_ote",
+    "location_address": "Av. Cuauhtémoc 800, Narvarte Oriente, Benito Juárez, CDMX",
+    "location_lat": 19.3915,
+    "location_lng": -99.144,
+    "zone_type": "medium_income",
+    "zone_label": "Narvarte Oriente",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "5e2dcd9f-5d49-4e3b-9f17-62c58ce06e48",
+    "timestamp": "2026-04-10T21:46:15.235977+00:00",
+    "platform": "ubereats",
+    "location_id": "agricola_oriental",
+    "location_address": "Calz. Ignacio Zaragoza 600, Agrícola Oriental, Iztacalco, CDMX",
+    "location_lat": 19.3965,
+    "location_lng": -99.0863,
+    "zone_type": "medium_income",
+    "zone_label": "Agrícola Oriental",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "eb3e6f19-0e3f-45d7-9a89-1ecabd7216f4",
+    "timestamp": "2026-04-10T21:46:58.353956+00:00",
+    "platform": "ubereats",
+    "location_id": "agricola_oriental",
+    "location_address": "Calz. Ignacio Zaragoza 600, Agrícola Oriental, Iztacalco, CDMX",
+    "location_lat": 19.3965,
+    "location_lng": -99.0863,
+    "zone_type": "medium_income",
+    "zone_label": "Agrícola Oriental",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "d70295f8-5a9a-41e5-afaa-cb85c884bd64",
+    "timestamp": "2026-04-10T21:47:45.974075+00:00",
+    "platform": "ubereats",
+    "location_id": "letran_valle",
+    "location_address": "Eje 5 Sur 300, Letrán Valle, Benito Juárez, CDMX",
+    "location_lat": 19.375,
+    "location_lng": -99.157,
+    "zone_type": "medium_income",
+    "zone_label": "Letrán Valle",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "b6f97f4a-69bb-4fd1-86e8-477bd56cc93d",
+    "timestamp": "2026-04-10T21:48:27.501026+00:00",
+    "platform": "ubereats",
+    "location_id": "letran_valle",
+    "location_address": "Eje 5 Sur 300, Letrán Valle, Benito Juárez, CDMX",
+    "location_lat": 19.375,
+    "location_lng": -99.157,
+    "zone_type": "medium_income",
+    "zone_label": "Letrán Valle",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "a71e6eba-bbd7-48c0-b9e9-29bb09be2ce5",
+    "timestamp": "2026-04-10T21:49:15.852625+00:00",
+    "platform": "ubereats",
+    "location_id": "tacuba",
+    "location_address": "Calz. México-Tacuba 500, Tacuba, Miguel Hidalgo, CDMX",
+    "location_lat": 19.452,
+    "location_lng": -99.18,
+    "zone_type": "medium_income",
+    "zone_label": "Tacuba",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "7b6fcc3c-5f7e-41ac-be39-38c1bbb126fd",
+    "timestamp": "2026-04-10T21:49:54.734983+00:00",
+    "platform": "ubereats",
+    "location_id": "tacuba",
+    "location_address": "Calz. México-Tacuba 500, Tacuba, Miguel Hidalgo, CDMX",
+    "location_lat": 19.452,
+    "location_lng": -99.18,
+    "zone_type": "medium_income",
+    "zone_label": "Tacuba",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "817dfb41-d139-4b06-b96a-f8623453eee9",
+    "timestamp": "2026-04-10T21:50:43.265154+00:00",
+    "platform": "ubereats",
+    "location_id": "iztapalapa",
+    "location_address": "Av. Ermita Iztapalapa 3000, Santa Cruz Meyehualco, Iztapalapa, CDMX",
+    "location_lat": 19.3579,
+    "location_lng": -99.052,
+    "zone_type": "low_income",
+    "zone_label": "Iztapalapa",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "e0b27142-460d-4c69-b4d5-bb442ba1e045",
+    "timestamp": "2026-04-10T21:51:22.791300+00:00",
+    "platform": "ubereats",
+    "location_id": "iztapalapa",
+    "location_address": "Av. Ermita Iztapalapa 3000, Santa Cruz Meyehualco, Iztapalapa, CDMX",
+    "location_lat": 19.3579,
+    "location_lng": -99.052,
+    "zone_type": "low_income",
+    "zone_label": "Iztapalapa",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "9169ae4b-7fec-4ae8-ad9d-878d91e3ff28",
+    "timestamp": "2026-04-10T21:52:12.639818+00:00",
+    "platform": "ubereats",
+    "location_id": "tlahuac",
+    "location_address": "Av. Tláhuac 4000, Santiago Acahualtepec, Iztapalapa, CDMX",
+    "location_lat": 19.335,
+    "location_lng": -99.03,
+    "zone_type": "low_income",
+    "zone_label": "Tláhuac / Sur-Oriente",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "acd6e71e-045d-4739-aba5-10d5aa7ff61a",
+    "timestamp": "2026-04-10T21:52:54.234611+00:00",
+    "platform": "ubereats",
+    "location_id": "tlahuac",
+    "location_address": "Av. Tláhuac 4000, Santiago Acahualtepec, Iztapalapa, CDMX",
+    "location_lat": 19.335,
+    "location_lng": -99.03,
+    "zone_type": "low_income",
+    "zone_label": "Tláhuac / Sur-Oriente",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "37143e54-da50-444c-b52c-f3ea0660aab9",
+    "timestamp": "2026-04-10T21:53:42.145804+00:00",
+    "platform": "ubereats",
+    "location_id": "gam",
+    "location_address": "Gran Canal 500, Casas Alemán, Gustavo A. Madero, CDMX",
+    "location_lat": 19.4836,
+    "location_lng": -99.0921,
+    "zone_type": "low_income",
+    "zone_label": "GAM Norte",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "00c6d526-23be-4cb0-a422-329d44612b4c",
+    "timestamp": "2026-04-10T21:54:22.760162+00:00",
+    "platform": "ubereats",
+    "location_id": "gam",
+    "location_address": "Gran Canal 500, Casas Alemán, Gustavo A. Madero, CDMX",
+    "location_lat": 19.4836,
+    "location_lng": -99.0921,
+    "zone_type": "low_income",
+    "zone_label": "GAM Norte",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "bf91dc7c-4d95-40c5-bc96-cbef0e115b1d",
+    "timestamp": "2026-04-10T21:55:11.612801+00:00",
+    "platform": "ubereats",
+    "location_id": "ecatepec",
+    "location_address": "Av. Central 200, Ecatepec Centro, Ecatepec, Estado de México",
+    "location_lat": 19.6012,
+    "location_lng": -99.044,
+    "zone_type": "low_income",
+    "zone_label": "Ecatepec (Edo. Méx.)",
+    "city": "Ecatepec",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "8a59e3b7-1ebd-4bc8-a004-c90cba853bf6",
+    "timestamp": "2026-04-10T21:55:51.902434+00:00",
+    "platform": "ubereats",
+    "location_id": "ecatepec",
+    "location_address": "Av. Central 200, Ecatepec Centro, Ecatepec, Estado de México",
+    "location_lat": 19.6012,
+    "location_lng": -99.044,
+    "zone_type": "low_income",
+    "zone_label": "Ecatepec (Edo. Méx.)",
+    "city": "Ecatepec",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "cbd02328-82b4-4d1d-9f87-7bd42fed3024",
+    "timestamp": "2026-04-10T21:56:39.544691+00:00",
+    "platform": "ubereats",
+    "location_id": "satelite",
+    "location_address": "Blvd. Manuel Ávila Camacho 1500, Cd. Satélite, Naucalpan, Edo. Méx.",
+    "location_lat": 19.504,
+    "location_lng": -99.233,
+    "zone_type": "low_income",
+    "zone_label": "Satélite (Edo. Méx.)",
+    "city": "Naucalpan",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "992c0c32-57d5-4469-bff2-06f9f682942a",
+    "timestamp": "2026-04-10T21:57:19.667074+00:00",
+    "platform": "ubereats",
+    "location_id": "satelite",
+    "location_address": "Blvd. Manuel Ávila Camacho 1500, Cd. Satélite, Naucalpan, Edo. Méx.",
+    "location_lat": 19.504,
+    "location_lng": -99.233,
+    "zone_type": "low_income",
+    "zone_label": "Satélite (Edo. Méx.)",
+    "city": "Naucalpan",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "f2e310a6-c846-45b0-a55e-bc41f8c750e1",
+    "timestamp": "2026-04-10T21:58:06.569872+00:00",
+    "platform": "ubereats",
+    "location_id": "reforma",
+    "location_address": "Av. Paseo de la Reforma 500, Juárez, Cuauhtémoc, CDMX",
+    "location_lat": 19.427,
+    "location_lng": -99.1616,
+    "zone_type": "commercial",
+    "zone_label": "Reforma (Oficinas)",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "3dcab235-c77e-4f69-a4eb-d930c458d30d",
+    "timestamp": "2026-04-10T21:58:47.496229+00:00",
+    "platform": "ubereats",
+    "location_id": "reforma",
+    "location_address": "Av. Paseo de la Reforma 500, Juárez, Cuauhtémoc, CDMX",
+    "location_lat": 19.427,
+    "location_lng": -99.1616,
+    "zone_type": "commercial",
+    "zone_label": "Reforma (Oficinas)",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "9df25200-ac24-4c46-9d3a-2942bad769da",
+    "timestamp": "2026-04-10T21:59:35.225306+00:00",
+    "platform": "ubereats",
+    "location_id": "centro",
+    "location_address": "Av. 5 de Febrero 100, Centro Histórico, Cuauhtémoc, CDMX",
+    "location_lat": 19.4326,
+    "location_lng": -99.1332,
+    "zone_type": "commercial",
+    "zone_label": "Centro Histórico",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "1a96e98b-4272-4aa8-a7a1-acbd44e650ff",
+    "timestamp": "2026-04-10T22:00:14.339957+00:00",
+    "platform": "ubereats",
+    "location_id": "centro",
+    "location_address": "Av. 5 de Febrero 100, Centro Histórico, Cuauhtémoc, CDMX",
+    "location_lat": 19.4326,
+    "location_lng": -99.1332,
+    "zone_type": "commercial",
+    "zone_label": "Centro Histórico",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "841587a6-e3f6-4779-be36-a8be925a574a",
+    "timestamp": "2026-04-10T22:01:02.235860+00:00",
+    "platform": "ubereats",
+    "location_id": "chapultepec",
+    "location_address": "Av. Chapultepec 200, Juárez, Cuauhtémoc, CDMX",
+    "location_lat": 19.4235,
+    "location_lng": -99.159,
+    "zone_type": "commercial",
+    "zone_label": "Chapultepec",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "d4c560c5-70b9-4477-8067-eda06a9a09e5",
+    "timestamp": "2026-04-10T22:01:41.861136+00:00",
+    "platform": "ubereats",
+    "location_id": "chapultepec",
+    "location_address": "Av. Chapultepec 200, Juárez, Cuauhtémoc, CDMX",
+    "location_lat": 19.4235,
+    "location_lng": -99.159,
+    "zone_type": "commercial",
+    "zone_label": "Chapultepec",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "83f7a1b0-4ebf-4256-a9cc-51a489e2ba97",
+    "timestamp": "2026-04-10T22:02:31.239218+00:00",
+    "platform": "ubereats",
+    "location_id": "guadalajara",
+    "location_address": "Av. Vallarta 3000, Vallarta Poniente, Guadalajara, Jalisco",
+    "location_lat": 20.6737,
+    "location_lng": -103.3823,
+    "zone_type": "medium_high_income",
+    "zone_label": "Guadalajara",
+    "city": "Guadalajara",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "6388c5f8-ae65-433b-a076-fa8cdf299c4f",
+    "timestamp": "2026-04-10T22:03:12.906360+00:00",
+    "platform": "ubereats",
+    "location_id": "guadalajara",
+    "location_address": "Av. Vallarta 3000, Vallarta Poniente, Guadalajara, Jalisco",
+    "location_lat": 20.6737,
+    "location_lng": -103.3823,
+    "zone_type": "medium_high_income",
+    "zone_label": "Guadalajara",
+    "city": "Guadalajara",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "f3e2c929-a3ad-450e-b44d-5f92720434da",
+    "timestamp": "2026-04-10T22:04:01.031411+00:00",
+    "platform": "ubereats",
+    "location_id": "monterrey",
+    "location_address": "Av. Constitución 500, Centro, Monterrey, Nuevo León",
+    "location_lat": 25.6714,
+    "location_lng": -100.309,
+    "zone_type": "medium_high_income",
+    "zone_label": "Monterrey",
+    "city": "Monterrey",
+    "restaurant": {
+      "name": "McDonald's",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'McDonald's' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "16bb9cf5-62b6-4cf6-9293-b25ef5c7fc60",
+    "timestamp": "2026-04-10T22:04:40.547591+00:00",
+    "platform": "ubereats",
+    "location_id": "monterrey",
+    "location_address": "Av. Constitución 500, Centro, Monterrey, Nuevo León",
+    "location_lat": 25.6714,
+    "location_lng": -100.309,
+    "zone_type": "medium_high_income",
+    "zone_label": "Monterrey",
+    "city": "Monterrey",
+    "restaurant": {
+      "name": "Burger King",
+      "platform_id": "",
+      "available": false,
+      "rating": null,
+      "review_count": null
+    },
+    "products": [],
+    "delivery": null,
+    "promotions": [],
+    "screenshot_path": "",
+    "errors": [
+      "Restaurant 'Burger King' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 0.0
+  },
+  {
+    "scrape_id": "53422f93-87b1-45b4-a228-fe32fd665e5c",
+    "timestamp": "2026-04-10T22:05:31.183985+00:00",
+    "platform": "rappi",
+    "location_id": "polanco",
+    "location_address": "Av. Presidente Masaryk 340, Polanco V Sección, Miguel Hidalgo, CDMX",
+    "location_lat": 19.4326,
+    "location_lng": -99.1942,
+    "zone_type": "high_income",
+    "zone_label": "Polanco",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/polanco_mcdonalds_20260410_170619.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 48.7
+  },
+  {
+    "scrape_id": "2c7ada54-e393-47be-bef6-d622c1be93af",
+    "timestamp": "2026-04-10T22:06:22.354970+00:00",
+    "platform": "rappi",
+    "location_id": "polanco",
+    "location_address": "Av. Presidente Masaryk 340, Polanco V Sección, Miguel Hidalgo, CDMX",
+    "location_lat": 19.4326,
+    "location_lng": -99.1942,
+    "zone_type": "high_income",
+    "zone_label": "Polanco",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/polanco_burger_king_20260410_170721.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 59.54
+  },
+  {
+    "scrape_id": "37c355b4-5697-4c71-86d5-00a8f67d8108",
+    "timestamp": "2026-04-10T22:07:32.325140+00:00",
+    "platform": "rappi",
+    "location_id": "santa_fe",
+    "location_address": "Av. Santa Fe 440, Santa Fe, Cuajimalpa, CDMX",
+    "location_lat": 19.3592,
+    "location_lng": -99.2741,
+    "zone_type": "high_income",
+    "zone_label": "Santa Fe",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/santa_fe_mcdonalds_20260410_170833.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 61.7
+  },
+  {
+    "scrape_id": "8841b1e4-e6e6-4b21-985a-8792387a4bfa",
+    "timestamp": "2026-04-10T22:08:36.179506+00:00",
+    "platform": "rappi",
+    "location_id": "santa_fe",
+    "location_address": "Av. Santa Fe 440, Santa Fe, Cuajimalpa, CDMX",
+    "location_lat": 19.3592,
+    "location_lng": -99.2741,
+    "zone_type": "high_income",
+    "zone_label": "Santa Fe",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/santa_fe_burger_king_20260410_170936.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 60.75
+  },
+  {
+    "scrape_id": "ddf7fddd-ae64-4af0-ae07-536bd44523a9",
+    "timestamp": "2026-04-10T22:09:48.412328+00:00",
+    "platform": "rappi",
+    "location_id": "condesa",
+    "location_address": "Ámsterdam 240, Hipódromo, Cuauhtémoc, CDMX",
+    "location_lat": 19.4113,
+    "location_lng": -99.1722,
+    "zone_type": "high_income",
+    "zone_label": "Condesa",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/condesa_mcdonalds_20260410_171047.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 59.59
+  },
+  {
+    "scrape_id": "bd66baeb-e449-4ba6-88aa-a25e73ec5fe2",
+    "timestamp": "2026-04-10T22:10:51.698047+00:00",
+    "platform": "rappi",
+    "location_id": "condesa",
+    "location_address": "Ámsterdam 240, Hipódromo, Cuauhtémoc, CDMX",
+    "location_lat": 19.4113,
+    "location_lng": -99.1722,
+    "zone_type": "high_income",
+    "zone_label": "Condesa",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/condesa_burger_king_20260410_171151.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 60.12
+  },
+  {
+    "scrape_id": "874c7e71-d4aa-4261-9f80-6de5e9d6961e",
+    "timestamp": "2026-04-10T22:12:02.840476+00:00",
+    "platform": "rappi",
+    "location_id": "roma_norte",
+    "location_address": "Av. Álvaro Obregón 120, Roma Norte, Cuauhtémoc, CDMX",
+    "location_lat": 19.4195,
+    "location_lng": -99.1619,
+    "zone_type": "high_income",
+    "zone_label": "Roma Norte",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/roma_norte_mcdonalds_20260410_171304.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 61.23
+  },
+  {
+    "scrape_id": "44b98c06-3df2-43e3-b970-5efc7f418be8",
+    "timestamp": "2026-04-10T22:13:07.417059+00:00",
+    "platform": "rappi",
+    "location_id": "roma_norte",
+    "location_address": "Av. Álvaro Obregón 120, Roma Norte, Cuauhtémoc, CDMX",
+    "location_lat": 19.4195,
+    "location_lng": -99.1619,
+    "zone_type": "high_income",
+    "zone_label": "Roma Norte",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/roma_norte_burger_king_20260410_171407.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 60.18
+  },
+  {
+    "scrape_id": "ed028e5f-62cc-4730-a845-4f5fac39148e",
+    "timestamp": "2026-04-10T22:14:18.003757+00:00",
+    "platform": "rappi",
+    "location_id": "lomas",
+    "location_address": "Blvd. Manuel Ávila Camacho 40, Lomas de Chapultepec, Miguel Hidalgo, CDMX",
+    "location_lat": 19.4251,
+    "location_lng": -99.2117,
+    "zone_type": "high_income",
+    "zone_label": "Lomas de Chapultepec",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/lomas_mcdonalds_20260410_171519.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 61.61
+  },
+  {
+    "scrape_id": "c8092734-2a14-4535-bfeb-409119820ee4",
+    "timestamp": "2026-04-10T22:15:22.641104+00:00",
+    "platform": "rappi",
+    "location_id": "lomas",
+    "location_address": "Blvd. Manuel Ávila Camacho 40, Lomas de Chapultepec, Miguel Hidalgo, CDMX",
+    "location_lat": 19.4251,
+    "location_lng": -99.2117,
+    "zone_type": "high_income",
+    "zone_label": "Lomas de Chapultepec",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/lomas_burger_king_20260410_171622.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 59.92
+  },
+  {
+    "scrape_id": "f081c653-131c-4293-8a60-15cb2c56cd9f",
+    "timestamp": "2026-04-10T22:16:32.839234+00:00",
+    "platform": "rappi",
+    "location_id": "del_valle",
+    "location_address": "Av. Universidad 1200, Del Valle Centro, Benito Juárez, CDMX",
+    "location_lat": 19.3846,
+    "location_lng": -99.1736,
+    "zone_type": "medium_high_income",
+    "zone_label": "Del Valle",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/del_valle_mcdonalds_20260410_171733.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 60.28
+  },
+  {
+    "scrape_id": "6e5bc638-9534-41da-9364-bf680b23ac43",
+    "timestamp": "2026-04-10T22:17:36.324478+00:00",
+    "platform": "rappi",
+    "location_id": "del_valle",
+    "location_address": "Av. Universidad 1200, Del Valle Centro, Benito Juárez, CDMX",
+    "location_lat": 19.3846,
+    "location_lng": -99.1736,
+    "zone_type": "medium_high_income",
+    "zone_label": "Del Valle",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/del_valle_burger_king_20260410_171834.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 57.92
+  },
+  {
+    "scrape_id": "84e3795f-75a6-43e5-881a-5fb2b6659948",
+    "timestamp": "2026-04-10T22:18:45.265827+00:00",
+    "platform": "rappi",
+    "location_id": "del_valle_sur",
+    "location_address": "Av. Coyoacán 1500, Del Valle Sur, Benito Juárez, CDMX",
+    "location_lat": 19.3723,
+    "location_lng": -99.1667,
+    "zone_type": "medium_high_income",
+    "zone_label": "Del Valle Sur",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/del_valle_sur_mcdonalds_20260410_171947.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 62.27
+  },
+  {
+    "scrape_id": "e6c9d82b-1241-4c8b-8ce2-56b6401db4d6",
+    "timestamp": "2026-04-10T22:19:50.529971+00:00",
+    "platform": "rappi",
+    "location_id": "del_valle_sur",
+    "location_address": "Av. Coyoacán 1500, Del Valle Sur, Benito Juárez, CDMX",
+    "location_lat": 19.3723,
+    "location_lng": -99.1667,
+    "zone_type": "medium_high_income",
+    "zone_label": "Del Valle Sur",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/del_valle_sur_burger_king_20260410_172050.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 59.78
+  },
+  {
+    "scrape_id": "8cb9a3bc-8bb7-490b-9805-fc6a3a094cf1",
+    "timestamp": "2026-04-10T22:21:01.216156+00:00",
+    "platform": "rappi",
+    "location_id": "country_club",
+    "location_address": "Calz. de Tlalpan 2000, Country Club, Coyoacán, CDMX",
+    "location_lat": 19.3594,
+    "location_lng": -99.1534,
+    "zone_type": "medium_high_income",
+    "zone_label": "Coyoacán",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/country_club_mcdonalds_20260410_172205.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 63.88
+  },
+  {
+    "scrape_id": "3844aec0-b4af-4044-a25c-343caca29280",
+    "timestamp": "2026-04-10T22:22:07.860391+00:00",
+    "platform": "rappi",
+    "location_id": "country_club",
+    "location_address": "Calz. de Tlalpan 2000, Country Club, Coyoacán, CDMX",
+    "location_lat": 19.3594,
+    "location_lng": -99.1534,
+    "zone_type": "medium_high_income",
+    "zone_label": "Coyoacán",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/country_club_burger_king_20260410_172308.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 60.62
+  },
+  {
+    "scrape_id": "afcdb48e-102a-4b6a-82fe-156524290fc5",
+    "timestamp": "2026-04-10T22:23:19.155729+00:00",
+    "platform": "rappi",
+    "location_id": "florida",
+    "location_address": "Insurgentes Sur 1800, Florida, Álvaro Obregón, CDMX",
+    "location_lat": 19.3645,
+    "location_lng": -99.1871,
+    "zone_type": "medium_high_income",
+    "zone_label": "Insurgentes Sur",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/florida_mcdonalds_20260410_172420.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 61.49
+  },
+  {
+    "scrape_id": "7efff197-3512-49d2-983b-2d02f3856ae2",
+    "timestamp": "2026-04-10T22:24:23.523294+00:00",
+    "platform": "rappi",
+    "location_id": "florida",
+    "location_address": "Insurgentes Sur 1800, Florida, Álvaro Obregón, CDMX",
+    "location_lat": 19.3645,
+    "location_lng": -99.1871,
+    "zone_type": "medium_high_income",
+    "zone_label": "Insurgentes Sur",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/florida_burger_king_20260410_172525.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 61.98
+  },
+  {
+    "scrape_id": "cf072d7e-a599-402a-8747-b81450b86975",
+    "timestamp": "2026-04-10T22:25:35.915006+00:00",
+    "platform": "rappi",
+    "location_id": "mixcoac",
+    "location_address": "Av. Revolución 1300, Mixcoac, Benito Juárez, CDMX",
+    "location_lat": 19.3768,
+    "location_lng": -99.1872,
+    "zone_type": "medium_high_income",
+    "zone_label": "Mixcoac",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/mixcoac_mcdonalds_20260410_172641.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 65.25
+  },
+  {
+    "scrape_id": "0b3eb87c-4e8f-4203-9696-9495af16d0d6",
+    "timestamp": "2026-04-10T22:26:45.044195+00:00",
+    "platform": "rappi",
+    "location_id": "mixcoac",
+    "location_address": "Av. Revolución 1300, Mixcoac, Benito Juárez, CDMX",
+    "location_lat": 19.3768,
+    "location_lng": -99.1872,
+    "zone_type": "medium_high_income",
+    "zone_label": "Mixcoac",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/mixcoac_burger_king_20260410_172748.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 63.31
+  },
+  {
+    "scrape_id": "56b34245-f56a-4243-90c5-cbdb023bd86b",
+    "timestamp": "2026-04-10T22:27:59.628244+00:00",
+    "platform": "rappi",
+    "location_id": "narvarte",
+    "location_address": "Eje Central 500, Narvarte Poniente, Benito Juárez, CDMX",
+    "location_lat": 19.396,
+    "location_lng": -99.1496,
+    "zone_type": "medium_income",
+    "zone_label": "Narvarte",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/narvarte_mcdonalds_20260410_172901.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 62.17
+  },
+  {
+    "scrape_id": "46a74b60-cfde-4fba-b800-5f957cae93bd",
+    "timestamp": "2026-04-10T22:29:04.199805+00:00",
+    "platform": "rappi",
+    "location_id": "narvarte",
+    "location_address": "Eje Central 500, Narvarte Poniente, Benito Juárez, CDMX",
+    "location_lat": 19.396,
+    "location_lng": -99.1496,
+    "zone_type": "medium_income",
+    "zone_label": "Narvarte",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/narvarte_burger_king_20260410_173004.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 60.2
+  },
+  {
+    "scrape_id": "9a8ec0cb-7206-4ac8-a3c8-2325a0d3685a",
+    "timestamp": "2026-04-10T22:30:16.062116+00:00",
+    "platform": "rappi",
+    "location_id": "narvarte_ote",
+    "location_address": "Av. Cuauhtémoc 800, Narvarte Oriente, Benito Juárez, CDMX",
+    "location_lat": 19.3915,
+    "location_lng": -99.144,
+    "zone_type": "medium_income",
+    "zone_label": "Narvarte Oriente",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/narvarte_ote_mcdonalds_20260410_173116.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 60.12
+  },
+  {
+    "scrape_id": "18842f52-7065-4597-a126-98b0b749c98e",
+    "timestamp": "2026-04-10T22:31:18.992832+00:00",
+    "platform": "rappi",
+    "location_id": "narvarte_ote",
+    "location_address": "Av. Cuauhtémoc 800, Narvarte Oriente, Benito Juárez, CDMX",
+    "location_lat": 19.3915,
+    "location_lng": -99.144,
+    "zone_type": "medium_income",
+    "zone_label": "Narvarte Oriente",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/narvarte_ote_burger_king_20260410_173219.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 60.86
+  },
+  {
+    "scrape_id": "4d05266f-752f-46a4-9108-05bf245df284",
+    "timestamp": "2026-04-10T22:32:31.438453+00:00",
+    "platform": "rappi",
+    "location_id": "agricola_oriental",
+    "location_address": "Calz. Ignacio Zaragoza 600, Agrícola Oriental, Iztacalco, CDMX",
+    "location_lat": 19.3965,
+    "location_lng": -99.0863,
+    "zone_type": "medium_income",
+    "zone_label": "Agrícola Oriental",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/agricola_oriental_mcdonalds_20260410_173332.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 60.8
+  },
+  {
+    "scrape_id": "aa212ba5-0ac3-467d-afba-a5f14e7d20ba",
+    "timestamp": "2026-04-10T22:33:35.673123+00:00",
+    "platform": "rappi",
+    "location_id": "agricola_oriental",
+    "location_address": "Calz. Ignacio Zaragoza 600, Agrícola Oriental, Iztacalco, CDMX",
+    "location_lat": 19.3965,
+    "location_lng": -99.0863,
+    "zone_type": "medium_income",
+    "zone_label": "Agrícola Oriental",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/agricola_oriental_burger_king_20260410_173434.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 58.81
+  },
+  {
+    "scrape_id": "bbedaa07-2f9c-4cdd-8a95-37eaeb8a9087",
+    "timestamp": "2026-04-10T22:34:45.159346+00:00",
+    "platform": "rappi",
+    "location_id": "letran_valle",
+    "location_address": "Eje 5 Sur 300, Letrán Valle, Benito Juárez, CDMX",
+    "location_lat": 19.375,
+    "location_lng": -99.157,
+    "zone_type": "medium_income",
+    "zone_label": "Letrán Valle",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/letran_valle_mcdonalds_20260410_173546.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 61.02
+  },
+  {
+    "scrape_id": "cf1f5c4c-4b3f-49a9-8d46-43c7703d49c4",
+    "timestamp": "2026-04-10T22:35:48.286382+00:00",
+    "platform": "rappi",
+    "location_id": "letran_valle",
+    "location_address": "Eje 5 Sur 300, Letrán Valle, Benito Juárez, CDMX",
+    "location_lat": 19.375,
+    "location_lng": -99.157,
+    "zone_type": "medium_income",
+    "zone_label": "Letrán Valle",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/letran_valle_burger_king_20260410_173646.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 58.12
+  },
+  {
+    "scrape_id": "24849a71-fcf4-42dd-a2bd-6c8bb3449aea",
+    "timestamp": "2026-04-10T22:36:57.877089+00:00",
+    "platform": "rappi",
+    "location_id": "tacuba",
+    "location_address": "Calz. México-Tacuba 500, Tacuba, Miguel Hidalgo, CDMX",
+    "location_lat": 19.452,
+    "location_lng": -99.18,
+    "zone_type": "medium_income",
+    "zone_label": "Tacuba",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/tacuba_mcdonalds_20260410_173756.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 59.0
+  },
+  {
+    "scrape_id": "7eb00087-5be0-4f28-94af-1bd2e0080576",
+    "timestamp": "2026-04-10T22:38:00.449372+00:00",
+    "platform": "rappi",
+    "location_id": "tacuba",
+    "location_address": "Calz. México-Tacuba 500, Tacuba, Miguel Hidalgo, CDMX",
+    "location_lat": 19.452,
+    "location_lng": -99.18,
+    "zone_type": "medium_income",
+    "zone_label": "Tacuba",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/tacuba_burger_king_20260410_173859.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 58.98
+  },
+  {
+    "scrape_id": "cd0fed03-0ebc-47f2-9f5c-c763f6380cc5",
+    "timestamp": "2026-04-10T22:39:11.161433+00:00",
+    "platform": "rappi",
+    "location_id": "iztapalapa",
+    "location_address": "Av. Ermita Iztapalapa 3000, Santa Cruz Meyehualco, Iztapalapa, CDMX",
+    "location_lat": 19.3579,
+    "location_lng": -99.052,
+    "zone_type": "low_income",
+    "zone_label": "Iztapalapa",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/iztapalapa_mcdonalds_20260410_174013.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 62.33
+  },
+  {
+    "scrape_id": "05bf976c-c403-4be8-b768-dfe3b4df6d45",
+    "timestamp": "2026-04-10T22:40:17.280415+00:00",
+    "platform": "rappi",
+    "location_id": "iztapalapa",
+    "location_address": "Av. Ermita Iztapalapa 3000, Santa Cruz Meyehualco, Iztapalapa, CDMX",
+    "location_lat": 19.3579,
+    "location_lng": -99.052,
+    "zone_type": "low_income",
+    "zone_label": "Iztapalapa",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/iztapalapa_burger_king_20260410_174117.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 60.51
+  },
+  {
+    "scrape_id": "0bf32f92-9d15-430a-b11e-704f1ab284e5",
+    "timestamp": "2026-04-10T22:41:27.802791+00:00",
+    "platform": "rappi",
+    "location_id": "tlahuac",
+    "location_address": "Av. Tláhuac 4000, Santiago Acahualtepec, Iztapalapa, CDMX",
+    "location_lat": 19.335,
+    "location_lng": -99.03,
+    "zone_type": "low_income",
+    "zone_label": "Tláhuac / Sur-Oriente",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/tlahuac_mcdonalds_20260410_174229.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 61.67
+  },
+  {
+    "scrape_id": "d7aecda0-0e78-47bb-82da-73585966e2a8",
+    "timestamp": "2026-04-10T22:42:33.432888+00:00",
+    "platform": "rappi",
+    "location_id": "tlahuac",
+    "location_address": "Av. Tláhuac 4000, Santiago Acahualtepec, Iztapalapa, CDMX",
+    "location_lat": 19.335,
+    "location_lng": -99.03,
+    "zone_type": "low_income",
+    "zone_label": "Tláhuac / Sur-Oriente",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/tlahuac_burger_king_20260410_174334.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 60.98
+  },
+  {
+    "scrape_id": "603a5823-3d72-46db-b4d2-05a0eaf663dd",
+    "timestamp": "2026-04-10T22:43:44.893128+00:00",
+    "platform": "rappi",
+    "location_id": "gam",
+    "location_address": "Gran Canal 500, Casas Alemán, Gustavo A. Madero, CDMX",
+    "location_lat": 19.4836,
+    "location_lng": -99.0921,
+    "zone_type": "low_income",
+    "zone_label": "GAM Norte",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/gam_mcdonalds_20260410_174449.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 64.22
+  },
+  {
+    "scrape_id": "69d8ea9b-f6f1-4617-b20b-5ec3abecaa7d",
+    "timestamp": "2026-04-10T22:44:51.373409+00:00",
+    "platform": "rappi",
+    "location_id": "gam",
+    "location_address": "Gran Canal 500, Casas Alemán, Gustavo A. Madero, CDMX",
+    "location_lat": 19.4836,
+    "location_lng": -99.0921,
+    "zone_type": "low_income",
+    "zone_label": "GAM Norte",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/gam_burger_king_20260410_174547.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 56.57
+  },
+  {
+    "scrape_id": "cb990a61-4317-4414-a081-0de02aed00b2",
+    "timestamp": "2026-04-10T22:45:59.454928+00:00",
+    "platform": "rappi",
+    "location_id": "ecatepec",
+    "location_address": "Av. Central 200, Ecatepec Centro, Ecatepec, Estado de México",
+    "location_lat": 19.6012,
+    "location_lng": -99.044,
+    "zone_type": "low_income",
+    "zone_label": "Ecatepec (Edo. Méx.)",
+    "city": "Ecatepec",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/ecatepec_mcdonalds_20260410_174701.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 62.04
+  },
+  {
+    "scrape_id": "14a97383-77ba-4b54-8e67-0e540889f422",
+    "timestamp": "2026-04-10T22:47:05.196904+00:00",
+    "platform": "rappi",
+    "location_id": "ecatepec",
+    "location_address": "Av. Central 200, Ecatepec Centro, Ecatepec, Estado de México",
+    "location_lat": 19.6012,
+    "location_lng": -99.044,
+    "zone_type": "low_income",
+    "zone_label": "Ecatepec (Edo. Méx.)",
+    "city": "Ecatepec",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/ecatepec_burger_king_20260410_174805.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 60.44
+  },
+  {
+    "scrape_id": "9ba40096-efb4-420c-b7ae-8a8b2dcc7f66",
+    "timestamp": "2026-04-10T22:48:15.890335+00:00",
+    "platform": "rappi",
+    "location_id": "satelite",
+    "location_address": "Blvd. Manuel Ávila Camacho 1500, Cd. Satélite, Naucalpan, Edo. Méx.",
+    "location_lat": 19.504,
+    "location_lng": -99.233,
+    "zone_type": "low_income",
+    "zone_label": "Satélite (Edo. Méx.)",
+    "city": "Naucalpan",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/satelite_mcdonalds_20260410_174917.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 61.4
+  },
+  {
+    "scrape_id": "7c525aa1-2730-4f42-bcff-0ea5b7eddfd9",
+    "timestamp": "2026-04-10T22:49:19.964867+00:00",
+    "platform": "rappi",
+    "location_id": "satelite",
+    "location_address": "Blvd. Manuel Ávila Camacho 1500, Cd. Satélite, Naucalpan, Edo. Méx.",
+    "location_lat": 19.504,
+    "location_lng": -99.233,
+    "zone_type": "low_income",
+    "zone_label": "Satélite (Edo. Méx.)",
+    "city": "Naucalpan",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/satelite_burger_king_20260410_175018.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 58.41
+  },
+  {
+    "scrape_id": "8ec8148a-bfb5-43cf-ab75-637383c85276",
+    "timestamp": "2026-04-10T22:50:30.067120+00:00",
+    "platform": "rappi",
+    "location_id": "reforma",
+    "location_address": "Av. Paseo de la Reforma 500, Juárez, Cuauhtémoc, CDMX",
+    "location_lat": 19.427,
+    "location_lng": -99.1616,
+    "zone_type": "commercial",
+    "zone_label": "Reforma (Oficinas)",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/reforma_mcdonalds_20260410_175132.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 62.59
+  },
+  {
+    "scrape_id": "52faa881-9ac6-4c51-a737-3979ad996d43",
+    "timestamp": "2026-04-10T22:51:36.244956+00:00",
+    "platform": "rappi",
+    "location_id": "reforma",
+    "location_address": "Av. Paseo de la Reforma 500, Juárez, Cuauhtémoc, CDMX",
+    "location_lat": 19.427,
+    "location_lng": -99.1616,
+    "zone_type": "commercial",
+    "zone_label": "Reforma (Oficinas)",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/reforma_burger_king_20260410_175234.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 58.29
+  },
+  {
+    "scrape_id": "39b1a297-829a-49b7-9e1e-6788ed3557ac",
+    "timestamp": "2026-04-10T22:52:44.745700+00:00",
+    "platform": "rappi",
+    "location_id": "centro",
+    "location_address": "Av. 5 de Febrero 100, Centro Histórico, Cuauhtémoc, CDMX",
+    "location_lat": 19.4326,
+    "location_lng": -99.1332,
+    "zone_type": "commercial",
+    "zone_label": "Centro Histórico",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/centro_mcdonalds_20260410_175344.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 59.87
+  },
+  {
+    "scrape_id": "9e076271-816e-4add-8725-e51cde4e7c5a",
+    "timestamp": "2026-04-10T22:53:47.005679+00:00",
+    "platform": "rappi",
+    "location_id": "centro",
+    "location_address": "Av. 5 de Febrero 100, Centro Histórico, Cuauhtémoc, CDMX",
+    "location_lat": 19.4326,
+    "location_lng": -99.1332,
+    "zone_type": "commercial",
+    "zone_label": "Centro Histórico",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/centro_burger_king_20260410_175445.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 58.79
+  },
+  {
+    "scrape_id": "789a4cfc-f0fc-4a16-9701-5b6c53966ccf",
+    "timestamp": "2026-04-10T22:54:56.094347+00:00",
+    "platform": "rappi",
+    "location_id": "chapultepec",
+    "location_address": "Av. Chapultepec 200, Juárez, Cuauhtémoc, CDMX",
+    "location_lat": 19.4235,
+    "location_lng": -99.159,
+    "zone_type": "commercial",
+    "zone_label": "Chapultepec",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/chapultepec_mcdonalds_20260410_175558.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 62.7
+  },
+  {
+    "scrape_id": "5e934434-812d-407f-ad3c-cbdee5bce478",
+    "timestamp": "2026-04-10T22:56:02.368532+00:00",
+    "platform": "rappi",
+    "location_id": "chapultepec",
+    "location_address": "Av. Chapultepec 200, Juárez, Cuauhtémoc, CDMX",
+    "location_lat": 19.4235,
+    "location_lng": -99.159,
+    "zone_type": "commercial",
+    "zone_label": "Chapultepec",
+    "city": "CDMX",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/chapultepec_burger_king_20260410_175702.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 60.07
+  },
+  {
+    "scrape_id": "84703411-6b30-4767-aa34-68a1ced29fdf",
+    "timestamp": "2026-04-10T22:57:14.278432+00:00",
+    "platform": "rappi",
+    "location_id": "guadalajara",
+    "location_address": "Av. Vallarta 3000, Vallarta Poniente, Guadalajara, Jalisco",
+    "location_lat": 20.6737,
+    "location_lng": -103.3823,
+    "zone_type": "medium_high_income",
+    "zone_label": "Guadalajara",
+    "city": "Guadalajara",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/guadalajara_mcdonalds_20260410_175813.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 58.99
+  },
+  {
+    "scrape_id": "004817e5-0b2e-4347-a74b-ffbfd7372d3e",
+    "timestamp": "2026-04-10T22:58:16.890712+00:00",
+    "platform": "rappi",
+    "location_id": "guadalajara",
+    "location_address": "Av. Vallarta 3000, Vallarta Poniente, Guadalajara, Jalisco",
+    "location_lat": 20.6737,
+    "location_lng": -103.3823,
+    "zone_type": "medium_high_income",
+    "zone_label": "Guadalajara",
+    "city": "Guadalajara",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/guadalajara_burger_king_20260410_175918.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 61.3
+  },
+  {
+    "scrape_id": "f1196152-2da4-43fd-bdc0-08f12cd7669f",
+    "timestamp": "2026-04-10T22:59:29.664307+00:00",
+    "platform": "rappi",
+    "location_id": "monterrey",
+    "location_address": "Av. Constitución 500, Centro, Monterrey, Nuevo León",
+    "location_lat": 25.6714,
+    "location_lng": -100.309,
+    "zone_type": "medium_high_income",
+    "zone_label": "Monterrey",
+    "city": "Monterrey",
+    "restaurant": {
+      "name": "Mcdonalds Postres - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+      "available": true,
+      "rating": 4.2,
+      "review_count": 10
+    },
+    "products": [
+      {
+        "name": "Big Mac",
+        "reference_id": "big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "Combo Big Mac Mediano",
+        "reference_id": "combo_big_mac",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      },
+      {
+        "name": "McNuggets 10 piezas",
+        "reference_id": "mcnuggets_10",
+        "price_mxn": null,
+        "available": false,
+        "description": "",
+        "original_name": ""
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/monterrey_mcdonalds_20260410_180027.png",
+    "errors": [
+      "Product 'Big Mac' not found",
+      "Product 'Combo Big Mac Mediano' not found",
+      "Product 'McNuggets 10 piezas' not found"
+    ],
+    "data_completeness": "failed",
+    "scrape_duration_seconds": 57.65
+  },
+  {
+    "scrape_id": "c05c0bab-11b2-4e57-a3cc-4df9dfb420a0",
+    "timestamp": "2026-04-10T23:00:31.006131+00:00",
+    "platform": "rappi",
+    "location_id": "monterrey",
+    "location_address": "Av. Constitución 500, Centro, Monterrey, Nuevo León",
+    "location_lat": 25.6714,
+    "location_lng": -100.309,
+    "zone_type": "medium_high_income",
+    "zone_label": "Monterrey",
+    "city": "Monterrey",
+    "restaurant": {
+      "name": "Burger King - Juárez",
+      "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+      "available": true,
+      "rating": 3.6,
+      "review_count": 108
+    },
+    "products": [
+      {
+        "name": "Whopper",
+        "reference_id": "whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      },
+      {
+        "name": "Combo Whopper Mediano",
+        "reference_id": "combo_whopper",
+        "price_mxn": 209.0,
+        "available": true,
+        "description": "",
+        "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+      }
+    ],
+    "delivery": {
+      "fee_mxn": 0.0,
+      "service_fee_mxn": null,
+      "estimated_time_min": 12,
+      "estimated_time_max": 12,
+      "free_delivery_threshold_mxn": null,
+      "surge_active": false
+    },
+    "promotions": [],
+    "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/monterrey_burger_king_20260410_180129.png",
+    "errors": [],
+    "data_completeness": "full",
+    "scrape_duration_seconds": 58.22
+  }
+]

@@ -128,7 +128,8 @@ def plot_price_comparison(df: pd.DataFrame, charts_dir: Path) -> None:
     ax.set_ylabel("Precio Promedio (MXN)")
     ax.set_title("Comparación de Precios por Plataforma")
     ax.legend(handles=_platform_handles(), loc="upper left")
-    ax.set_ylim(0, pivot.max().max() * 1.20)
+    max_val = pivot.max().max()
+    ax.set_ylim(0, max_val * 1.20 if pd.notna(max_val) and max_val > 0 else 10)
     fig.tight_layout()
     _save(fig, charts_dir / "01_price_comparison.png")
 
@@ -192,7 +193,7 @@ def plot_total_cost_breakdown(df: pd.DataFrame, charts_dir: Path) -> None:
     ax.set_ylabel("Costo Total (MXN)")
     ax.set_title(f"Desglose del Costo Total — {PRODUCT_SHORT.get(product_name, product_name)}")
     ax.legend(loc="upper right")
-    ax.set_ylim(0, bottoms.max() * 1.20)
+    ax.set_ylim(0, max(bottoms.max() * 1.20, 1))
     fig.tight_layout()
     _save(fig, charts_dir / "02_total_cost_breakdown.png")
 
@@ -313,7 +314,7 @@ def plot_fee_comparison(df: pd.DataFrame, charts_dir: Path) -> None:
     ax.set_xlabel("Fee Promedio (MXN)")
     ax.set_title("Comparación de Fees por Plataforma")
     ax.legend(loc="lower right")
-    ax.set_xlim(0, max(agg["delivery"].max(), agg["service"].max()) * 1.3)
+    ax.set_xlim(0, max(agg["delivery"].max(), agg["service"].max(), 1) * 1.3)
     fig.tight_layout()
     _save(fig, charts_dir / "05_fee_comparison.png")
 
@@ -391,7 +392,7 @@ def plot_competitive_radar(df: pd.DataFrame, charts_dir: Path) -> None:
     for dim in dims:
         col = agg[dim]
         col_min, col_max = col.min(), col.max()
-        if col_max == col_min:
+        if pd.isna(col_min) or pd.isna(col_max) or col_max == col_min:
             normalized[dim] = 1.0
         elif dim == "promo_rate":
             # Higher = better
@@ -399,6 +400,8 @@ def plot_competitive_radar(df: pd.DataFrame, charts_dir: Path) -> None:
         else:
             # Lower = better → invert
             normalized[dim] = 1 - (col - col_min) / (col_max - col_min)
+    # Platforms with no data (all NaN after normalization) get worst score = 0
+    normalized = normalized.fillna(0)
 
     N = len(dims)
     angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()

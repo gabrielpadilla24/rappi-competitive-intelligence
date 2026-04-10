@@ -1,0 +1,28 @@
+{
+  "scrape_id": "8de343aa-f895-486a-9111-52dff6846062",
+  "timestamp": "2026-04-10T21:32:10.537987+00:00",
+  "platform": "ubereats",
+  "location_id": "roma_norte",
+  "location_address": "Av. Álvaro Obregón 120, Roma Norte, Cuauhtémoc, CDMX",
+  "location_lat": 19.4195,
+  "location_lng": -99.1619,
+  "zone_type": "high_income",
+  "zone_label": "Roma Norte",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'McDonald's' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

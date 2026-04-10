@@ -1,0 +1,28 @@
+{
+  "scrape_id": "1e9efc6e-45b3-4a53-bb5b-d1e4e854bbff",
+  "timestamp": "2026-04-10T21:35:12.391164+00:00",
+  "platform": "ubereats",
+  "location_id": "del_valle",
+  "location_address": "Av. Universidad 1200, Del Valle Centro, Benito Juárez, CDMX",
+  "location_lat": 19.3846,
+  "location_lng": -99.1736,
+  "zone_type": "medium_high_income",
+  "zone_label": "Del Valle",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'McDonald's' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

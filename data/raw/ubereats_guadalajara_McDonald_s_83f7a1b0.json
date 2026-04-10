@@ -1,0 +1,28 @@
+{
+  "scrape_id": "83f7a1b0-4ebf-4256-a9cc-51a489e2ba97",
+  "timestamp": "2026-04-10T22:02:31.239218+00:00",
+  "platform": "ubereats",
+  "location_id": "guadalajara",
+  "location_address": "Av. Vallarta 3000, Vallarta Poniente, Guadalajara, Jalisco",
+  "location_lat": 20.6737,
+  "location_lng": -103.3823,
+  "zone_type": "medium_high_income",
+  "zone_label": "Guadalajara",
+  "city": "Guadalajara",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'McDonald's' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

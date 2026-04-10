@@ -1,20 +1,20 @@
 {
-  "scrape_id": "c084a53f-90ed-4a6e-a2ff-63c7c1415e80",
-  "timestamp": "2026-04-10T21:06:03.939875+00:00",
+  "scrape_id": "69d8ea9b-f6f1-4617-b20b-5ec3abecaa7d",
+  "timestamp": "2026-04-10T22:44:51.373409+00:00",
   "platform": "rappi",
-  "location_id": "polanco",
-  "location_address": "Av. Presidente Masaryk 340, Polanco V Sección, Miguel Hidalgo, CDMX",
-  "location_lat": 19.4326,
-  "location_lng": -99.1942,
-  "zone_type": "high_income",
-  "zone_label": "Polanco",
+  "location_id": "gam",
+  "location_address": "Gran Canal 500, Casas Alemán, Gustavo A. Madero, CDMX",
+  "location_lat": 19.4836,
+  "location_lng": -99.0921,
+  "zone_type": "low_income",
+  "zone_label": "GAM Norte",
   "city": "CDMX",
   "restaurant": {
     "name": "Burger King - Juárez",
     "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
     "available": true,
     "rating": 3.6,
-    "review_count": 107
+    "review_count": 108
   },
   "products": [
     {
@@ -43,8 +43,8 @@
     "surge_active": false
   },
   "promotions": [],
-  "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/polanco_burger_king_20260410_160703.png",
+  "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/gam_burger_king_20260410_174547.png",
   "errors": [],
   "data_completeness": "full",
-  "scrape_duration_seconds": 59.17
+  "scrape_duration_seconds": 56.57
 }

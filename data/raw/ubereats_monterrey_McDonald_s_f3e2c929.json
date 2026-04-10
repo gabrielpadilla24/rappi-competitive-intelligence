@@ -1,0 +1,28 @@
+{
+  "scrape_id": "f3e2c929-a3ad-450e-b44d-5f92720434da",
+  "timestamp": "2026-04-10T22:04:01.031411+00:00",
+  "platform": "ubereats",
+  "location_id": "monterrey",
+  "location_address": "Av. Constitución 500, Centro, Monterrey, Nuevo León",
+  "location_lat": 25.6714,
+  "location_lng": -100.309,
+  "zone_type": "medium_high_income",
+  "zone_label": "Monterrey",
+  "city": "Monterrey",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'McDonald's' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

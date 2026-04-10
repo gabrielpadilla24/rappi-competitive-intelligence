@@ -1,0 +1,28 @@
+{
+  "scrape_id": "9169ae4b-7fec-4ae8-ad9d-878d91e3ff28",
+  "timestamp": "2026-04-10T21:52:12.639818+00:00",
+  "platform": "ubereats",
+  "location_id": "tlahuac",
+  "location_address": "Av. Tláhuac 4000, Santiago Acahualtepec, Iztapalapa, CDMX",
+  "location_lat": 19.335,
+  "location_lng": -99.03,
+  "zone_type": "low_income",
+  "zone_label": "Tláhuac / Sur-Oriente",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'McDonald's' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

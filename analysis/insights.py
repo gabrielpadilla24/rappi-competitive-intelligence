@@ -21,6 +21,19 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from config.settings import REPORTS_DIR
 
 
+def _safe_float(val, digits: int = 2):
+    """Return round(float(val), digits) or None if val is NaN/None — JSON-safe."""
+    if val is None:
+        return None
+    try:
+        f = float(val)
+    except (TypeError, ValueError):
+        return None
+    if f != f:  # NaN check without importing math/numpy
+        return None
+    return round(f, digits)
+
+
 # ============================================================
 # Individual insight generators
 # ============================================================
@@ -33,30 +46,40 @@ def _insight_pricing(price_df: pd.DataFrame) -> dict:
     if price_df.empty:
         return _empty_insight(1, "pricing")
 
-    # Average delta across all products
+    # Average delta across all products (NaN when platform has no data)
     ue_avg = price_df["ue_vs_rappi_pct"].mean()
     didi_avg = price_df["didi_vs_rappi_pct"].mean()
 
-    # Find worst-case product for the most expensive competitor
-    if abs(ue_avg) >= abs(didi_avg):
-        competitor = "Uber Eats"
-        delta = ue_avg
-        delta_col = "ue_vs_rappi_pct"
-        comp_col = "ubereats_avg"
-    else:
+    ue_valid = pd.notna(ue_avg)
+    didi_valid = pd.notna(didi_avg)
+
+    if not ue_valid and not didi_valid:
+        return _empty_insight(1, "pricing")
+
+    # Pick competitor with most data / biggest delta
+    if didi_valid and (not ue_valid or abs(float(didi_avg)) > abs(float(ue_avg))):
         competitor = "DiDi Food"
-        delta = didi_avg
+        delta = float(didi_avg)
         delta_col = "didi_vs_rappi_pct"
         comp_col = "didifood_avg"
+    else:
+        competitor = "Uber Eats"
+        delta = float(ue_avg)
+        delta_col = "ue_vs_rappi_pct"
+        comp_col = "ubereats_avg"
+
+    # Guard: idxmax() returns NaN when entire column is NaN
+    valid_mask = price_df[delta_col].notna()
+    if not valid_mask.any():
+        return _empty_insight(1, "pricing")
 
     worst_row = price_df.loc[price_df[delta_col].abs().idxmax()]
     worst_product = worst_row["product"]
-    worst_delta = worst_row[delta_col]
+    worst_delta = float(worst_row[delta_col])
 
     rappi_avg_all = price_df["rappi_avg"].mean()
     comp_avg_all = price_df[comp_col].mean()
 
-    direction = "más caro" if delta > 0 else "más barato"
     sign = "+" if delta > 0 else ""
 
     return {
@@ -78,11 +101,11 @@ def _insight_pricing(price_df: pd.DataFrame) -> dict:
             "Considerar subsidios de precio en productos ancla como Big Mac y Whopper."
         ),
         "data_support": {
-            "rappi_avg_price_mxn": round(float(rappi_avg_all), 2),
-            f"{competitor.lower().replace(' ', '_')}_avg_price_mxn": round(float(comp_avg_all), 2),
-            "avg_delta_pct": round(float(delta), 1),
+            "rappi_avg_price_mxn": _safe_float(rappi_avg_all),
+            f"{competitor.lower().replace(' ', '_')}_avg_price_mxn": _safe_float(comp_avg_all),
+            "avg_delta_pct": _safe_float(delta, 1),
             "worst_product": worst_product,
-            "worst_delta_pct": round(float(worst_delta), 1),
+            "worst_delta_pct": _safe_float(worst_delta, 1),
         },
     }
 
@@ -99,19 +122,46 @@ def _insight_fees(fee_df: pd.DataFrame) -> dict:
     if rappi_row.empty:
         return _empty_insight(2, "fees")
 
-    rappi_fee = float(rappi_row["avg_total_fee"].values[0])
-    rappi_pct = float(rappi_row["fee_as_pct_of_product"].values[0])
+    rappi_fee_raw = rappi_row["avg_total_fee"].values[0]
+    rappi_pct_raw = rappi_row["fee_as_pct_of_product"].values[0]
 
-    # Compare vs cheapest competitor
+    if pd.isna(rappi_fee_raw):
+        return _empty_insight(2, "fees")
+
+    rappi_fee = float(rappi_fee_raw)
+    rappi_pct = float(rappi_pct_raw) if pd.notna(rappi_pct_raw) else 0.0
+
+    # Compare vs cheapest competitor with actual data
     competitors = fee_df[fee_df["platform"] != "rappi"].copy()
     if competitors.empty:
         return _empty_insight(2, "fees")
 
-    min_idx = competitors["avg_total_fee"].idxmin()
-    cheapest = competitors.loc[min_idx]
+    valid_competitors = competitors[competitors["avg_total_fee"].notna()]
+
+    # Special case: all platforms have $0 fees
+    all_fees = fee_df["avg_total_fee"].dropna()
+    if len(all_fees) > 0 and (all_fees == 0).all():
+        return {
+            "number": 2,
+            "category": "fees",
+            "finding": "Todas las plataformas con datos ofrecen envío gratis ($0 fee total) en las observaciones recopiladas.",
+            "impact": "Sin diferenciación en fees actualmente. El precio del producto es el único diferenciador de costo.",
+            "recommendation": (
+                "Monitorear si los fees son consistentemente $0 o si están ausentes del scraping. "
+                "Validar que los datos de fees estén siendo capturados correctamente."
+            ),
+            "data_support": {"all_platforms_fee_mxn": 0},
+        }
+
+    if valid_competitors.empty:
+        return _empty_insight(2, "fees")
+
+    min_idx = valid_competitors["avg_total_fee"].idxmin()
+    cheapest = valid_competitors.loc[min_idx]
     cheapest_name = str(cheapest["platform"]).replace("ubereats", "Uber Eats").replace("didifood", "DiDi Food")
     cheapest_fee = float(cheapest["avg_total_fee"])
-    cheapest_pct = float(cheapest["fee_as_pct_of_product"])
+    cheapest_pct_raw = cheapest["fee_as_pct_of_product"]
+    cheapest_pct = float(cheapest_pct_raw) if pd.notna(cheapest_pct_raw) else 0.0
 
     delta_abs = rappi_fee - cheapest_fee
     delta_pct = (delta_abs / cheapest_fee * 100) if cheapest_fee > 0 else 0.0
@@ -133,12 +183,12 @@ def _insight_fees(fee_df: pd.DataFrame) -> dict:
             "Comunicar la propuesta de valor total, no solo el precio del producto."
         ),
         "data_support": {
-            "rappi_avg_total_fee_mxn": round(rappi_fee, 2),
-            "rappi_fee_pct_of_product": round(rappi_pct, 1),
-            f"{str(cheapest['platform'])}_avg_total_fee_mxn": round(cheapest_fee, 2),
-            f"{str(cheapest['platform'])}_fee_pct_of_product": round(cheapest_pct, 1),
-            "delta_mxn": round(float(delta_abs), 2),
-            "delta_pct": round(float(delta_pct), 1),
+            "rappi_avg_total_fee_mxn": _safe_float(rappi_fee),
+            "rappi_fee_pct_of_product": _safe_float(rappi_pct, 1),
+            f"{str(cheapest['platform'])}_avg_total_fee_mxn": _safe_float(cheapest_fee),
+            f"{str(cheapest['platform'])}_fee_pct_of_product": _safe_float(cheapest_pct, 1),
+            "delta_mxn": _safe_float(delta_abs),
+            "delta_pct": _safe_float(delta_pct, 1),
         },
     }
 
@@ -152,34 +202,76 @@ def _insight_delivery_times(time_df: pd.DataFrame) -> dict:
 
     time_df = time_df.copy()
 
-    # Overall averages
+    # Overall averages (NaN when platform has no data)
     rappi_global = time_df["rappi_avg_time"].mean()
     ue_global = time_df["ubereats_avg_time"].mean()
     didi_global = time_df["didifood_avg_time"].mean()
 
+    if pd.isna(rappi_global):
+        return _empty_insight(3, "delivery_time")
+
     # Zone where Rappi has biggest advantage (lowest time vs next fastest)
-    time_df["rappi_vs_best_competitor"] = time_df.apply(
-        lambda row: row["rappi_avg_time"] - min(
-            v for v in [row.get("ubereats_avg_time"), row.get("didifood_avg_time")]
-            if pd.notna(v)
-        ) if pd.notna(row.get("rappi_avg_time")) else float("nan"),
-        axis=1,
-    )
+    # Guard: skip rows where no competitor time is available
+    def _rappi_vs_competitors(row):
+        if pd.isna(row.get("rappi_avg_time")):
+            return float("nan")
+        competitor_times = [
+            row.get("ubereats_avg_time"),
+            row.get("didifood_avg_time"),
+        ]
+        valid_times = [v for v in competitor_times if pd.notna(v)]
+        if not valid_times:
+            return float("nan")
+        return row["rappi_avg_time"] - min(valid_times)
+
+    time_df["rappi_vs_best_competitor"] = time_df.apply(_rappi_vs_competitors, axis=1)
+
+    # Guard: idxmin/idxmax return NaN when entire column is NaN
+    if time_df["rappi_vs_best_competitor"].notna().sum() == 0:
+        # No competitor data — still report Rappi's own numbers
+        rappi_str = f"{rappi_global:.0f}"
+        ue_str = f"{ue_global:.0f}" if pd.notna(ue_global) else "N/A"
+        didi_str = f"{didi_global:.0f}" if pd.notna(didi_global) else "N/A"
+        return {
+            "number": 3,
+            "category": "delivery_time",
+            "finding": (
+                f"Rappi promedia {rappi_str} min de entrega. "
+                f"Uber Eats: {ue_str} min. DiDi Food: {didi_str} min. "
+                "Sin suficientes datos de competidores para comparación por zona."
+            ),
+            "impact": "Datos de competidores insuficientes para determinar ventaja relativa.",
+            "recommendation": "Recopilar más datos de competidores para comparación por zona.",
+            "data_support": {
+                "rappi_global_avg_min": _safe_float(rappi_global, 1),
+                "ubereats_global_avg_min": _safe_float(ue_global, 1),
+                "didifood_global_avg_min": _safe_float(didi_global, 1),
+            },
+        }
 
     best_zone_idx = time_df["rappi_vs_best_competitor"].idxmin()
     best_zone = time_df.loc[best_zone_idx]
     worst_zone_idx = time_df["rappi_vs_best_competitor"].idxmax()
     worst_zone = time_df.loc[worst_zone_idx]
 
-    rappi_leads = float(rappi_global) < float(ue_global) and float(rappi_global) < float(didi_global)
+    # "Rappi leads" only when we have data for both competitors
+    rappi_leads = (
+        (not pd.notna(ue_global) or float(rappi_global) < float(ue_global))
+        and (not pd.notna(didi_global) or float(rappi_global) < float(didi_global))
+        and (pd.notna(ue_global) or pd.notna(didi_global))
+    )
+
+    ue_str = f"Uber Eats {ue_global:.0f} min" if pd.notna(ue_global) else "Uber Eats (sin datos)"
+    didi_str = f"DiDi {didi_global:.0f} min" if pd.notna(didi_global) else "DiDi (sin datos)"
+    advantage_min = float(-best_zone["rappi_vs_best_competitor"])
 
     return {
         "number": 3,
         "category": "delivery_time",
         "finding": (
             f"Rappi promedia {rappi_global:.0f} min de entrega vs "
-            f"Uber Eats {ue_global:.0f} min y DiDi {didi_global:.0f} min. "
-            f"Mayor ventaja en '{best_zone['zone_type']}' ({best_zone['rappi_vs_best_competitor']:.0f} min más rápido)."
+            f"{ue_str} y {didi_str}. "
+            f"Mayor ventaja en '{best_zone['zone_type']}' ({advantage_min:.0f} min más rápido)."
         ),
         "impact": (
             "El tiempo de entrega es el segundo factor más importante para usuarios frecuentes. "
@@ -192,11 +284,11 @@ def _insight_delivery_times(time_df: pd.DataFrame) -> dict:
             "(posiblemente cobertura de repartidores)."
         ),
         "data_support": {
-            "rappi_global_avg_min": round(float(rappi_global), 1),
-            "ubereats_global_avg_min": round(float(ue_global), 1),
-            "didifood_global_avg_min": round(float(didi_global), 1),
+            "rappi_global_avg_min": _safe_float(rappi_global, 1),
+            "ubereats_global_avg_min": _safe_float(ue_global, 1),
+            "didifood_global_avg_min": _safe_float(didi_global, 1),
             "best_zone_for_rappi": best_zone["zone_type"],
-            "rappi_advantage_min": round(float(-best_zone["rappi_vs_best_competitor"]), 1),
+            "rappi_advantage_min": _safe_float(advantage_min, 1),
             "worst_zone_for_rappi": worst_zone["zone_type"],
         },
     }
@@ -214,6 +306,10 @@ def _insight_geographic(geo_df: pd.DataFrame) -> dict:
         return _empty_insight(4, "geographic")
 
     # Zone where Rappi has worst rank (most expensive total price)
+    # Guard: idxmax/idxmin return NaN when rappi_rank is all NaN
+    if rappi_geo["rappi_rank"].notna().sum() == 0:
+        return _empty_insight(4, "geographic")
+
     worst_zone_row = rappi_geo.loc[rappi_geo["rappi_rank"].idxmax()]
     best_zone_row = rappi_geo.loc[rappi_geo["rappi_rank"].idxmin()]
 
@@ -249,10 +345,10 @@ def _insight_geographic(geo_df: pd.DataFrame) -> dict:
         ),
         "data_support": {
             "worst_zone": worst_zone,
-            "rappi_avg_total_price_mxn": round(worst_total, 2),
+            "rappi_avg_total_price_mxn": _safe_float(worst_total),
             "cheapest_platform": str(cheapest_in_worst["platform"]),
-            "cheapest_avg_total_price_mxn": round(cheapest_total, 2),
-            "rappi_premium_pct": round(float(delta_pct), 1),
+            "cheapest_avg_total_price_mxn": _safe_float(cheapest_total),
+            "rappi_premium_pct": _safe_float(delta_pct, 1),
             "best_zone": best_zone,
         },
     }
@@ -263,6 +359,10 @@ def _insight_promotions(promo_df: pd.DataFrame) -> dict:
     Compare promo aggressiveness across platforms.
     """
     if promo_df.empty:
+        return _empty_insight(5, "promotions")
+
+    # Guard: idxmax returns NaN when all promo_rate_pct are NaN
+    if promo_df["promo_rate_pct"].notna().sum() == 0:
         return _empty_insight(5, "promotions")
 
     most_aggressive = promo_df.loc[promo_df["promo_rate_pct"].idxmax()]

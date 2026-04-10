@@ -1,0 +1,50 @@
+{
+  "scrape_id": "7c525aa1-2730-4f42-bcff-0ea5b7eddfd9",
+  "timestamp": "2026-04-10T22:49:19.964867+00:00",
+  "platform": "rappi",
+  "location_id": "satelite",
+  "location_address": "Blvd. Manuel Ávila Camacho 1500, Cd. Satélite, Naucalpan, Edo. Méx.",
+  "location_lat": 19.504,
+  "location_lng": -99.233,
+  "zone_type": "low_income",
+  "zone_label": "Satélite (Edo. Méx.)",
+  "city": "Naucalpan",
+  "restaurant": {
+    "name": "Burger King - Juárez",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+    "available": true,
+    "rating": 3.6,
+    "review_count": 108
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 12,
+    "estimated_time_max": 12,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/satelite_burger_king_20260410_175018.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 58.41
+}

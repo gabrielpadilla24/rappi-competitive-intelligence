@@ -1,0 +1,50 @@
+{
+  "scrape_id": "c05c0bab-11b2-4e57-a3cc-4df9dfb420a0",
+  "timestamp": "2026-04-10T23:00:31.006131+00:00",
+  "platform": "rappi",
+  "location_id": "monterrey",
+  "location_address": "Av. Constitución 500, Centro, Monterrey, Nuevo León",
+  "location_lat": 25.6714,
+  "location_lng": -100.309,
+  "zone_type": "medium_high_income",
+  "zone_label": "Monterrey",
+  "city": "Monterrey",
+  "restaurant": {
+    "name": "Burger King - Juárez",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+    "available": true,
+    "rating": 3.6,
+    "review_count": 108
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 12,
+    "estimated_time_max": 12,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/monterrey_burger_king_20260410_180129.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 58.22
+}

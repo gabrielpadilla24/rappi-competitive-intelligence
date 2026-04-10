@@ -1,13 +1,13 @@
 {
-  "scrape_id": "c14828bd-e56f-4106-87ca-ba97cc65602c",
-  "timestamp": "2026-04-10T21:05:15.554239+00:00",
+  "scrape_id": "9a8ec0cb-7206-4ac8-a3c8-2325a0d3685a",
+  "timestamp": "2026-04-10T22:30:16.062116+00:00",
   "platform": "rappi",
-  "location_id": "polanco",
-  "location_address": "Av. Presidente Masaryk 340, Polanco V Sección, Miguel Hidalgo, CDMX",
-  "location_lat": 19.4326,
-  "location_lng": -99.1942,
-  "zone_type": "high_income",
-  "zone_label": "Polanco",
+  "location_id": "narvarte_ote",
+  "location_address": "Av. Cuauhtémoc 800, Narvarte Oriente, Benito Juárez, CDMX",
+  "location_lat": 19.3915,
+  "location_lng": -99.144,
+  "zone_type": "medium_income",
+  "zone_label": "Narvarte Oriente",
   "city": "CDMX",
   "restaurant": {
     "name": "Mcdonalds Postres - Juárez",
@@ -51,12 +51,12 @@
     "surge_active": false
   },
   "promotions": [],
-  "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/polanco_mcdonalds_20260410_160601.png",
+  "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/rappi/narvarte_ote_mcdonalds_20260410_173116.png",
   "errors": [
     "Product 'Big Mac' not found",
     "Product 'Combo Big Mac Mediano' not found",
     "Product 'McNuggets 10 piezas' not found"
   ],
   "data_completeness": "failed",
-  "scrape_duration_seconds": 46.12
+  "scrape_duration_seconds": 60.12
 }

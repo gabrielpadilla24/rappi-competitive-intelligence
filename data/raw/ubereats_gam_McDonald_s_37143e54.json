@@ -1,0 +1,28 @@
+{
+  "scrape_id": "37143e54-da50-444c-b52c-f3ea0660aab9",
+  "timestamp": "2026-04-10T21:53:42.145804+00:00",
+  "platform": "ubereats",
+  "location_id": "gam",
+  "location_address": "Gran Canal 500, Casas Alemán, Gustavo A. Madero, CDMX",
+  "location_lat": 19.4836,
+  "location_lng": -99.0921,
+  "zone_type": "low_income",
+  "zone_label": "GAM Norte",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'McDonald's' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

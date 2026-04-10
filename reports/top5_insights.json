@@ -1,0 +1,70 @@
+[
+  {
+    "number": 1,
+    "category": "pricing",
+    "finding": "Uber Eats cobra en promedio -23.9% que Rappi en productos de fast food (más pronunciado en 'Combo Whopper Mediano': -23.9%)",
+    "impact": "Rappi está en desventaja de precio vs Uber Eats. Con fees incluidos, la diferencia real al consumidor puede ser distinta.",
+    "recommendation": "Revisar acuerdos de pricing con restaurantes para alinear con competidores. Considerar subsidios de precio en productos ancla como Big Mac y Whopper.",
+    "data_support": {
+      "rappi_avg_price_mxn": 209.0,
+      "uber_eats_avg_price_mxn": 143.0,
+      "avg_delta_pct": -23.9,
+      "worst_product": "Combo Whopper Mediano",
+      "worst_delta_pct": -23.9
+    }
+  },
+  {
+    "number": 2,
+    "category": "fees",
+    "finding": "Todas las plataformas con datos ofrecen envío gratis ($0 fee total) en las observaciones recopiladas.",
+    "impact": "Sin diferenciación en fees actualmente. El precio del producto es el único diferenciador de costo.",
+    "recommendation": "Monitorear si los fees son consistentemente $0 o si están ausentes del scraping. Validar que los datos de fees estén siendo capturados correctamente.",
+    "data_support": {
+      "all_platforms_fee_mxn": 0
+    }
+  },
+  {
+    "number": 3,
+    "category": "delivery_time",
+    "finding": "Rappi promedia 12 min de entrega vs Uber Eats 28 min y DiDi (sin datos). Mayor ventaja en 'high_income' (17 min más rápido).",
+    "impact": "El tiempo de entrega es el segundo factor más importante para usuarios frecuentes. Rappi lidera en velocidad a nivel global, con variación significativa por zona.",
+    "recommendation": "Destacar ventaja de velocidad en la zona 'high_income' en comunicación local. Investigar causas del rezago en 'medium_high_income' (posiblemente cobertura de repartidores).",
+    "data_support": {
+      "rappi_global_avg_min": 12.0,
+      "ubereats_global_avg_min": 28.2,
+      "didifood_global_avg_min": null,
+      "best_zone_for_rappi": "high_income",
+      "rappi_advantage_min": 17.2,
+      "worst_zone_for_rappi": "medium_high_income"
+    }
+  },
+  {
+    "number": 4,
+    "category": "geographic",
+    "finding": "Rappi es la opción más cara en la zona 'high_income' (precio total $209), 46.2% más que Uber Eats ($143). Rappi tiene mejor posición en 'commercial'.",
+    "impact": "En zonas periféricas/de menor ingreso, el precio total es el factor decisivo. Perder competitividad aquí puede significar pérdida de cuota en segmentos de alto crecimiento.",
+    "recommendation": "Implementar fees diferenciales por zona: reducir delivery fee en 'high_income' para mejorar competitividad. Evaluar partnerships locales con restaurantes en esa zona.",
+    "data_support": {
+      "worst_zone": "high_income",
+      "rappi_avg_total_price_mxn": 209.0,
+      "cheapest_platform": "ubereats",
+      "cheapest_avg_total_price_mxn": 143.0,
+      "rappi_premium_pct": 46.2,
+      "best_zone": "commercial"
+    }
+  },
+  {
+    "number": 5,
+    "category": "promotions",
+    "finding": "Uber Eats lidera en agresividad promocional con 100% de observaciones con promo activa. Rappi registra 0% (N/A es el tipo más frecuente).",
+    "impact": "Las promociones actúan como diferenciador en la decisión de plataforma, especialmente en primera compra y reactivación de usuarios inactivos.",
+    "recommendation": "Aumentar frecuencia de promociones de tipo 'free_delivery' en horas valle. Testear 'descuento en combo' como gancho para tickets más altos.",
+    "data_support": {
+      "rappi_promo_rate_pct": 0.0,
+      "most_aggressive_platform": "ubereats",
+      "most_aggressive_rate_pct": 100.0,
+      "rappi_most_common_promo_type": "N/A",
+      "delta_vs_most_aggressive_pct": 100.0
+    }
+  }
+]
