@@ -1,0 +1,106 @@
+15:19:48 | asyncio                   | DEBUG   | Using selector: KqueueSelector
+15:19:48 | runner                    | INFO    | ============================================================
+15:19:48 | runner                    | INFO    | Starting scrape run
+15:19:48 | runner                    | INFO    |   Locations:   1
+15:19:48 | runner                    | INFO    |   Platforms:   ubereats
+15:19:48 | runner                    | INFO    |   Restaurants: McDonald's, Burger King
+15:19:48 | runner                    | INFO    |   Total combinations: 2
+15:19:48 | runner                    | INFO    | ============================================================
+15:19:48 | runner                    | INFO    | 
+────────────────────────────────────────
+15:19:48 | runner                    | INFO    | Platform: UBEREATS
+15:19:48 | runner                    | INFO    | ────────────────────────────────────────
+15:19:48 | scraper.ubereats          | INFO    | Starting Uber Eats browser
+15:19:51 | scraper.anti_detection    | INFO    | Stealth browser ready — UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...
+15:19:51 | scraper.ubereats          | INFO    | Uber Eats browser ready
+15:19:51 | runner                    | INFO    | 
+📍 Location: Polanco V Sección, Miguel Hidalgo (high_income)
+15:19:51 | runner                    | INFO    |   🏪 McDonald's — 3 products
+15:19:51 | scraper.ubereats          | INFO    | Setting location: Polanco V Sección, Miguel Hidalgo
+15:19:51 | scraper.ubereats          | INFO    | Navigating to https://www.ubereats.com/mx/feed
+15:19:54 | scraper.anti_detection    | DEBUG   | Waiting 3.5s
+15:20:02 | scraper.ubereats          | DEBUG   | Found address input with selector: input[placeholder*="dirección"]
+15:20:09 | scraper.anti_detection    | DEBUG   | Waiting 1.6s
+15:20:10 | scraper.anti_detection    | DEBUG   | Waiting 2.3s
+15:20:13 | scraper.ubereats          | INFO    | Location set: Polanco V Sección, Miguel Hidalgo
+15:20:13 | scraper.ubereats          | INFO    | Searching for: McDonald's
+15:20:13 | scraper.ubereats          | INFO    | Searching: https://www.ubereats.com/mx/search?q=McDonald's
+15:20:14 | scraper.anti_detection    | DEBUG   | Waiting 2.6s
+15:20:18 | scraper.ubereats          | INFO    | Found 79 store cards
+15:20:18 | scraper.ubereats          | INFO    | Matched restaurant card: Pollos de McDonald's Antara
+15:20:21 | scraper.anti_detection    | DEBUG   | Waiting 2.6s
+15:20:24 | scraper.ubereats          | INFO    | Restaurant info: name=Pollos de McDonald's Antara, rating=None, reviews=None
+15:20:24 | scraper.ubereats          | INFO    | Extracting delivery info
+15:20:24 | scraper.ubereats          | INFO    | Delivery info: fee=None, time=2218-36 min
+15:20:24 | scraper.ubereats          | INFO    | Looking for product: Big Mac
+15:20:24 | scraper.ubereats          | DEBUG   | Found 42 items with 'li[data-testid^="store-item-"]'
+15:20:24 | scraper.ubereats          | WARNING | Product 'Big Mac' not found in menu items
+15:20:24 | scraper.ubereats          | INFO    | Looking for product: Combo Big Mac Mediano
+15:20:24 | scraper.ubereats          | DEBUG   | Found 42 items with 'li[data-testid^="store-item-"]'
+15:20:24 | scraper.ubereats          | WARNING | Product 'Combo Big Mac Mediano' not found in menu items
+15:20:24 | scraper.ubereats          | INFO    | Looking for product: McNuggets 10 piezas
+15:20:24 | scraper.ubereats          | DEBUG   | Found 42 items with 'li[data-testid^="store-item-"]'
+15:20:24 | scraper.ubereats          | DEBUG   | Item parse error: name 're' is not defined
+15:20:24 | scraper.ubereats          | DEBUG   | Item parse error: name 're' is not defined
+15:20:24 | scraper.ubereats          | DEBUG   | Item parse error: name 're' is not defined
+15:20:24 | scraper.ubereats          | DEBUG   | Item parse error: name 're' is not defined
+15:20:24 | scraper.ubereats          | DEBUG   | Item parse error: name 're' is not defined
+15:20:24 | scraper.ubereats          | DEBUG   | Item parse error: name 're' is not defined
+15:20:24 | scraper.ubereats          | DEBUG   | Item parse error: name 're' is not defined
+15:20:24 | scraper.ubereats          | DEBUG   | Item parse error: name 're' is not defined
+15:20:24 | scraper.ubereats          | DEBUG   | Item parse error: name 're' is not defined
+15:20:24 | scraper.ubereats          | DEBUG   | Item parse error: name 're' is not defined
+15:20:24 | scraper.ubereats          | DEBUG   | Item parse error: name 're' is not defined
+15:20:24 | scraper.ubereats          | DEBUG   | Item parse error: name 're' is not defined
+15:20:24 | scraper.ubereats          | DEBUG   | Item parse error: name 're' is not defined
+15:20:24 | scraper.ubereats          | WARNING | Product 'McNuggets 10 piezas' not found in menu items
+15:20:24 | scraper.ubereats          | INFO    | Extracting promotions
+15:20:24 | scraper.ubereats          | INFO    | Found 4 promotions
+15:20:24 | scraper.ubereats          | INFO    | Screenshot saved: /Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/polanco_mcdonalds_20260410_152024.png
+15:20:24 | runner                    | INFO    |   ❌ failed (33.58s) → ubereats_polanco_Pollos_de_McDonald_s_Antara_fb86fe8d.json
+15:20:24 | scraper.anti_detection    | DEBUG   | Waiting 3.9s
+15:20:28 | runner                    | INFO    |   🏪 Burger King — 2 products
+15:20:28 | scraper.ubereats          | INFO    | Setting location: Polanco V Sección, Miguel Hidalgo
+15:20:28 | scraper.ubereats          | INFO    | Navigating to https://www.ubereats.com/mx/feed
+15:20:30 | scraper.anti_detection    | DEBUG   | Waiting 3.6s
+15:20:53 | scraper.ubereats          | DEBUG   | Found address input with selector: input[type="text"][aria-autocomplete]
+15:21:00 | scraper.anti_detection    | DEBUG   | Waiting 1.7s
+15:21:02 | scraper.anti_detection    | DEBUG   | Waiting 2.4s
+15:21:04 | scraper.ubereats          | INFO    | Location set: Polanco V Sección, Miguel Hidalgo
+15:21:04 | scraper.ubereats          | INFO    | Searching for: Burger King
+15:21:04 | scraper.ubereats          | INFO    | Searching: https://www.ubereats.com/mx/search?q=Burger King
+15:21:06 | scraper.anti_detection    | DEBUG   | Waiting 3.4s
+15:21:11 | scraper.ubereats          | INFO    | Found 79 store cards
+15:21:11 | scraper.ubereats          | INFO    | Matched restaurant card: Burger King (Antara)
+15:21:14 | scraper.anti_detection    | DEBUG   | Waiting 2.6s
+15:21:16 | scraper.ubereats          | INFO    | Restaurant info: name=Burger King (Antara), rating=None, reviews=None
+15:21:16 | scraper.ubereats          | INFO    | Extracting delivery info
+15:21:16 | scraper.ubereats          | INFO    | Delivery info: fee=None, time=2219-37 min
+15:21:16 | scraper.ubereats          | INFO    | Looking for product: Whopper
+15:21:16 | scraper.ubereats          | DEBUG   | Found 58 items with 'li[data-testid^="store-item-"]'
+15:21:16 | scraper.ubereats          | INFO    | Product match: 'Elige 2 x $109' → $2109.0 (looking for Whopper)
+15:21:16 | scraper.ubereats          | INFO    | Looking for product: Combo Whopper Mediano
+15:21:16 | scraper.ubereats          | DEBUG   | Found 58 items with 'li[data-testid^="store-item-"]'
+15:21:16 | scraper.ubereats          | DEBUG   | Item parse error: name 're' is not defined
+15:21:16 | scraper.ubereats          | DEBUG   | Item parse error: name 're' is not defined
+15:21:16 | scraper.ubereats          | DEBUG   | Item parse error: name 're' is not defined
+15:21:16 | scraper.ubereats          | DEBUG   | Item parse error: name 're' is not defined
+15:21:17 | scraper.ubereats          | WARNING | Product 'Combo Whopper Mediano' not found in menu items
+15:21:17 | scraper.ubereats          | INFO    | Extracting promotions
+15:21:17 | scraper.ubereats          | INFO    | Found 5 promotions
+15:21:17 | scraper.ubereats          | INFO    | Screenshot saved: /Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/polanco_burger_king_20260410_152117.png
+15:21:17 | runner                    | INFO    |   ⚠️ partial (48.51s) → ubereats_polanco_Burger_King__Antara__ce7644f1.json
+15:21:17 | scraper.anti_detection    | DEBUG   | Waiting 3.7s
+15:21:28 | scraper.ubereats          | INFO    | Uber Eats browser closed
+15:21:30 | runner                    | INFO    | 
+============================================================
+15:21:30 | runner                    | INFO    | SCRAPE COMPLETE
+15:21:30 | runner                    | INFO    |   Total time:    103s (1.7m)
+15:21:30 | runner                    | INFO    |   Completed:     2/2
+15:21:30 | runner                    | INFO    |   Errors:        0
+15:21:30 | runner                    | INFO    |   Success rate:  100%
+15:21:30 | runner                    | INFO    |   Results saved: /Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/raw
+15:21:30 | runner                    | INFO    | ============================================================
+15:21:30 | runner                    | INFO    | Consolidated results: /Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/processed/consolidated_20260410_152130.json
+15:21:30 | runner                    | INFO    | Consolidating raw JSONs into CSV...
+15:21:30 | runner                    | INFO    | CSV ready: /Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/processed/competitive_data.csv

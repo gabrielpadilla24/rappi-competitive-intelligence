@@ -3,6 +3,7 @@ Uber Eats scraper implementation.
 Scrapes restaurant data from ubereats.com/mx using Playwright.
 """
 
+import re
 from typing import Optional
 
 from scrapers.base import (
@@ -291,7 +292,6 @@ class UberEatsScraper(BaseScraper):
                 r'delivery\s+fee[:\s]+\$\s*(\d[\d,]*(?:\.\d{2})?)',
                 r'(?:envío|delivery)\s*(?:gratis|free)',
             ]
-            import re
             for pattern in fee_patterns:
                 match = re.search(pattern, page_text, re.IGNORECASE)
                 if match:
@@ -301,17 +301,22 @@ class UberEatsScraper(BaseScraper):
                         delivery_info.fee_mxn = parse_price(match.group(1))
                     break
 
-            # Delivery time — look for "XX–YY min" or "XX min"
-            time_match = re.search(r'(\d+)\s*[–\-]\s*(\d+)\s*min', page_text, re.IGNORECASE)
+            # Delivery time — look for "XX–YY min" or "XX min".
+            # \d{1,3} prevents matching 4-digit numbers (years, timestamps).
+            # Validate that lo <= hi and both are realistic (1–180 min).
+            time_match = re.search(r'\b(\d{1,3})\s*[–\-]\s*(\d{1,3})\s*min\b', page_text, re.IGNORECASE)
             if time_match:
-                delivery_info.estimated_time_min = int(time_match.group(1))
-                delivery_info.estimated_time_max = int(time_match.group(2))
-            else:
-                single_match = re.search(r'(\d+)\s*min', page_text, re.IGNORECASE)
+                lo, hi = int(time_match.group(1)), int(time_match.group(2))
+                if 1 <= lo <= hi <= 180:
+                    delivery_info.estimated_time_min = lo
+                    delivery_info.estimated_time_max = hi
+            if delivery_info.estimated_time_min is None:
+                single_match = re.search(r'\b(\d{1,3})\s*min\b', page_text, re.IGNORECASE)
                 if single_match:
                     val = int(single_match.group(1))
-                    delivery_info.estimated_time_min = val
-                    delivery_info.estimated_time_max = val
+                    if 1 <= val <= 180:
+                        delivery_info.estimated_time_min = val
+                        delivery_info.estimated_time_max = val
 
             # Service fee
             svc_match = re.search(
@@ -366,15 +371,15 @@ class UberEatsScraper(BaseScraper):
             for item in items:
                 try:
                     item_text = await item.text_content() or ""
-                    if not fuzzy_match(product.search_terms, item_text):
-                        continue
-
-                    # Extract price from rich-text spans
+                    # Extract name and price from rich-text spans first.
+                    # First span = item name, subsequent spans may contain price.
+                    # We match against the item name (first span), not the full
+                    # container text, to avoid false positives where the container
+                    # holds many items and the search term appears in a sibling.
                     spans = await item.query_selector_all('span[data-testid="rich-text"]')
-                    price = None
                     item_name = item_text.strip()
+                    price = None
 
-                    # First span = name, second span = price (Uber Eats convention)
                     for i, span in enumerate(spans):
                         span_text = await span.text_content() or ""
                         if i == 0:
@@ -383,6 +388,10 @@ class UberEatsScraper(BaseScraper):
                             price = parse_price(span_text)
                             if price:
                                 break
+
+                    # Match against the resolved item name, not the full container blob
+                    if not fuzzy_match(product.search_terms, item_name):
+                        continue
 
                     if price is None:
                         # Fallback: regex on full item text
@@ -414,7 +423,6 @@ class UberEatsScraper(BaseScraper):
 
     async def _product_from_page_text(self, product: Product) -> Optional[ProductResult]:
         """Last-resort: scan full page text for product name + price."""
-        import re
         try:
             page_text = await self.page.text_content("body") or ""
             for term in product.search_terms:
@@ -488,7 +496,6 @@ class UberEatsScraper(BaseScraper):
 
     async def _find_text_by_pattern(self, pattern: str) -> Optional[str]:
         """Search the page body text for a regex pattern and return first capture."""
-        import re
         try:
             page_text = await self.page.text_content("body") or ""
             match = re.search(pattern, page_text)
@@ -500,7 +507,6 @@ class UberEatsScraper(BaseScraper):
 
     def _extract_promo_value(self, text: str) -> str:
         """Try to extract a promo value like '50%', '$30', '2x1' from text."""
-        import re
         patterns = [r'\d+%', r'\$\s*\d+', r'2x1', r'3x2']
         for pat in patterns:
             match = re.search(pat, text, re.IGNORECASE)

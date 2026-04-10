@@ -1,0 +1,83 @@
+{
+  "scrape_id": "ce7644f1-6507-4c7e-9d67-64460e8b0b89",
+  "timestamp": "2026-04-10T20:20:28.565289+00:00",
+  "platform": "ubereats",
+  "location_id": "polanco",
+  "location_address": "Av. Presidente Masaryk 340, Polanco V Sección, Miguel Hidalgo, CDMX",
+  "location_lat": 19.4326,
+  "location_lng": -99.1942,
+  "zone_type": "high_income",
+  "zone_label": "Polanco",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King (Antara)",
+    "platform_id": "https://www.ubereats.com/mx/store/burger-king-antara/mB-ric9STWimRr-RmIwxeA",
+    "available": true,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 2109.0,
+      "available": true,
+      "description": "",
+      "original_name": "Elige 2 x $109"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    }
+  ],
+  "delivery": {
+    "fee_mxn": null,
+    "service_fee_mxn": null,
+    "estimated_time_min": 2219,
+    "estimated_time_max": 37,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "- 20%",
+      "value": "20%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 26%",
+      "value": "26%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 27%",
+      "value": "27%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 47%",
+      "value": "47%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 42%",
+      "value": "42%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/polanco_burger_king_20260410_152117.png",
+  "errors": [
+    "Product 'Combo Whopper Mediano' not found"
+  ],
+  "data_completeness": "partial",
+  "scrape_duration_seconds": 48.51
+}
