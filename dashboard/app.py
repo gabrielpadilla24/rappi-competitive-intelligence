@@ -816,12 +816,20 @@ def main():
         initial_sidebar_state="expanded",
     )
 
-    # Custom CSS for tighter spacing
+    # Custom CSS
     st.markdown(
         """
         <style>
-        .block-container { padding-top: 1.5rem; }
+        .block-container { padding-top: 3.5rem; padding-bottom: 2rem; }
         .stMetric { background: #f8f9fa; border-radius: 8px; padding: 0.5rem 1rem; }
+        /* Keep the tab bar fully visible when sticky */
+        .stTabs [data-baseweb="tab-list"] {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: white;
+            padding-top: 0.25rem;
+        }
         </style>
         """,
         unsafe_allow_html=True,
