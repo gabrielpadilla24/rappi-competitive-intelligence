@@ -1,0 +1,28 @@
+{
+  "scrape_id": "1a2eae9d-f421-4e8c-8e64-8d7cfe234263",
+  "timestamp": "2026-04-14T02:24:30.777975+00:00",
+  "platform": "ubereats",
+  "location_id": "chapultepec",
+  "location_address": "Av. Chapultepec 200, Juárez, Cuauhtémoc, CDMX",
+  "location_lat": 19.4235,
+  "location_lng": -99.159,
+  "zone_type": "commercial",
+  "zone_label": "Chapultepec",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'McDonald's' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

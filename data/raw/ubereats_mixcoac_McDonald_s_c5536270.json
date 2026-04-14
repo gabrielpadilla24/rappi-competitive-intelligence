@@ -1,0 +1,28 @@
+{
+  "scrape_id": "c5536270-faca-4afa-97a3-e73c77d4d7b2",
+  "timestamp": "2026-04-14T01:11:25.805973+00:00",
+  "platform": "ubereats",
+  "location_id": "mixcoac",
+  "location_address": "Av. Revolución 1300, Mixcoac, Benito Juárez, CDMX",
+  "location_lat": 19.3768,
+  "location_lng": -99.1872,
+  "zone_type": "medium_high_income",
+  "zone_label": "Mixcoac",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'McDonald's' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

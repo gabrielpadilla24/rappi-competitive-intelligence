@@ -1,0 +1,83 @@
+{
+  "scrape_id": "6450638b-704d-4bc5-afc7-65c2155fac30",
+  "timestamp": "2026-04-14T00:58:00.330943+00:00",
+  "platform": "ubereats",
+  "location_id": "del_valle",
+  "location_address": "Av. Universidad 1200, Del Valle Centro, Benito Juárez, CDMX",
+  "location_lat": 19.3846,
+  "location_lng": -99.1736,
+  "zone_type": "medium_high_income",
+  "zone_label": "Del Valle",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's Antara",
+    "platform_id": "https://www.ubereats.com/mx/store/mcdonalds-antara/Rbz1VPBPTvWsUiLtW5wsLg",
+    "available": true,
+    "rating": 4.5,
+    "review_count": 15000
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 125.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 169.0,
+      "available": true,
+      "description": "",
+      "original_name": "McTrío Big Mac mediano+McFlurry Oreo"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 159.0,
+      "available": true,
+      "description": "",
+      "original_name": "McTrio mediano McNuggets 10 pzas"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 14,
+    "estimated_time_max": 32,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "- 43%",
+      "value": "43%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 27%",
+      "value": "27%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 41%",
+      "value": "41%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 22%",
+      "value": "22%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/ubereats/del_valle_mcdonalds_20260413_195847.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 46.85
+}

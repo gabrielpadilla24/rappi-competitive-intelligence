@@ -1,0 +1,28 @@
+{
+  "scrape_id": "53070c6f-dc88-4fc1-8ebb-51e20e48ddcc",
+  "timestamp": "2026-04-14T01:46:43.747302+00:00",
+  "platform": "ubereats",
+  "location_id": "letran_valle",
+  "location_address": "Eje 5 Sur 300, Letrán Valle, Benito Juárez, CDMX",
+  "location_lat": 19.375,
+  "location_lng": -99.157,
+  "zone_type": "medium_income",
+  "zone_label": "Letrán Valle",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'McDonald's' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

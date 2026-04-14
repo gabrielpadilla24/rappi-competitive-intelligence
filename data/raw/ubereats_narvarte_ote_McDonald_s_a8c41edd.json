@@ -1,0 +1,28 @@
+{
+  "scrape_id": "a8c41edd-52d4-4517-a1df-b38d864f84fd",
+  "timestamp": "2026-04-14T01:29:52.429369+00:00",
+  "platform": "ubereats",
+  "location_id": "narvarte_ote",
+  "location_address": "Av. Cuauhtémoc 800, Narvarte Oriente, Benito Juárez, CDMX",
+  "location_lat": 19.3915,
+  "location_lng": -99.144,
+  "zone_type": "medium_income",
+  "zone_label": "Narvarte Oriente",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'McDonald's' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

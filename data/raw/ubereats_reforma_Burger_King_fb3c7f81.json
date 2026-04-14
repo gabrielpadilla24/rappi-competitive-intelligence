@@ -1,0 +1,28 @@
+{
+  "scrape_id": "fb3c7f81-61e8-4e59-bd69-0c2863823e94",
+  "timestamp": "2026-04-14T02:11:04.819752+00:00",
+  "platform": "ubereats",
+  "location_id": "reforma",
+  "location_address": "Av. Paseo de la Reforma 500, Juárez, Cuauhtémoc, CDMX",
+  "location_lat": 19.427,
+  "location_lng": -99.1616,
+  "zone_type": "commercial",
+  "zone_label": "Reforma (Oficinas)",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'Burger King' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

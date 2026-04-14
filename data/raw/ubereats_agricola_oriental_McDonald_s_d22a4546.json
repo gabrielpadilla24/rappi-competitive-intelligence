@@ -1,0 +1,28 @@
+{
+  "scrape_id": "d22a4546-3d97-4428-9f07-3a42b27fa17a",
+  "timestamp": "2026-04-14T01:38:17.984854+00:00",
+  "platform": "ubereats",
+  "location_id": "agricola_oriental",
+  "location_address": "Calz. Ignacio Zaragoza 600, Agrícola Oriental, Iztacalco, CDMX",
+  "location_lat": 19.3965,
+  "location_lng": -99.0863,
+  "zone_type": "medium_income",
+  "zone_label": "Agrícola Oriental",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'McDonald's' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

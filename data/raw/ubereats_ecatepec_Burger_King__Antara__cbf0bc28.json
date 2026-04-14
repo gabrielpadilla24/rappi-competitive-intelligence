@@ -1,0 +1,87 @@
+{
+  "scrape_id": "cbf0bc28-638a-400c-913f-f0c038d6e19d",
+  "timestamp": "2026-04-14T01:59:57.244277+00:00",
+  "platform": "ubereats",
+  "location_id": "ecatepec",
+  "location_address": "Av. Central 200, Ecatepec Centro, Ecatepec, Estado de México",
+  "location_lat": 19.6012,
+  "location_lng": -99.044,
+  "zone_type": "low_income",
+  "zone_label": "Ecatepec (Edo. Méx.)",
+  "city": "Ecatepec",
+  "restaurant": {
+    "name": "Burger King (Antara)",
+    "platform_id": "https://www.ubereats.com/mx/store/burger-king-antara/mB-ric9STWimRr-RmIwxeA",
+    "available": true,
+    "rating": 4.4,
+    "review_count": 7000
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 14,
+    "estimated_time_max": 32,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "- 26%",
+      "value": "26%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 20%",
+      "value": "20%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 27%",
+      "value": "27%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 47%",
+      "value": "47%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 22%",
+      "value": "22%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 42%",
+      "value": "42%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/ubereats/ecatepec_burger_king_20260413_210042.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 45.5
+}

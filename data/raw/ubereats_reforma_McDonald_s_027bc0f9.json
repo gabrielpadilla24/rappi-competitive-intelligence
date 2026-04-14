@@ -1,0 +1,28 @@
+{
+  "scrape_id": "027bc0f9-6e92-480e-9508-cd10848c4c7a",
+  "timestamp": "2026-04-14T02:06:49.914224+00:00",
+  "platform": "ubereats",
+  "location_id": "reforma",
+  "location_address": "Av. Paseo de la Reforma 500, Juárez, Cuauhtémoc, CDMX",
+  "location_lat": 19.427,
+  "location_lng": -99.1616,
+  "zone_type": "commercial",
+  "zone_label": "Reforma (Oficinas)",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'McDonald's' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}
