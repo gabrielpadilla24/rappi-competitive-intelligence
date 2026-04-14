@@ -1,0 +1,93 @@
+{
+  "scrape_id": "21436a3c-f2f5-4284-a33a-7aed88268246",
+  "timestamp": "2026-04-14T03:30:54.491731+00:00",
+  "platform": "ubereats",
+  "location_id": "chapultepec",
+  "location_address": "Av. Chapultepec 200, Juárez, Cuauhtémoc, CDMX",
+  "location_lat": 19.4235,
+  "location_lng": -99.159,
+  "zone_type": "commercial",
+  "zone_label": "Chapultepec",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King (Genova)",
+    "platform_id": "https://www.ubereats.com/mx/store/burger-king-genova/Bw8hTDFfSdaToOnt6CuLGg",
+    "available": true,
+    "rating": 4.3,
+    "review_count": 10000
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 10,
+    "estimated_time_max": 27,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "- 20%",
+      "value": "20%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 26%",
+      "value": "26%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 27%",
+      "value": "27%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 47%",
+      "value": "47%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 22%",
+      "value": "22%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 42%",
+      "value": "42%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 40%",
+      "value": "40%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/ubereats/chapultepec_burger_king_20260413_223139.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 45.59
+}

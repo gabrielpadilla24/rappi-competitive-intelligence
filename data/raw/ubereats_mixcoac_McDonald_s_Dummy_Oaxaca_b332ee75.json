@@ -1,0 +1,61 @@
+{
+  "scrape_id": "b332ee75-71c8-46f8-b96b-c99cdb09c716",
+  "timestamp": "2026-04-14T02:56:08.618170+00:00",
+  "platform": "ubereats",
+  "location_id": "mixcoac",
+  "location_address": "Av. Revolución 1300, Mixcoac, Benito Juárez, CDMX",
+  "location_lat": 19.3768,
+  "location_lng": -99.1872,
+  "zone_type": "medium_high_income",
+  "zone_label": "Mixcoac",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's Dummy Oaxaca",
+    "platform_id": "https://www.ubereats.com/mx/store/mcdonalds-dummy-oaxaca/vlxAQu95Q_m0JW2zC4jwvg",
+    "available": true,
+    "rating": null,
+    "review_count": 1
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 96.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac®"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 60,
+    "estimated_time_max": 60,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/ubereats/mixcoac_mcdonalds_20260413_215653.png",
+  "errors": [
+    "Product 'Combo Big Mac Mediano' not found",
+    "Product 'McNuggets 10 piezas' not found"
+  ],
+  "data_completeness": "partial",
+  "scrape_duration_seconds": 44.81
+}

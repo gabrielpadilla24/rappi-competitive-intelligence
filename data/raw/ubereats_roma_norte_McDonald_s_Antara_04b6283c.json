@@ -1,0 +1,83 @@
+{
+  "scrape_id": "04b6283c-5bfc-45d9-ad15-d61edbbec5bd",
+  "timestamp": "2026-04-14T02:45:18.225082+00:00",
+  "platform": "ubereats",
+  "location_id": "roma_norte",
+  "location_address": "Av. Álvaro Obregón 120, Roma Norte, Cuauhtémoc, CDMX",
+  "location_lat": 19.4195,
+  "location_lng": -99.1619,
+  "zone_type": "high_income",
+  "zone_label": "Roma Norte",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's Antara",
+    "platform_id": "https://www.ubereats.com/mx/store/mcdonalds-antara/Rbz1VPBPTvWsUiLtW5wsLg",
+    "available": true,
+    "rating": 4.5,
+    "review_count": 15000
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 125.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 169.0,
+      "available": true,
+      "description": "",
+      "original_name": "McTrío Big Mac mediano+McFlurry Oreo"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 159.0,
+      "available": true,
+      "description": "",
+      "original_name": "McTrio mediano McNuggets 10 pzas"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 14,
+    "estimated_time_max": 34,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "- 43%",
+      "value": "43%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 27%",
+      "value": "27%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 41%",
+      "value": "41%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 22%",
+      "value": "22%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/ubereats/roma_norte_mcdonalds_20260413_214611.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 53.36
+}

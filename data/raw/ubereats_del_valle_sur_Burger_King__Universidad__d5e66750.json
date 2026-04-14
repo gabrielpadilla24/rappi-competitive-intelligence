@@ -1,0 +1,93 @@
+{
+  "scrape_id": "d5e66750-e3c5-4a07-bbd3-ec1a20087ac2",
+  "timestamp": "2026-04-14T02:52:08.474634+00:00",
+  "platform": "ubereats",
+  "location_id": "del_valle_sur",
+  "location_address": "Av. Coyoacán 1500, Del Valle Sur, Benito Juárez, CDMX",
+  "location_lat": 19.3723,
+  "location_lng": -99.1667,
+  "zone_type": "medium_high_income",
+  "zone_label": "Del Valle Sur",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King (Universidad)",
+    "platform_id": "https://www.ubereats.com/mx/store/burger-king-universidad/I-j6eXrLS7ep6s3HDHWomw",
+    "available": true,
+    "rating": 4.6,
+    "review_count": 10000
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 11,
+    "estimated_time_max": 11,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "- 20%",
+      "value": "20%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 26%",
+      "value": "26%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 27%",
+      "value": "27%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 22%",
+      "value": "22%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 47%",
+      "value": "47%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 42%",
+      "value": "42%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 31%",
+      "value": "31%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/ubereats/del_valle_sur_burger_king_20260413_215253.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 45.31
+}

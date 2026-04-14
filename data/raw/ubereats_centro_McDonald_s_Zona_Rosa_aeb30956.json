@@ -1,0 +1,83 @@
+{
+  "scrape_id": "aeb30956-c486-4cc4-a931-5342f3b9e70a",
+  "timestamp": "2026-04-14T03:28:33.120170+00:00",
+  "platform": "ubereats",
+  "location_id": "centro",
+  "location_address": "Av. 5 de Febrero 100, Centro Histórico, Cuauhtémoc, CDMX",
+  "location_lat": 19.4326,
+  "location_lng": -99.1332,
+  "zone_type": "commercial",
+  "zone_label": "Centro Histórico",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's Zona Rosa",
+    "platform_id": "https://www.ubereats.com/mx/store/mcdonalds-zona-rosa/8sqiuGSzTS6rGChzhlWTlw",
+    "available": true,
+    "rating": 4.6,
+    "review_count": 20000
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 125.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 169.0,
+      "available": true,
+      "description": "",
+      "original_name": "McTrío Big Mac mediano+McFlurry Oreo"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 159.0,
+      "available": true,
+      "description": "",
+      "original_name": "McTrio mediano McNuggets 10 pzas"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 11,
+    "estimated_time_max": 29,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "- 27%",
+      "value": "27%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 43%",
+      "value": "43%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 22%",
+      "value": "22%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 41%",
+      "value": "41%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/ubereats/centro_mcdonalds_20260413_222919.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 46.97
+}

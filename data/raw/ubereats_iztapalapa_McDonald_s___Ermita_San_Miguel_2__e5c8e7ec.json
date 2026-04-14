@@ -1,0 +1,89 @@
+{
+  "scrape_id": "e5c8e7ec-55d0-4d68-8783-57bfaa779ac1",
+  "timestamp": "2026-04-14T03:11:03.038147+00:00",
+  "platform": "ubereats",
+  "location_id": "iztapalapa",
+  "location_address": "Av. Ermita Iztapalapa 3000, Santa Cruz Meyehualco, Iztapalapa, CDMX",
+  "location_lat": 19.3579,
+  "location_lng": -99.052,
+  "zone_type": "low_income",
+  "zone_label": "Iztapalapa",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's  (Ermita San Miguel 2)",
+    "platform_id": "https://www.ubereats.com/mx/store/mcdonalds-ermita-san-miguel-2/ep8YfaLjVmiyOgjZmHaJHg",
+    "available": true,
+    "rating": 4.5,
+    "review_count": 1000
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 125.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 169.0,
+      "available": true,
+      "description": "",
+      "original_name": "McTrío Big Mac mediano+McFlurry Oreo"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 159.0,
+      "available": true,
+      "description": "",
+      "original_name": "McTrio mediano McNuggets 10 pzas"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 13,
+    "estimated_time_max": 33,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "- 43%",
+      "value": "43%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 22%",
+      "value": "22%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 41%",
+      "value": "41%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 19%",
+      "value": "19%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 27%",
+      "value": "27%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/ubereats/iztapalapa_mcdonalds_20260413_221202.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 59.73
+}

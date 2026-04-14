@@ -1,0 +1,61 @@
+{
+  "scrape_id": "348c4f2a-b4d9-4fbe-b42c-129b54b7737e",
+  "timestamp": "2026-04-14T03:08:38.087415+00:00",
+  "platform": "ubereats",
+  "location_id": "tacuba",
+  "location_address": "Calz. México-Tacuba 500, Tacuba, Miguel Hidalgo, CDMX",
+  "location_lat": 19.452,
+  "location_lng": -99.18,
+  "zone_type": "medium_income",
+  "zone_label": "Tacuba",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's Dummy Oaxaca",
+    "platform_id": "https://www.ubereats.com/mx/store/mcdonalds-dummy-oaxaca/vlxAQu95Q_m0JW2zC4jwvg",
+    "available": true,
+    "rating": null,
+    "review_count": 1
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 96.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac®"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 51,
+    "estimated_time_max": 67,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/ubereats/tacuba_mcdonalds_20260413_220923.png",
+  "errors": [
+    "Product 'Combo Big Mac Mediano' not found",
+    "Product 'McNuggets 10 piezas' not found"
+  ],
+  "data_completeness": "partial",
+  "scrape_duration_seconds": 45.79
+}
