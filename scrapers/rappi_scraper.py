@@ -15,7 +15,7 @@ _SUBCATEGORY_KEYWORDS = frozenset({
 })
 
 from scrapers.base import (
-    BaseScraper, RestaurantResult, DeliveryInfo,
+    BaseScraper, ScrapeResult, RestaurantResult, DeliveryInfo,
     ProductResult, PromotionInfo,
 )
 from scrapers.utils.anti_detection import (
@@ -42,6 +42,7 @@ class RappiScraper(BaseScraper):
         self._api_responses: list[dict] = []
         self._current_restaurant_url: Optional[str] = None
         self._restaurant_search_count = 0  # tracks calls to search_restaurant()
+        self._on_subcategory_store: bool = False  # True when only a sub-category store was found
 
     # ------------------------------------------------------------------
     # Lifecycle
@@ -88,6 +89,38 @@ class RappiScraper(BaseScraper):
             pass
 
     # ------------------------------------------------------------------
+    # High-level orchestration override
+    # ------------------------------------------------------------------
+
+    async def scrape_restaurant_at_location(
+        self,
+        location,
+        restaurant,
+        products,
+    ) -> ScrapeResult:
+        """
+        Override BaseScraper to post-process subcategory-store results.
+
+        When only a sub-category store (e.g. "McDonalds Postres") was found and
+        none of the target products exist there, the result should be a clean
+        'failed' — not 'partial' with misleading delivery data from the wrong
+        store.
+        """
+        self._on_subcategory_store = False
+        result = await super().scrape_restaurant_at_location(location, restaurant, products)
+
+        if self._on_subcategory_store and all(not p.available for p in result.products):
+            result.data_completeness = "failed"
+            result.delivery = None  # delivery info from a wrong store is meaningless
+            if not any("sub-category" in e for e in result.errors):
+                result.errors.append(
+                    "Only sub-category store found (no main branch in delivery zone); "
+                    "product data unavailable"
+                )
+
+        return result
+
+    # ------------------------------------------------------------------
     # set_location
     # ------------------------------------------------------------------
 
@@ -116,20 +149,29 @@ class RappiScraper(BaseScraper):
             base_url = PLATFORM_URLS["rappi"]["base"]
             self.logger.info(f"Navigating to {base_url}")
             await self.page.goto(base_url, timeout=PAGE_LOAD_TIMEOUT, wait_until="domcontentloaded")
-            await random_delay(2, 4)
+            # Wait longer so the SPA renders fully and any address modal has time to appear
+            await random_delay(5, 7)
+            await simulate_human_scroll(self.page, scrolls=1)
 
             address_set = await self._fill_address_modal(location.address)
             if not address_set:
-                self.logger.warning("Could not set address on Rappi — proceeding with default location")
-                # Rappi may still show restaurants based on IP geolocation
-                content = await self.page.content()
-                has_restaurants = any(
-                    kw in content.lower()
-                    for kw in ["restaurante", "restaurant", "tienda", "store"]
+                # Modal didn't appear — Rappi's UI may have changed.
+                # Navigate directly to /restaurantes; the browser geolocation already set
+                # above will be used by Rappi to show nearby restaurants.
+                self.logger.warning(
+                    "Could not set address via modal — navigating to /restaurantes "
+                    "with browser geolocation"
                 )
-                if has_restaurants:
-                    self.logger.info("Page has restaurant content — using default location")
+                try:
+                    restaurants_url = PLATFORM_URLS["rappi"]["restaurants"]
+                    await self.page.goto(
+                        restaurants_url, timeout=PAGE_LOAD_TIMEOUT, wait_until="domcontentloaded"
+                    )
+                    await random_delay(2, 3)
+                    self.logger.info("Navigated to /restaurantes with browser geolocation")
                     return True
+                except Exception as e:
+                    self.logger.warning(f"Fallback /restaurantes navigation failed: {e}")
                 return False
 
             self.logger.info(f"Location set: {location.short_name}")
@@ -141,13 +183,49 @@ class RappiScraper(BaseScraper):
 
     async def _fill_address_modal(self, address: str) -> bool:
         """Interact with Rappi's address modal or input field."""
-        # Rappi often shows a location modal on first load
+        # Scroll once more to trigger any lazy-loaded modals before scanning
+        await simulate_human_scroll(self.page, scrolls=1)
+        await random_delay(1, 2)
+
+        # Ordered from most specific (Rappi-specific) to most generic.
+        # Includes both direct inputs and button triggers that open an input.
         modal_triggers = [
+            # Rappi data-qa patterns
+            '[data-qa="input-address"]',
+            '[data-qa*="address-input"]',
+            '[data-qa*="location-input"]',
+            '[data-qa*="search-address"]',
+            # Class-based inputs
+            '[class*="address-search"] input',
+            '[class*="AddressSearch"] input',
+            '[class*="address-input"]',
+            '[class*="AddressInput"]',
+            '[class*="location-input"]',
+            # ARIA / role patterns
+            '[role="combobox"][aria-label*="irección"]',
+            '[role="combobox"][aria-label*="iudad"]',
+            '[role="searchbox"]',
+            # Placeholder-based
+            '[placeholder*="irección"]',
+            '[placeholder*="Busca tu dirección"]',
+            '[placeholder*="Ingresa tu dirección"]',
+            '[placeholder*="¿Dónde"]',
+            '[placeholder*="Ingresa"]',
+            '[placeholder*="calle"]',
+            '[placeholder*="Buscar"]',
+            # Text-based modal triggers (buttons/labels that open the actual input)
             'text="Ingresa tu dirección"',
             'text="¿Dónde quieres recibir"',
             'text="Selecciona tu dirección"',
-            '[placeholder*="dirección"]',
-            '[placeholder*="Busca tu dirección"]',
+            'text="¿A dónde te llevamos?"',
+            'text="Agregar dirección"',
+            'text="Tu dirección"',
+            'text="Ciudad de México"',
+            # Autocomplete-based
+            'input[autocomplete*="address"]',
+            'input[autocomplete*="street"]',
+            # Input type fallbacks
+            'input[type="search"]',
             'input[type="text"]',
         ]
 
@@ -240,10 +318,12 @@ class RappiScraper(BaseScraper):
         """Search for a restaurant and navigate to its page."""
         try:
             self._restaurant_search_count += 1
+            self._on_subcategory_store = False
 
-            # From the second restaurant onward, add a longer delay and return to
-            # the base URL so Rappi sees a fresh navigation rather than rapid
-            # same-session requests — reduces bot-detection false positives.
+            # From the second restaurant onward, add a longer delay and navigate to
+            # /restaurantes so the search has proper location context.
+            # Using /restaurantes (not the home page) gives better search results
+            # because it applies the geolocation that was set during set_location.
             if self._restaurant_search_count > 1:
                 self.logger.info(
                     f"Extended anti-bot delay before restaurant "
@@ -251,7 +331,7 @@ class RappiScraper(BaseScraper):
                 )
                 await random_delay(8, 12)
                 await self.page.goto(
-                    PLATFORM_URLS["rappi"]["base"],
+                    PLATFORM_URLS["rappi"]["restaurants"],
                     timeout=PAGE_LOAD_TIMEOUT,
                     wait_until="domcontentloaded",
                 )
@@ -386,6 +466,7 @@ class RappiScraper(BaseScraper):
                         f"Best match '{best_text[:60]}' looks like a sub-category store "
                         f"(no main branch found). Proceeding anyway — product matches may fail."
                     )
+                    self._on_subcategory_store = True
                 else:
                     self.logger.info(f"Matched Rappi card: {best_text[:60]}")
                 href = await best_card.get_attribute("href") or ""
