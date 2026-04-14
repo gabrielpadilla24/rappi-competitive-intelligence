@@ -1,0 +1,50 @@
+{
+  "scrape_id": "089dd7ad-33e6-4230-9298-90584f87bfd8",
+  "timestamp": "2026-04-14T04:18:11.061835+00:00",
+  "platform": "rappi",
+  "location_id": "del_valle",
+  "location_address": "Av. Universidad 1200, Del Valle Centro, Benito Juárez, CDMX",
+  "location_lat": 19.3846,
+  "location_lng": -99.1736,
+  "zone_type": "medium_high_income",
+  "zone_label": "Del Valle",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King - Juárez",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+    "available": true,
+    "rating": 3.5,
+    "review_count": 115
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 319.0,
+      "available": true,
+      "description": "",
+      "original_name": "Family King PlusSabor para compartir en familia: 1 Whopper®"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 13,
+    "estimated_time_max": 13,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/rappi/del_valle_burger_king_20260413_231912.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 61.46
+}

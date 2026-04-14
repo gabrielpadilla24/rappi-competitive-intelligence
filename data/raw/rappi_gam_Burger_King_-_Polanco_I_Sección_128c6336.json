@@ -1,0 +1,50 @@
+{
+  "scrape_id": "128c6336-3711-4c6b-8467-cf0554f0c039",
+  "timestamp": "2026-04-14T05:57:05.204564+00:00",
+  "platform": "rappi",
+  "location_id": "gam",
+  "location_address": "Gran Canal 500, Casas Alemán, Gustavo A. Madero, CDMX",
+  "location_lat": 19.4836,
+  "location_lng": -99.0921,
+  "zone_type": "low_income",
+  "zone_label": "GAM Norte",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King - Polanco I Sección",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/300000036",
+    "available": true,
+    "rating": 3.9,
+    "review_count": 234
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 319.0,
+      "available": true,
+      "description": "",
+      "original_name": "Family King PlusSabor para compartir en familia: 1 Whopper®"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 15,
+    "estimated_time_max": 15,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/rappi/gam_burger_king_20260414_005804.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 59.63
+}

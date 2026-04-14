@@ -1,0 +1,58 @@
+{
+  "scrape_id": "176c0dd7-d6b0-4014-bd83-a7b90e83e8d1",
+  "timestamp": "2026-04-14T05:07:01.545154+00:00",
+  "platform": "rappi",
+  "location_id": "letran_valle",
+  "location_address": "Eje 5 Sur 300, Letrán Valle, Benito Juárez, CDMX",
+  "location_lat": 19.375,
+  "location_lng": -99.157,
+  "zone_type": "medium_income",
+  "zone_label": "Letrán Valle",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's - Juárez",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/1306703465-mcdonalds",
+    "available": true,
+    "rating": 3.7,
+    "review_count": 270
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 145.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac TocinoBig Mac Tocino$ 145.00"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 199.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac Tocino + favoritosMcTrío Big Mac Tocino + Hamburgues"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 149.0,
+      "available": true,
+      "description": "",
+      "original_name": "Paquete BotaneroDisfruta tus partidos favoritos con 10 McNug"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 12,
+    "estimated_time_max": 12,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/rappi/letran_valle_mcdonalds_20260414_000818.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 77.31
+}

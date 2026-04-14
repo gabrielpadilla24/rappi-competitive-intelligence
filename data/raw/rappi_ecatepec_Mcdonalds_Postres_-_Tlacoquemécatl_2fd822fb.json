@@ -1,0 +1,62 @@
+{
+  "scrape_id": "2fd822fb-c654-4981-9b18-ca18bb773a07",
+  "timestamp": "2026-04-14T06:02:07.753533+00:00",
+  "platform": "rappi",
+  "location_id": "ecatepec",
+  "location_address": "Av. Central 200, Ecatepec Centro, Ecatepec, Estado de México",
+  "location_lat": 19.6012,
+  "location_lng": -99.044,
+  "zone_type": "low_income",
+  "zone_label": "Ecatepec (Edo. Méx.)",
+  "city": "Ecatepec",
+  "restaurant": {
+    "name": "Mcdonalds Postres - Tlacoquemécatl",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/1930253514",
+    "available": true,
+    "rating": 4.2,
+    "review_count": 10
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 40,
+    "estimated_time_max": 40,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/rappi/ecatepec_mcdonalds_20260414_010308.png",
+  "errors": [
+    "Product 'Big Mac' not found",
+    "Product 'Combo Big Mac Mediano' not found",
+    "Product 'McNuggets 10 piezas' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 60.62
+}

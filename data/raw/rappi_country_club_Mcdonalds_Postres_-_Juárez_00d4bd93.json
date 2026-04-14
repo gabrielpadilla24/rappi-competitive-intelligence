@@ -1,0 +1,62 @@
+{
+  "scrape_id": "00d4bd93-7b22-4313-9f5f-8726bb6b9c3a",
+  "timestamp": "2026-04-14T04:29:19.787356+00:00",
+  "platform": "rappi",
+  "location_id": "country_club",
+  "location_address": "Calz. de Tlalpan 2000, Country Club, Coyoacán, CDMX",
+  "location_lat": 19.3594,
+  "location_lng": -99.1534,
+  "zone_type": "medium_high_income",
+  "zone_label": "Coyoacán",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Mcdonalds Postres - Juárez",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/1930253992",
+    "available": true,
+    "rating": 4.2,
+    "review_count": 10
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 12,
+    "estimated_time_max": 12,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/rappi/country_club_mcdonalds_20260413_233020.png",
+  "errors": [
+    "Product 'Big Mac' not found",
+    "Product 'Combo Big Mac Mediano' not found",
+    "Product 'McNuggets 10 piezas' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 61.19
+}

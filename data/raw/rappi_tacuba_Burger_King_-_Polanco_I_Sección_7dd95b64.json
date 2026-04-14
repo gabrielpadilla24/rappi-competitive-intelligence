@@ -1,0 +1,50 @@
+{
+  "scrape_id": "7dd95b64-cea7-4658-a691-e6aa77d3b4ad",
+  "timestamp": "2026-04-14T05:14:33.323696+00:00",
+  "platform": "rappi",
+  "location_id": "tacuba",
+  "location_address": "Calz. México-Tacuba 500, Tacuba, Miguel Hidalgo, CDMX",
+  "location_lat": 19.452,
+  "location_lng": -99.18,
+  "zone_type": "medium_income",
+  "zone_label": "Tacuba",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King - Polanco I Sección",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/300000036",
+    "available": true,
+    "rating": 3.9,
+    "review_count": 234
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 319.0,
+      "available": true,
+      "description": "",
+      "original_name": "Family King PlusSabor para compartir en familia: 1 Whopper®"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 15,
+    "estimated_time_max": 15,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/rappi/tacuba_burger_king_20260414_001536.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 63.56
+}

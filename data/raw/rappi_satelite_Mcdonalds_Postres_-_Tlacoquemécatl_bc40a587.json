@@ -1,0 +1,62 @@
+{
+  "scrape_id": "bc40a587-9cb9-4601-9211-d0cf74aebccf",
+  "timestamp": "2026-04-14T06:08:08.351664+00:00",
+  "platform": "rappi",
+  "location_id": "satelite",
+  "location_address": "Blvd. Manuel Ávila Camacho 1500, Cd. Satélite, Naucalpan, Edo. Méx.",
+  "location_lat": 19.504,
+  "location_lng": -99.233,
+  "zone_type": "low_income",
+  "zone_label": "Satélite (Edo. Méx.)",
+  "city": "Naucalpan",
+  "restaurant": {
+    "name": "Mcdonalds Postres - Tlacoquemécatl",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/1930253514",
+    "available": true,
+    "rating": 4.2,
+    "review_count": 10
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 40,
+    "estimated_time_max": 40,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/rappi/satelite_mcdonalds_20260414_010908.png",
+  "errors": [
+    "Product 'Big Mac' not found",
+    "Product 'Combo Big Mac Mediano' not found",
+    "Product 'McNuggets 10 piezas' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 60.7
+}

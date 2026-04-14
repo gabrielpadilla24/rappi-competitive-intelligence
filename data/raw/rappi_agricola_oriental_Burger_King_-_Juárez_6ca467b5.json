@@ -1,0 +1,50 @@
+{
+  "scrape_id": "6ca467b5-c7c4-439c-ad9d-1dd3f6885f73",
+  "timestamp": "2026-04-14T05:01:57.240576+00:00",
+  "platform": "rappi",
+  "location_id": "agricola_oriental",
+  "location_address": "Calz. Ignacio Zaragoza 600, Agrícola Oriental, Iztacalco, CDMX",
+  "location_lat": 19.3965,
+  "location_lng": -99.0863,
+  "zone_type": "medium_income",
+  "zone_label": "Agrícola Oriental",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King - Juárez",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+    "available": true,
+    "rating": 3.5,
+    "review_count": 115
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 319.0,
+      "available": true,
+      "description": "",
+      "original_name": "Family King PlusSabor para compartir en familia: 1 Whopper®"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 13,
+    "estimated_time_max": 13,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/rappi/agricola_oriental_burger_king_20260414_000259.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 61.85
+}

@@ -1,0 +1,62 @@
+{
+  "scrape_id": "d34e8f37-dde3-4f66-b165-7ef9b8550411",
+  "timestamp": "2026-04-14T05:13:30.880169+00:00",
+  "platform": "rappi",
+  "location_id": "tacuba",
+  "location_address": "Calz. México-Tacuba 500, Tacuba, Miguel Hidalgo, CDMX",
+  "location_lat": 19.452,
+  "location_lng": -99.18,
+  "zone_type": "medium_income",
+  "zone_label": "Tacuba",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Mcdonalds Postres - Tlacoquemécatl",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/1930253514",
+    "available": true,
+    "rating": 4.2,
+    "review_count": 10
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 40,
+    "estimated_time_max": 40,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/rappi/tacuba_mcdonalds_20260414_001433.png",
+  "errors": [
+    "Product 'Big Mac' not found",
+    "Product 'Combo Big Mac Mediano' not found",
+    "Product 'McNuggets 10 piezas' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 62.44
+}

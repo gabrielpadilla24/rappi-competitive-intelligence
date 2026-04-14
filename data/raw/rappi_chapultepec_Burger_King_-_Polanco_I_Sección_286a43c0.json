@@ -1,0 +1,50 @@
+{
+  "scrape_id": "286a43c0-84e3-4c8c-b798-f5ad635aefd4",
+  "timestamp": "2026-04-14T06:28:02.817887+00:00",
+  "platform": "rappi",
+  "location_id": "chapultepec",
+  "location_address": "Av. Chapultepec 200, Juárez, Cuauhtémoc, CDMX",
+  "location_lat": 19.4235,
+  "location_lng": -99.159,
+  "zone_type": "commercial",
+  "zone_label": "Chapultepec",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King - Polanco I Sección",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/300000036",
+    "available": true,
+    "rating": 3.9,
+    "review_count": 234
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 319.0,
+      "available": true,
+      "description": "",
+      "original_name": "Family King PlusSabor para compartir en familia: 1 Whopper®"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 15,
+    "estimated_time_max": 15,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/rappi/chapultepec_burger_king_20260414_012859.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 57.02
+}

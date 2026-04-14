@@ -1,0 +1,50 @@
+{
+  "scrape_id": "11043e7a-ab60-4542-b3ca-4c60e33a733b",
+  "timestamp": "2026-04-14T04:36:25.772504+00:00",
+  "platform": "rappi",
+  "location_id": "florida",
+  "location_address": "Insurgentes Sur 1800, Florida, Álvaro Obregón, CDMX",
+  "location_lat": 19.3645,
+  "location_lng": -99.1871,
+  "zone_type": "medium_high_income",
+  "zone_label": "Insurgentes Sur",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King - Juárez",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+    "available": true,
+    "rating": 3.5,
+    "review_count": 115
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 319.0,
+      "available": true,
+      "description": "",
+      "original_name": "Family King PlusSabor para compartir en familia: 1 Whopper®"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 13,
+    "estimated_time_max": 13,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/rappi/florida_burger_king_20260413_233726.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 61.26
+}

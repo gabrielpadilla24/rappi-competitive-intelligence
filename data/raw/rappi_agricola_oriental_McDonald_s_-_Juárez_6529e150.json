@@ -1,0 +1,58 @@
+{
+  "scrape_id": "6529e150-33b5-48c7-aab3-d30a726bf2e2",
+  "timestamp": "2026-04-14T05:00:36.185629+00:00",
+  "platform": "rappi",
+  "location_id": "agricola_oriental",
+  "location_address": "Calz. Ignacio Zaragoza 600, Agrícola Oriental, Iztacalco, CDMX",
+  "location_lat": 19.3965,
+  "location_lng": -99.0863,
+  "zone_type": "medium_income",
+  "zone_label": "Agrícola Oriental",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's - Juárez",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/1306703465-mcdonalds",
+    "available": true,
+    "rating": 3.7,
+    "review_count": 270
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 145.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac TocinoBig Mac Tocino$ 145.00"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 199.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac Tocino + favoritosMcTrío Big Mac Tocino + Hamburgues"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 149.0,
+      "available": true,
+      "description": "",
+      "original_name": "Paquete BotaneroDisfruta tus partidos favoritos con 10 McNug"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 12,
+    "estimated_time_max": 12,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/rappi/agricola_oriental_mcdonalds_20260414_000157.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 81.05
+}
