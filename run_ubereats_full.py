@@ -361,7 +361,7 @@ async def run_full(batch_size: int) -> list[dict]:
 
     try:
         for batch_idx, batch_locs in enumerate(batches):
-            # ── Between-batch pause ───────────────────────────────────────
+            # ── Between-batch pause + browser session reset ───────────────
             if batch_idx > 0:
                 pause = _gauss_clamp(
                     BATCH_PAUSE_MEAN, BATCH_PAUSE_SIGMA,
@@ -372,6 +372,15 @@ async def run_full(batch_size: int) -> list[dict]:
                     f"(batch {batch_idx + 1}/{len(batches)})"
                 )
                 await asyncio.sleep(pause)
+
+                # Fresh browser session: resets cookies, fingerprint, and session state.
+                # Counter resets prevent inflated inter-restaurant delays in the new session.
+                logger.info("🔄 Browser session reset between batches")
+                await scraper.teardown()
+                await scraper.setup()
+                scraper._consecutive_blocks = 0
+                scraper._restaurant_search_count = 0
+                logger.info("🔄 Browser session reset complete")
 
             logger.info(
                 f"\n{'━'*60}\n"
