@@ -87,12 +87,12 @@ from config.products import (
 )
 
 # ── Constants ────────────────────────────────────────────────────────────────
-BATCH_SIZE            = 5
+BATCH_SIZE            = 3      # smaller batches → more browser resets → fresher sessions
 BATCH_PAUSE_MEAN      = 60.0   # seconds
 BATCH_PAUSE_SIGMA     = 10.0
 BATCH_PAUSE_LO        = 45.0
 BATCH_PAUSE_HI        = 90.0
-RETRY_WAIT_SECS       = 180    # 3 minutes on failure
+RETRY_WAIT_SECS       = 60     # 1 minute on failure (was 3 min — too slow given failure rate)
 
 # Fixed product columns — order determines CSV column order
 _PRODUCT_IDS: list[str] = [

@@ -149,7 +149,11 @@ class RappiScraper(BaseScraper):
             base_url = PLATFORM_URLS["rappi"]["base"]
             self.logger.info(f"Navigating to {base_url}")
             await self.page.goto(base_url, timeout=PAGE_LOAD_TIMEOUT, wait_until="domcontentloaded")
-            # Wait longer so the SPA renders fully and any address modal has time to appear
+            # Wait for SPA to finish loading, then add a human-like delay
+            try:
+                await self.page.wait_for_load_state("networkidle", timeout=15000)
+            except Exception:
+                pass
             await random_delay(5, 7)
             await simulate_human_scroll(self.page, scrolls=1)
 
@@ -167,7 +171,12 @@ class RappiScraper(BaseScraper):
                     await self.page.goto(
                         restaurants_url, timeout=PAGE_LOAD_TIMEOUT, wait_until="domcontentloaded"
                     )
-                    await random_delay(2, 3)
+                    # Wait for the SPA to finish loading restaurant listings
+                    try:
+                        await self.page.wait_for_load_state("networkidle", timeout=15000)
+                    except Exception:
+                        pass
+                    await random_delay(5, 7)
                     self.logger.info("Navigated to /restaurantes with browser geolocation")
                     return True
                 except Exception as e:
@@ -335,6 +344,10 @@ class RappiScraper(BaseScraper):
                     timeout=PAGE_LOAD_TIMEOUT,
                     wait_until="domcontentloaded",
                 )
+                try:
+                    await self.page.wait_for_load_state("networkidle", timeout=15000)
+                except Exception:
+                    pass
                 await random_delay(2, 4)
 
             # Reset captured API responses for this restaurant
@@ -405,6 +418,10 @@ class RappiScraper(BaseScraper):
             await self.page.goto(
                 restaurants_url, timeout=PAGE_LOAD_TIMEOUT, wait_until="domcontentloaded"
             )
+            try:
+                await self.page.wait_for_load_state("networkidle", timeout=15000)
+            except Exception:
+                pass
             await random_delay(2, 3)
             await simulate_human_scroll(self.page, scrolls=3)
             return await self._find_and_navigate_to_restaurant(restaurant)
@@ -423,6 +440,15 @@ class RappiScraper(BaseScraper):
             'a[href*="/restaurantes/"]',
             'a[href*="/tiendas/"]',
         ]
+
+        # Wait up to 15 s for at least one card to appear before scanning.
+        # This prevents false "0 results" on pages that are still rendering.
+        for selector in card_selectors:
+            try:
+                await self.page.wait_for_selector(selector, timeout=15000)
+                break  # at least one card type is present — proceed to scan
+            except Exception:
+                continue  # this selector never appeared; try the next one
 
         for selector in card_selectors:
             try:
