@@ -65,8 +65,8 @@ PLATFORM_URLS = {
         "feed": "https://www.ubereats.com/mx/feed",
     },
     "didifood": {
-        "base": "https://didi-food.com/es-MX/food/",
-        "feed": "https://didi-food.com/es-MX/food/",
+        "base": "https://www.didi-food.com/es-MX/food",
+        "feed": "https://www.didi-food.com/es-MX/food",
     },
 }
 
