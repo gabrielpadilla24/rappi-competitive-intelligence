@@ -1,0 +1,50 @@
+{
+  "scrape_id": "fc4443be-b7b1-4efc-9e1e-d76e11ca1c11",
+  "timestamp": "2026-04-14T23:13:32.327723+00:00",
+  "platform": "rappi",
+  "location_id": "chapultepec",
+  "location_address": "Av. Chapultepec 200, Juárez, Cuauhtémoc, CDMX",
+  "location_lat": 19.4235,
+  "location_lng": -99.159,
+  "zone_type": "commercial",
+  "zone_label": "Chapultepec",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King - Juárez",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+    "available": true,
+    "rating": 3.5,
+    "review_count": 115
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 319.0,
+      "available": true,
+      "description": "",
+      "original_name": "Family King PlusSabor para compartir en familia: 1 Whopper®"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 13,
+    "estimated_time_max": 13,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/rappi/chapultepec_burger_king_20260414_181523.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 111.03
+}

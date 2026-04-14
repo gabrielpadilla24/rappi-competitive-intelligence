@@ -1,0 +1,58 @@
+{
+  "scrape_id": "f2781abe-f3f2-4b94-8e32-4eb5f3ce1fd3",
+  "timestamp": "2026-04-14T21:22:11.176844+00:00",
+  "platform": "rappi",
+  "location_id": "polanco",
+  "location_address": "Av. Presidente Masaryk 340, Polanco V Sección, Miguel Hidalgo, CDMX",
+  "location_lat": 19.4326,
+  "location_lng": -99.1942,
+  "zone_type": "high_income",
+  "zone_label": "Polanco",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's - Juárez",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/1306703465-mcdonalds",
+    "available": true,
+    "rating": 3.7,
+    "review_count": 270
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 145.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac TocinoBig Mac Tocino$ 145.00"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 199.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac Tocino + favoritosMcTrío Big Mac Tocino + Hamburgues"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 149.0,
+      "available": true,
+      "description": "",
+      "original_name": "Paquete BotaneroDisfruta tus partidos favoritos con 10 McNug"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 12,
+    "estimated_time_max": 12,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/rappi/polanco_mcdonalds_20260414_162414.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 123.48
+}

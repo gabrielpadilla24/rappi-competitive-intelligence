@@ -1,0 +1,50 @@
+{
+  "scrape_id": "1db23c00-d525-4535-b805-80999e1a1891",
+  "timestamp": "2026-04-14T21:24:14.659922+00:00",
+  "platform": "rappi",
+  "location_id": "polanco",
+  "location_address": "Av. Presidente Masaryk 340, Polanco V Sección, Miguel Hidalgo, CDMX",
+  "location_lat": 19.4326,
+  "location_lng": -99.1942,
+  "zone_type": "high_income",
+  "zone_label": "Polanco",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King - Juárez",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+    "available": true,
+    "rating": 3.5,
+    "review_count": 115
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 319.0,
+      "available": true,
+      "description": "",
+      "original_name": "Family King PlusSabor para compartir en familia: 1 Whopper®"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 12,
+    "estimated_time_max": 12,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/rappi/polanco_burger_king_20260414_162607.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 112.72
+}

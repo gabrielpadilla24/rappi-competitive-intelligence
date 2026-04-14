@@ -1,0 +1,58 @@
+{
+  "scrape_id": "bb448f1e-7dbd-4c3f-8752-017131c13fda",
+  "timestamp": "2026-04-14T21:41:05.302325+00:00",
+  "platform": "rappi",
+  "location_id": "lomas",
+  "location_address": "Blvd. Manuel Ávila Camacho 40, Lomas de Chapultepec, Miguel Hidalgo, CDMX",
+  "location_lat": 19.4251,
+  "location_lng": -99.2117,
+  "zone_type": "high_income",
+  "zone_label": "Lomas de Chapultepec",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's - Juárez",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/1306703465-mcdonalds",
+    "available": true,
+    "rating": 3.7,
+    "review_count": 270
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 145.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac TocinoBig Mac Tocino$ 145.00"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 199.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac Tocino + favoritosMcTrío Big Mac Tocino + Hamburgues"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 149.0,
+      "available": true,
+      "description": "",
+      "original_name": "Paquete BotaneroDisfruta tus partidos favoritos con 10 McNug"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 12,
+    "estimated_time_max": 12,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/rappi/lomas_mcdonalds_20260414_164353.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 168.3
+}

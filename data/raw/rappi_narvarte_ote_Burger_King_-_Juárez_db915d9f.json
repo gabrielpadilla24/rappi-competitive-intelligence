@@ -1,0 +1,50 @@
+{
+  "scrape_id": "db915d9f-c5f3-458b-86b6-cffccb5d5f64",
+  "timestamp": "2026-04-14T22:16:26.766381+00:00",
+  "platform": "rappi",
+  "location_id": "narvarte_ote",
+  "location_address": "Av. Cuauhtémoc 800, Narvarte Oriente, Benito Juárez, CDMX",
+  "location_lat": 19.3915,
+  "location_lng": -99.144,
+  "zone_type": "medium_income",
+  "zone_label": "Narvarte Oriente",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King - Juárez",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/300000040-burger-king",
+    "available": true,
+    "rating": 3.5,
+    "review_count": 115
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 319.0,
+      "available": true,
+      "description": "",
+      "original_name": "Family King PlusSabor para compartir en familia: 1 Whopper®"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 12,
+    "estimated_time_max": 12,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/rappi/narvarte_ote_burger_king_20260414_171849.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 143.17
+}

@@ -1,0 +1,58 @@
+{
+  "scrape_id": "4832b5fe-70d4-431d-82fc-a06d968195da",
+  "timestamp": "2026-04-14T22:55:27.191148+00:00",
+  "platform": "rappi",
+  "location_id": "ecatepec",
+  "location_address": "Av. Central 200, Ecatepec Centro, Ecatepec, Estado de México",
+  "location_lat": 19.6012,
+  "location_lng": -99.044,
+  "zone_type": "low_income",
+  "zone_label": "Ecatepec (Edo. Méx.)",
+  "city": "Ecatepec",
+  "restaurant": {
+    "name": "McDonald's - Juárez",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/1306703465-mcdonalds",
+    "available": true,
+    "rating": 3.7,
+    "review_count": 270
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 145.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac TocinoBig Mac Tocino$ 145.00"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 199.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac Tocino + favoritosMcTrío Big Mac Tocino + Hamburgues"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 149.0,
+      "available": true,
+      "description": "",
+      "original_name": "Paquete BotaneroDisfruta tus partidos favoritos con 10 McNug"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 12,
+    "estimated_time_max": 12,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/rappi/ecatepec_mcdonalds_20260414_175729.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 122.32
+}

@@ -1,0 +1,50 @@
+{
+  "scrape_id": "0109ee44-94c2-47b8-8d3a-7738d372d078",
+  "timestamp": "2026-04-14T22:09:01.966656+00:00",
+  "platform": "rappi",
+  "location_id": "mixcoac",
+  "location_address": "Av. Revolución 1300, Mixcoac, Benito Juárez, CDMX",
+  "location_lat": 19.3768,
+  "location_lng": -99.1872,
+  "zone_type": "medium_high_income",
+  "zone_label": "Mixcoac",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King - Juárez",
+    "platform_id": "https://www.rappi.com.mx/restaurantes/300000040",
+    "available": true,
+    "rating": 3.5,
+    "review_count": 115
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 319.0,
+      "available": true,
+      "description": "",
+      "original_name": "Family King PlusSabor para compartir en familia: 1 Whopper®"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo WhopperLa Burger que nunca pasa de moda. Tradicional W"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 12,
+    "estimated_time_max": 12,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/rappi/mixcoac_burger_king_20260414_171048.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 106.15
+}
