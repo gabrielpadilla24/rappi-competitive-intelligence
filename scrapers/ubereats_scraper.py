@@ -903,12 +903,14 @@ class UberEatsScraper(BaseScraper):
                 self.logger.warning("No menu items found — falling back to page-text search")
                 return await self._product_from_page_text(product)
 
+            # Collect ALL matching items first, then pick the shortest name.
+            # "Big Mac" wins over "Home Office con Big Mac" — shorter = more exact.
+            dom_matches: list[tuple[str, Optional[float]]] = []
+
             for item in items:
                 try:
                     item_text = await item.text_content() or ""
                     # Extract name from first rich-text span; price from subsequent spans.
-                    # Matching against the resolved name avoids false positives when the
-                    # container holds many items and the search term appears in a sibling.
                     spans = await item.query_selector_all('span[data-testid="rich-text"]')
                     item_name = item_text.strip()
                     price = None
@@ -925,27 +927,36 @@ class UberEatsScraper(BaseScraper):
                     if not fuzzy_match(product.search_terms, item_name):
                         continue
 
-                    # Fallback: regex on the full item container text
                     if price is None:
                         price_match = re.search(r'\$\s*(\d[\d,]*(?:\.\d{2})?)', item_text)
                         if price_match:
                             price = parse_price(price_match.group(1))
 
-                    self.logger.info(
-                        f"Product match: '{item_name}' → ${price} "
-                        f"(searching for {product.name!r})"
-                    )
-                    return ProductResult(
-                        name=product.name,
-                        reference_id=product.id,
-                        price_mxn=price,
-                        available=price is not None,
-                        original_name=item_name,
-                    )
+                    dom_matches.append((item_name, price))
 
                 except Exception as e:
                     self.logger.debug(f"Item parse error: {e}")
                     continue
+
+            if dom_matches:
+                dom_matches.sort(key=lambda x: len(x[0]))
+                best_name, best_price = dom_matches[0]
+                if len(dom_matches) > 1:
+                    skipped = [f"'{n}'" for n, _ in dom_matches[1:3]]
+                    self.logger.debug(
+                        f"Shortest DOM match wins; skipped: {skipped}"
+                    )
+                self.logger.info(
+                    f"Product match: '{best_name}' → ${best_price} "
+                    f"(searching for {product.name!r})"
+                )
+                return ProductResult(
+                    name=product.name,
+                    reference_id=product.id,
+                    price_mxn=best_price,
+                    available=best_price is not None,
+                    original_name=best_name,
+                )
 
             self.logger.warning(f"Product '{product.name}' not found in menu items")
             return await self._product_from_page_text(product)
@@ -957,18 +968,19 @@ class UberEatsScraper(BaseScraper):
     def _product_from_api(self, product: Product) -> Optional[ProductResult]:
         """
         Extract product price from intercepted API responses.
-        Handles getCatalogPresentationV2 and simpler catalog formats.
+        Collects ALL matches across every response, then returns the one with
+        the shortest name — shorter = closer to the standalone product.
         """
+        api_matches: list[tuple[str, Optional[float]]] = []
+
         for resp in self._api_responses:
             try:
                 data = resp.get("data", {})
                 if not isinstance(data, dict):
                     continue
 
-                # Collect all menu items from common response shapes
                 items: list[dict] = []
 
-                # getCatalogPresentationV2 → sections → items
                 catalog = (
                     data.get("catalog")
                     or data.get("menu")
@@ -984,10 +996,8 @@ class UberEatsScraper(BaseScraper):
                     )
                     for section in sections:
                         items.extend(section.get("items") or [])
-                    # Also try top-level items key
                     items.extend(catalog.get("items") or [])
 
-                # Flat items key at response root
                 if not items and "items" in data:
                     items = data["items"]
 
@@ -1004,11 +1014,9 @@ class UberEatsScraper(BaseScraper):
                         or item.get("basePrice")
                         or 0
                     )
-                    # Uber Eats API may return prices as cents (int) or formatted strings
                     if isinstance(raw_price, str):
                         price = parse_price(raw_price)
                     elif isinstance(raw_price, (int, float)):
-                        # Heuristic: if value > 500 it's likely cents (e.g. 8900 → $89)
                         price = float(raw_price) / 100 if raw_price > 500 else float(raw_price)
                     else:
                         price = None
@@ -1016,23 +1024,29 @@ class UberEatsScraper(BaseScraper):
                     if price is not None and price <= 0:
                         price = None
 
-                    self.logger.debug(
-                        f"API product match: '{item_name}' → ${price} "
-                        f"(url={resp['url'][:80]})"
-                    )
-                    return ProductResult(
-                        name=product.name,
-                        reference_id=product.id,
-                        price_mxn=price,
-                        available=True,
-                        original_name=item_name,
-                    )
+                    api_matches.append((item_name, price))
 
             except Exception as e:
                 self.logger.debug(f"_product_from_api error: {e}")
                 continue
 
-        return None
+        if not api_matches:
+            return None
+
+        # Shortest name = most exact match (avoids combo/bundle names)
+        api_matches.sort(key=lambda x: len(x[0]))
+        best_name, best_price = api_matches[0]
+        if len(api_matches) > 1:
+            skipped = [f"'{n}'" for n, _ in api_matches[1:3]]
+            self.logger.debug(f"API: shortest match wins; skipped: {skipped}")
+        self.logger.debug(f"API product match: '{best_name}' → ${best_price}")
+        return ProductResult(
+            name=product.name,
+            reference_id=product.id,
+            price_mxn=best_price,
+            available=True,
+            original_name=best_name,
+        )
 
     async def _product_from_page_text(self, product: Product) -> Optional[ProductResult]:
         """Last-resort: scan full page text for product name + price proximity."""

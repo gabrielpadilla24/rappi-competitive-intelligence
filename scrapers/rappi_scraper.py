@@ -587,6 +587,8 @@ class RappiScraper(BaseScraper):
                 'li[class*="product"]',
             ]
 
+            # Collect ALL matching items across all selectors, then pick shortest name.
+            dom_matches: list[tuple[str, object | None]] = []
             for selector in item_selectors:
                 items = await self.page.query_selector_all(selector)
                 if not items:
@@ -599,17 +601,27 @@ class RappiScraper(BaseScraper):
                             continue
                         price = self._extract_price_from_text(item_text)
                         item_name = item_text.split("\n")[0].strip() if "\n" in item_text else item_text[:60].strip()
-                        self.logger.info(f"Rappi product match: '{item_name}' → ${price}")
-                        return ProductResult(
-                            name=product.name,
-                            reference_id=product.id,
-                            price_mxn=price,
-                            available=price is not None,
-                            original_name=item_name,
-                        )
+                        dom_matches.append((item_name, price))
                     except Exception as e:
                         self.logger.debug(f"Item parse error: {e}")
                         continue
+                if dom_matches:
+                    break  # found items with this selector, no need to try others
+
+            if dom_matches:
+                dom_matches.sort(key=lambda x: len(x[0]))
+                best_name, best_price = dom_matches[0]
+                if len(dom_matches) > 1:
+                    skipped = [f"'{n}'" for n, _ in dom_matches[1:3]]
+                    self.logger.debug(f"Shortest DOM match wins; skipped: {skipped}")
+                self.logger.info(f"Rappi product match: '{best_name}' → ${best_price}")
+                return ProductResult(
+                    name=product.name,
+                    reference_id=product.id,
+                    price_mxn=best_price,
+                    available=best_price is not None,
+                    original_name=best_name,
+                )
 
             # Fallback: scan page text
             return await self._product_from_page_text(product)
@@ -619,11 +631,14 @@ class RappiScraper(BaseScraper):
             return None
 
     def _product_from_api(self, product: Product) -> Optional[ProductResult]:
-        """Try to find product price in captured API responses."""
-        for resp in reversed(self._api_responses):
+        """
+        Try to find product price in captured API responses.
+        Collects all matches across all responses, then returns the shortest name.
+        """
+        api_matches: list[tuple[str, object | None]] = []
+        for resp in self._api_responses:
             try:
                 data = resp.get("data", {})
-                # Flatten possible data shapes
                 items = (
                     data.get("products")
                     or data.get("items")
@@ -636,16 +651,25 @@ class RappiScraper(BaseScraper):
                     name = item.get("name", "")
                     if fuzzy_match(product.search_terms, name):
                         price = item.get("price") or item.get("basePrice")
-                        return ProductResult(
-                            name=product.name,
-                            reference_id=product.id,
-                            price_mxn=float(price) if price is not None else None,
-                            available=True,
-                            original_name=name,
-                        )
+                        api_matches.append((name, float(price) if price is not None else None))
             except Exception:
                 continue
-        return None
+
+        if not api_matches:
+            return None
+
+        api_matches.sort(key=lambda x: len(x[0]))
+        best_name, best_price = api_matches[0]
+        if len(api_matches) > 1:
+            skipped = [f"'{n}'" for n, _ in api_matches[1:3]]
+            self.logger.debug(f"API: shortest match wins; skipped: {skipped}")
+        return ProductResult(
+            name=product.name,
+            reference_id=product.id,
+            price_mxn=best_price,
+            available=True,
+            original_name=best_name,
+        )
 
     async def _product_from_page_text(self, product: Product) -> Optional[ProductResult]:
         """Last-resort text scan for product + price."""

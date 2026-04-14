@@ -43,8 +43,10 @@ PRODUCTS: list[Product] = [
         restaurant="McDonald's",
         category="fast_food",
         search_terms=[
-            "Combo Big Mac", "McCombo Big Mac", "Big Mac Combo",
-            "Big Mac Mediano", "McCombo Big Mac Mediano",
+            "McTrío Big Mac", "McTrio Big Mac",      # Uber Eats MX name
+            "Combo Big Mac", "McCombo Big Mac",       # Rappi / DiDi name
+            "Big Mac Combo", "Big Mac Mediano",
+            "McCombo Big Mac Mediano",
         ],
         description="Big Mac + Papas Medianas + Bebida Mediana",
         priority=1,
@@ -55,8 +57,9 @@ PRODUCTS: list[Product] = [
         restaurant="McDonald's",
         category="fast_food",
         search_terms=[
-            "McNuggets 10", "Chicken McNuggets 10",
-            "McNuggets", "10 McNuggets", "10 Nuggets",
+            # Specific enough to avoid "McNuggets y Papas para Todos" (family combo)
+            "McNuggets 10 piezas", "Chicken McNuggets 10",
+            "McNuggets 10", "10 McNuggets", "10 Nuggets",
         ],
         description="10 piezas de pollo empanizado McNuggets",
         priority=2,
@@ -68,7 +71,7 @@ PRODUCTS: list[Product] = [
         name="Whopper",
         restaurant="Burger King",
         category="fast_food",
-        search_terms=["Whopper", "Whopper Jr", "WHOPPER"],
+        search_terms=["Whopper", "WHOPPER"],  # "Whopper Jr" removed — different, cheaper product
         description="Hamburguesa a la parrilla con tomate, lechuga, cebolla, pepinillos, ketchup y mayonesa",
         priority=1,
     ),
