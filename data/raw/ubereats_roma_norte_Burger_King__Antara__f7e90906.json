@@ -1,0 +1,87 @@
+{
+  "scrape_id": "f7e90906-84c4-490a-8a03-158483bcf4f6",
+  "timestamp": "2026-04-14T00:34:00.671869+00:00",
+  "platform": "ubereats",
+  "location_id": "roma_norte",
+  "location_address": "Av. Álvaro Obregón 120, Roma Norte, Cuauhtémoc, CDMX",
+  "location_lat": 19.4195,
+  "location_lng": -99.1619,
+  "zone_type": "high_income",
+  "zone_label": "Roma Norte",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King (Antara)",
+    "platform_id": "https://www.ubereats.com/mx/store/burger-king-antara/mB-ric9STWimRr-RmIwxeA",
+    "available": true,
+    "rating": 4.4,
+    "review_count": 7000
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": 209.0,
+      "available": true,
+      "description": "",
+      "original_name": "Combo Whopper"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 0.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 15,
+    "estimated_time_max": 34,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "- 26%",
+      "value": "26%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 20%",
+      "value": "20%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 27%",
+      "value": "27%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 47%",
+      "value": "47%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 22%",
+      "value": "22%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "- 42%",
+      "value": "42%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/Desktop/rappi-competitive-intelligence/data/screenshots/ubereats/roma_norte_burger_king_20260413_193439.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 38.82
+}
