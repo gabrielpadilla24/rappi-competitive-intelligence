@@ -29,6 +29,7 @@ import json
 import base64
 import random
 import asyncio
+import urllib.parse
 from typing import Optional
 
 # ── Session-expiry signals ────────────────────────────────────────────────────
@@ -668,12 +669,20 @@ class DididfoodScraper(BaseScraper):
                     )
                     return None
 
-            # Try search bar first
+            # Try direct search URL first — most reliable path.
+            result = await self._search_via_direct_url(restaurant)
+            if result:
+                return result
+
+            # Fallback: interact with the search bar.
+            self.logger.info(
+                "Direct search URL failed — trying search bar interaction"
+            )
             result = await self._search_via_search_bar(restaurant)
             if result:
                 return result
 
-            # Fallback: scan current page for restaurant cards
+            # Final fallback: scan current page for restaurant cards
             self.logger.info(
                 "Search bar approach failed — scanning page for restaurant cards"
             )
@@ -837,6 +846,54 @@ class DididfoodScraper(BaseScraper):
         )
         return None, None
 
+    async def _search_via_direct_url(
+        self, restaurant: TargetRestaurant
+    ) -> Optional[RestaurantResult]:
+        """
+        Navigate directly to DiDi Food's search-results URL and scan cards.
+
+        More reliable than interacting with the search bar because it skips
+        the autocomplete dropdown and submit-button dance entirely.
+        URL shape: /es-MX/food/search?q=<query>&search_word_source=3
+        """
+        query = urllib.parse.quote(restaurant.name)
+        search_url = (
+            f"https://www.didi-food.com/es-MX/food/search"
+            f"?q={query}&search_word_source=3"
+        )
+        if self._pl_param:
+            search_url = f"{search_url}&pl={self._pl_param}"
+
+        try:
+            self.logger.info(f"Direct search URL: {search_url[:140]}")
+            await self.page.goto(
+                search_url, timeout=PAGE_LOAD_TIMEOUT, wait_until="domcontentloaded"
+            )
+            try:
+                await self.page.wait_for_url("**/food/search**", timeout=15000)
+            except Exception:
+                pass
+            try:
+                await self.page.wait_for_load_state("networkidle", timeout=10000)
+            except Exception:
+                pass
+            await random_delay(3, 5)
+
+            page_text = await self.page.text_content("body") or ""
+            if await self._is_session_expired(page_text, self.page.url):
+                self.logger.error(
+                    "Session expired on direct search URL — aborting"
+                )
+                return None
+
+            if "/food/store/" in self.page.url:
+                return await self._extract_restaurant_info(restaurant)
+
+            return await self._find_restaurant_on_page(restaurant)
+        except Exception as e:
+            self.logger.debug(f"Direct search URL failed: {e}")
+            return None
+
     async def _search_via_search_bar(
         self, restaurant: TargetRestaurant
     ) -> Optional[RestaurantResult]:
@@ -967,12 +1024,26 @@ class DididfoodScraper(BaseScraper):
                 await self.page.keyboard.press("Enter")
                 self.logger.debug("Pressed Enter to submit search")
 
-            # Wait for results to load.
-            await random_delay(2, 3)
+            # Wait for navigation to the /food/search results page.
+            try:
+                await self.page.wait_for_url(
+                    "**/food/search**", timeout=15000
+                )
+                self.logger.info(
+                    f"Navigated to search results: {self.page.url[:120]}"
+                )
+            except Exception:
+                self.logger.debug(
+                    "Did not land on /food/search after submit "
+                    f"(current URL: {self.page.url[:120]})"
+                )
+
+            # Wait for networkidle + a short render delay so cards materialize.
             try:
                 await self.page.wait_for_load_state("networkidle", timeout=10000)
             except Exception:
                 pass
+            await random_delay(3, 5)
 
             # If the submit navigated directly to a store page, extract there.
             if "/food/store/" in self.page.url:
@@ -996,9 +1067,11 @@ class DididfoodScraper(BaseScraper):
     ) -> Optional[RestaurantResult]:
         """Scan the current page for a matching restaurant card and navigate to it."""
         card_selectors = [
-            'a[href*="/food/store/"]',          # DiDi Food store pages (specific)
+            'div.shop-card',                    # DiDi Food Vue.js shop cards (primary)
+            'div[class*="shop-card"]',          # shop-card class variants
+            '.shop-list-wrapper .el-col',       # grid column wrapping each card
+            'a[href*="/food/store/"]',          # DiDi Food store pages (link form)
             'div[class*="store-card"]',
-            'div[class*="shop-card"]',
             'div[class*="merchant"]',
             '[data-testid*="store-card"]',
             '[data-testid*="restaurant"]',
@@ -1022,9 +1095,21 @@ class DididfoodScraper(BaseScraper):
                 if not cards:
                     continue
 
+                async def _card_title(card) -> str:
+                    """Prefer div.shop-title; fall back to full card text."""
+                    try:
+                        title_el = await card.query_selector('div.shop-title')
+                        if title_el:
+                            t = (await title_el.text_content() or "").strip()
+                            if t:
+                                return t
+                    except Exception:
+                        pass
+                    return (await card.text_content() or "").strip()
+
                 all_texts = []
                 for card in cards:
-                    t = (await card.text_content() or "").strip()
+                    t = await _card_title(card)
                     if t:
                         all_texts.append(t[:60])
                 self.logger.debug(
@@ -1033,9 +1118,11 @@ class DididfoodScraper(BaseScraper):
 
                 matches: list[tuple[str, object]] = []
                 for card in cards:
+                    title = await _card_title(card)
                     text = await card.text_content() or ""
-                    if fuzzy_match(restaurant.search_terms, text):
-                        matches.append((text.strip(), card))
+                    if fuzzy_match(restaurant.search_terms, title) or \
+                            fuzzy_match(restaurant.search_terms, text):
+                        matches.append((title or text.strip(), card))
 
                 if not matches:
                     continue
@@ -1057,6 +1144,17 @@ class DididfoodScraper(BaseScraper):
                     self.logger.info(f"Matched DiDi Food card: {best_text[:60]}")
 
                 href = await best_card.get_attribute("href") or ""
+                if not href:
+                    # div.shop-card has no href — look for a nested store link.
+                    try:
+                        inner = await best_card.query_selector(
+                            'a[href*="/food/store/"]'
+                        )
+                        if inner:
+                            href = await inner.get_attribute("href") or ""
+                    except Exception:
+                        pass
+
                 if href:
                     if href.startswith("/"):
                         href = f"https://www.didi-food.com{href}"
@@ -1067,7 +1165,14 @@ class DididfoodScraper(BaseScraper):
                     self._current_restaurant_url = href
                     await self.page.goto(href, timeout=PAGE_LOAD_TIMEOUT, wait_until="load")
                 else:
+                    # Vue.js click handler — click the card directly.
                     await best_card.click()
+                    try:
+                        await self.page.wait_for_url(
+                            lambda url: "/food/store/" in url, timeout=10000
+                        )
+                    except Exception:
+                        pass
 
                 await self._gauss_delay(2, 0.5, 1.5, 4)
 
