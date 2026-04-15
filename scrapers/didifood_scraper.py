@@ -683,6 +683,160 @@ class DididfoodScraper(BaseScraper):
             self.logger.error(f"search_restaurant failed: {e}")
             return None
 
+    async def _find_search_dropdown_suggestion(
+        self, search_el, restaurant: TargetRestaurant
+    ):
+        """
+        Find a restaurant suggestion in the search dropdown after typing.
+
+        Returns (element, text) if a match is found, or (None, None).
+
+        Strategies (in order):
+          1. Walk up the DOM from the search input to find its container element
+             (anything with "search", "autocomplete", or "combobox" in its class),
+             mark it with a data attribute, then query result-like children within
+             it — scoped entirely away from the nav/header.
+          2. Use page.get_by_text() to find all visible elements containing the
+             restaurant name; keep only those that also have an address-like
+             substring (digit + comma) and are not inside <nav>/<header>.
+          3. Class-based selectors (div[class*="suggest"], div[class*="result"],
+             [role="option"], [role="listbox"] *) with an explicit nav exclusion
+             check on every candidate.
+
+        All strategies skip elements whose closest ancestor is <nav>, <header>,
+        or [role="navigation"] to avoid matching the site's top navigation menu.
+        """
+
+        def _is_address_like(text: str) -> bool:
+            """True when text looks like 'Name - Street 123, Colonia…'."""
+            return bool(re.search(r'\d', text)) and ',' in text
+
+        async def _not_in_nav(el) -> bool:
+            try:
+                return not await el.evaluate(
+                    "el => !!el.closest('nav, header, [role=\"navigation\"]')"
+                )
+            except Exception:
+                return True  # assume OK if evaluate fails
+
+        # ── Strategy 1: scope to the search container ────────────────────
+        try:
+            # Mark the closest search-like ancestor with a temp data attribute.
+            marked = await search_el.evaluate("""(input) => {
+                let el = input.parentElement;
+                for (let i = 0; i < 8; i++) {
+                    if (!el) break;
+                    const cls = (el.className || '') + ' ' + (el.getAttribute('role') || '');
+                    if (/search|autocomplete|combobox/i.test(cls)) {
+                        el.setAttribute('data-didi-sc', '1');
+                        return true;
+                    }
+                    el = el.parentElement;
+                }
+                // Fallback: mark 3 levels up.
+                let fb = input.parentElement?.parentElement?.parentElement;
+                if (fb) { fb.setAttribute('data-didi-sc', '1'); return true; }
+                return false;
+            }""")
+
+            if marked:
+                for sel in [
+                    'div[class*="result"]',
+                    'div[class*="suggest"]',
+                    'div[class*="item"]',
+                    'li',
+                    'a',
+                ]:
+                    try:
+                        items = await self.page.query_selector_all(
+                            f'[data-didi-sc] {sel}'
+                        )
+                        candidates = []
+                        for item in items:
+                            t = (await item.text_content() or "").strip()
+                            if not t or len(t) < 3:
+                                continue
+                            if fuzzy_match(restaurant.search_terms, t):
+                                candidates.append((t, item))
+                        if candidates:
+                            candidates.sort(key=lambda x: len(x[0]))
+                            self.logger.debug(
+                                f"Strategy 1 ({sel}) found {len(candidates)} candidates: "
+                                f"{[t[:40] for t, _ in candidates[:3]]}"
+                            )
+                            return candidates[0][1], candidates[0][0]
+                    except Exception as e:
+                        self.logger.debug(f"Strategy 1 selector '{sel}': {e}")
+        except Exception as e:
+            self.logger.debug(f"Strategy 1 container walk failed: {e}")
+        finally:
+            # Always clean up the temp attribute.
+            try:
+                await self.page.evaluate(
+                    "() => document.querySelectorAll('[data-didi-sc]')"
+                    ".forEach(el => el.removeAttribute('data-didi-sc'))"
+                )
+            except Exception:
+                pass
+
+        # ── Strategy 2: text locator + address-like filter ───────────────
+        try:
+            # Use the first search term (usually the brand name).
+            term = restaurant.search_terms[0] if restaurant.search_terms else restaurant.name
+            locator = self.page.get_by_text(term, exact=False)
+            els = await locator.all()
+            self.logger.debug(
+                f"Strategy 2: get_by_text('{term}') found {len(els)} elements"
+            )
+            for el in els:
+                t = (await el.text_content() or "").strip()
+                # Restaurant results always include an address (digit + comma).
+                if not _is_address_like(t):
+                    continue
+                if not await _not_in_nav(el):
+                    continue
+                self.logger.debug(
+                    f"Strategy 2 matched address-like element: '{t[:60]}'"
+                )
+                return el, t
+        except Exception as e:
+            self.logger.debug(f"Strategy 2 text locator failed: {e}")
+
+        # ── Strategy 3: class selectors with nav exclusion ───────────────
+        for sel in [
+            'div[class*="suggest"]',
+            'div[class*="result"]',
+            'div[class*="search-item"]',
+            'div[class*="dropdown"] div',
+            '[role="option"]',
+            '[role="listbox"] *',
+        ]:
+            try:
+                items = await self.page.query_selector_all(sel)
+                if not items:
+                    continue
+                candidates = []
+                for item in items:
+                    if not await _not_in_nav(item):
+                        continue
+                    t = (await item.text_content() or "").strip()
+                    if t and fuzzy_match(restaurant.search_terms, t):
+                        candidates.append((t, item))
+                if candidates:
+                    candidates.sort(key=lambda x: len(x[0]))
+                    self.logger.debug(
+                        f"Strategy 3 ({sel}) found {len(candidates)} candidates: "
+                        f"{[t[:40] for t, _ in candidates[:3]]}"
+                    )
+                    return candidates[0][1], candidates[0][0]
+            except Exception as e:
+                self.logger.debug(f"Strategy 3 selector '{sel}': {e}")
+
+        self.logger.debug(
+            f"No dropdown suggestion found for '{restaurant.name}'"
+        )
+        return None, None
+
     async def _search_via_search_bar(
         self, restaurant: TargetRestaurant
     ) -> Optional[RestaurantResult]:
@@ -748,58 +902,15 @@ class DididfoodScraper(BaseScraper):
             await random_delay(2, 3)
 
             # ── Attempt A: click a matching dropdown suggestion ───────────
-            dropdown_selectors = [
-                'div[class*="suggestion"]',
-                'div[class*="search-result"]',
-                'div[class*="dropdown"] a',
-                '[role="option"]',
-                '[role="listbox"] li',
-                'ul[role="listbox"] li',
-                'li[class*="suggestion"]',
-                'li[class*="result"]',
-                'ul li',                      # generic fallback
-            ]
-
-            clicked_suggestion = False
-            for sel in dropdown_selectors:
-                try:
-                    # Non-blocking: collect all currently visible items.
-                    items = await self.page.query_selector_all(sel)
-                    if not items:
-                        continue
-
-                    texts_els = []
-                    for item in items:
-                        t = (await item.text_content() or "").strip()
-                        if t:
-                            texts_els.append((t, item))
-
-                    if not texts_els:
-                        continue
-
-                    self.logger.debug(
-                        f"Dropdown selector '{sel}' gave {len(texts_els)} items: "
-                        f"{[t[:40] for t, _ in texts_els[:5]]}"
-                    )
-
-                    # Prefer items that fuzzy-match; otherwise take the first one.
-                    matching = [
-                        (t, el) for t, el in texts_els
-                        if fuzzy_match(restaurant.search_terms, t)
-                    ]
-                    chosen_text, chosen_el = (
-                        matching[0] if matching else texts_els[0]
-                    )
-                    self.logger.info(
-                        f"Clicking dropdown suggestion: '{chosen_text[:60]}'"
-                    )
-                    await chosen_el.click()
-                    clicked_suggestion = True
-                    break
-
-                except Exception as e:
-                    self.logger.debug(f"Dropdown selector '{sel}' error: {e}")
-                    continue
+            chosen_el, chosen_text = await self._find_search_dropdown_suggestion(
+                search_el, restaurant
+            )
+            clicked_suggestion = chosen_el is not None
+            if clicked_suggestion:
+                self.logger.info(
+                    f"Clicking dropdown suggestion: '{chosen_text[:60]}'"
+                )
+                await chosen_el.click()
 
             if clicked_suggestion:
                 # Wait up to 8 s for the browser to navigate to a store page.
