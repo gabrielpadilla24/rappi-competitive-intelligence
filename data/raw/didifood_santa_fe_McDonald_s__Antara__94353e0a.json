@@ -1,0 +1,71 @@
+{
+  "scrape_id": "94353e0a-a450-478e-8c94-288ca408b3f7",
+  "timestamp": "2026-04-15T01:13:10.749671+00:00",
+  "platform": "didifood",
+  "location_id": "santa_fe",
+  "location_address": "Av. Santa Fe 440, Santa Fe, Cuajimalpa, CDMX",
+  "location_lat": 19.3592,
+  "location_lng": -99.2741,
+  "zone_type": "high_income",
+  "zone_label": "Santa Fe",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's (Antara)",
+    "platform_id": "",
+    "available": true,
+    "rating": 4.1,
+    "review_count": 4000
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 87.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 199.0,
+      "available": true,
+      "description": "",
+      "original_name": "McTrío Big Mac"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 159.0,
+      "available": true,
+      "description": "",
+      "original_name": "McNuggets 10"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 15.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 15,
+    "estimated_time_max": 30,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 55%Combo de gran ahorroSólo nuevos usuarios",
+      "value": "55%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 55%",
+      "value": "55%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/didifood/santa_fe_mcdonalds_20260414_201406.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 55.48
+}

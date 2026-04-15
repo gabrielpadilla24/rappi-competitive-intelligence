@@ -1,0 +1,28 @@
+{
+  "scrape_id": "1483d69f-b6e6-41ce-bf46-3b0b5ec1eebf",
+  "timestamp": "2026-04-15T02:57:23.042758+00:00",
+  "platform": "didifood",
+  "location_id": "centro",
+  "location_address": "Av. 5 de Febrero 100, Centro Histórico, Cuauhtémoc, CDMX",
+  "location_lat": 19.4326,
+  "location_lng": -99.1332,
+  "zone_type": "commercial",
+  "zone_label": "Centro Histórico",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'McDonald's' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

@@ -1,0 +1,28 @@
+{
+  "scrape_id": "db58658e-a08a-4e94-afe1-809e04351224",
+  "timestamp": "2026-04-15T02:13:21.627714+00:00",
+  "platform": "didifood",
+  "location_id": "satelite",
+  "location_address": "Blvd. Manuel Ávila Camacho 1500, Cd. Satélite, Naucalpan, Edo. Méx.",
+  "location_lat": 19.504,
+  "location_lng": -99.233,
+  "zone_type": "low_income",
+  "zone_label": "Satélite (Edo. Méx.)",
+  "city": "Naucalpan",
+  "restaurant": {
+    "name": "Burger King",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'Burger King' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

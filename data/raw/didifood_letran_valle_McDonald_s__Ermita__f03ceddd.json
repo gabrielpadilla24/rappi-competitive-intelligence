@@ -1,0 +1,71 @@
+{
+  "scrape_id": "f03ceddd-2a87-4d97-b918-829d525e4c25",
+  "timestamp": "2026-04-15T01:38:46.118105+00:00",
+  "platform": "didifood",
+  "location_id": "letran_valle",
+  "location_address": "Eje 5 Sur 300, Letrán Valle, Benito Juárez, CDMX",
+  "location_lat": 19.375,
+  "location_lng": -99.157,
+  "zone_type": "medium_income",
+  "zone_label": "Letrán Valle",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's (Ermita)",
+    "platform_id": "",
+    "available": true,
+    "rating": 4.2,
+    "review_count": 20000
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 87.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 199.0,
+      "available": true,
+      "description": "",
+      "original_name": "McTrío Big Mac"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 159.0,
+      "available": true,
+      "description": "",
+      "original_name": "McNuggets 10"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 31.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 30,
+    "estimated_time_max": 45,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 55%Combo de gran ahorroSólo nuevos usuarios",
+      "value": "55%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 55%",
+      "value": "55%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/didifood/letran_valle_mcdonalds_20260414_203937.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 51.47
+}

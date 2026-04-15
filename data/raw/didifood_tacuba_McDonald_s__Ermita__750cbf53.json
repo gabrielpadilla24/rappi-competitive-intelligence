@@ -1,0 +1,71 @@
+{
+  "scrape_id": "750cbf53-a0c5-4061-9cf4-37a01ded0091",
+  "timestamp": "2026-04-15T01:40:29.865290+00:00",
+  "platform": "didifood",
+  "location_id": "tacuba",
+  "location_address": "Calz. México-Tacuba 500, Tacuba, Miguel Hidalgo, CDMX",
+  "location_lat": 19.452,
+  "location_lng": -99.18,
+  "zone_type": "medium_income",
+  "zone_label": "Tacuba",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's (Ermita)",
+    "platform_id": "",
+    "available": true,
+    "rating": 4.2,
+    "review_count": 20000
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 87.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 199.0,
+      "available": true,
+      "description": "",
+      "original_name": "McTrío Big Mac"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 159.0,
+      "available": true,
+      "description": "",
+      "original_name": "McNuggets 10"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 31.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 30,
+    "estimated_time_max": 45,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 55%Combo de gran ahorroSólo nuevos usuarios",
+      "value": "55%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 55%",
+      "value": "55%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/didifood/tacuba_mcdonalds_20260414_204126.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 56.97
+}

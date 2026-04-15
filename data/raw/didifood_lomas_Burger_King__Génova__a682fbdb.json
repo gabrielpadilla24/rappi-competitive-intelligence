@@ -1,0 +1,65 @@
+{
+  "scrape_id": "a682fbdb-7816-439d-bf42-24badca28adc",
+  "timestamp": "2026-04-15T01:20:15.120886+00:00",
+  "platform": "didifood",
+  "location_id": "lomas",
+  "location_address": "Blvd. Manuel Ávila Camacho 40, Lomas de Chapultepec, Miguel Hidalgo, CDMX",
+  "location_lat": 19.4251,
+  "location_lng": -99.2117,
+  "zone_type": "high_income",
+  "zone_label": "Lomas de Chapultepec",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King (Génova)",
+    "platform_id": "",
+    "available": true,
+    "rating": 4.1,
+    "review_count": 10000
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 99.0,
+      "available": true,
+      "description": "",
+      "original_name": "Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 12.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 10,
+    "estimated_time_max": 25,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 62%Combo de gran ahorroSólo nuevos usuarios",
+      "value": "62%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 62%",
+      "value": "62%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/didifood/lomas_burger_king_20260414_202108.png",
+  "errors": [
+    "Product 'Combo Whopper Mediano' not found"
+  ],
+  "data_completeness": "partial",
+  "scrape_duration_seconds": 53.21
+}

@@ -1,0 +1,71 @@
+{
+  "scrape_id": "c4f38e5a-222b-4875-a36b-00b4f4c01d96",
+  "timestamp": "2026-04-15T01:45:06.688915+00:00",
+  "platform": "didifood",
+  "location_id": "tlahuac",
+  "location_address": "Av. Tláhuac 4000, Santiago Acahualtepec, Iztapalapa, CDMX",
+  "location_lat": 19.335,
+  "location_lng": -99.03,
+  "zone_type": "low_income",
+  "zone_label": "Tláhuac / Sur-Oriente",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's (Zaragoza)",
+    "platform_id": "",
+    "available": true,
+    "rating": 4.4,
+    "review_count": 20000
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 87.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 177.0,
+      "available": true,
+      "description": "",
+      "original_name": "McTrío Big Mac"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 159.0,
+      "available": true,
+      "description": "",
+      "original_name": "McNuggets 10"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 35.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 30,
+    "estimated_time_max": 45,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 55%Combo de gran ahorroSólo nuevos usuarios",
+      "value": "55%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 55%",
+      "value": "55%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/didifood/tlahuac_mcdonalds_20260414_204604.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 57.91
+}

@@ -1,0 +1,65 @@
+{
+  "scrape_id": "4ce4b9b4-d611-497b-86da-0fa2250eb687",
+  "timestamp": "2026-04-15T01:21:57.046331+00:00",
+  "platform": "didifood",
+  "location_id": "del_valle",
+  "location_address": "Av. Universidad 1200, Del Valle Centro, Benito Juárez, CDMX",
+  "location_lat": 19.3846,
+  "location_lng": -99.1736,
+  "zone_type": "medium_high_income",
+  "zone_label": "Del Valle",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King (Génova)",
+    "platform_id": "",
+    "available": true,
+    "rating": 4.1,
+    "review_count": 10000
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 129.0,
+      "available": true,
+      "description": "",
+      "original_name": "Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 12.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 10,
+    "estimated_time_max": 25,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 62%Combo de gran ahorroSólo nuevos usuarios",
+      "value": "62%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 62%",
+      "value": "62%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/didifood/del_valle_burger_king_20260414_202248.png",
+  "errors": [
+    "Product 'Combo Whopper Mediano' not found"
+  ],
+  "data_completeness": "partial",
+  "scrape_duration_seconds": 51.82
+}

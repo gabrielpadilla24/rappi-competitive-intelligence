@@ -1,0 +1,28 @@
+{
+  "scrape_id": "8169cd97-f3ba-4e85-8c76-26c527a653e3",
+  "timestamp": "2026-04-15T03:34:42.742644+00:00",
+  "platform": "didifood",
+  "location_id": "chapultepec",
+  "location_address": "Av. Chapultepec 200, Juárez, Cuauhtémoc, CDMX",
+  "location_lat": 19.4235,
+  "location_lng": -99.159,
+  "zone_type": "commercial",
+  "zone_label": "Chapultepec",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King",
+    "platform_id": "",
+    "available": false,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [],
+  "delivery": null,
+  "promotions": [],
+  "screenshot_path": "",
+  "errors": [
+    "Restaurant 'Burger King' not found"
+  ],
+  "data_completeness": "failed",
+  "scrape_duration_seconds": 0.0
+}

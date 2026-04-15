@@ -1,0 +1,65 @@
+{
+  "scrape_id": "5e0edaac-c648-4f6b-a70c-89e1aecf5817",
+  "timestamp": "2026-04-15T01:39:37.593068+00:00",
+  "platform": "didifood",
+  "location_id": "letran_valle",
+  "location_address": "Eje 5 Sur 300, Letrán Valle, Benito Juárez, CDMX",
+  "location_lat": 19.375,
+  "location_lng": -99.157,
+  "zone_type": "medium_income",
+  "zone_label": "Letrán Valle",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King",
+    "platform_id": "",
+    "available": true,
+    "rating": null,
+    "review_count": null
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 129.0,
+      "available": true,
+      "description": "",
+      "original_name": "Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 18.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 10,
+    "estimated_time_max": 25,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 62%Combo de gran ahorroSólo nuevos usuarios",
+      "value": "62%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 62%",
+      "value": "62%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/didifood/letran_valle_burger_king_20260414_204029.png",
+  "errors": [
+    "Product 'Combo Whopper Mediano' not found"
+  ],
+  "data_completeness": "partial",
+  "scrape_duration_seconds": 52.25
+}

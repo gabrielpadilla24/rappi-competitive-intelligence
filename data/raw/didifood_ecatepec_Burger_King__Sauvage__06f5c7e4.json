@@ -1,0 +1,65 @@
+{
+  "scrape_id": "06f5c7e4-b01e-41e5-ba2d-087e6c7d52d8",
+  "timestamp": "2026-04-15T01:50:31.247256+00:00",
+  "platform": "didifood",
+  "location_id": "ecatepec",
+  "location_address": "Av. Central 200, Ecatepec Centro, Ecatepec, Estado de México",
+  "location_lat": 19.6012,
+  "location_lng": -99.044,
+  "zone_type": "low_income",
+  "zone_label": "Ecatepec (Edo. Méx.)",
+  "city": "Ecatepec",
+  "restaurant": {
+    "name": "Burger King (Sauvage)",
+    "platform_id": "",
+    "available": true,
+    "rating": 4.2,
+    "review_count": 10000
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 99.0,
+      "available": true,
+      "description": "",
+      "original_name": "Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 23.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 15,
+    "estimated_time_max": 30,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "promotion",
+      "description": "Descuentos de hasta MX$259.00Combo de gran ahorro",
+      "value": "MX$259",
+      "conditions": ""
+    },
+    {
+      "type": "promotion",
+      "description": "Descuentos de hasta MX$259.00",
+      "value": "MX$259",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/didifood/ecatepec_burger_king_20260414_205124.png",
+  "errors": [
+    "Product 'Combo Whopper Mediano' not found"
+  ],
+  "data_completeness": "partial",
+  "scrape_duration_seconds": 53.49
+}

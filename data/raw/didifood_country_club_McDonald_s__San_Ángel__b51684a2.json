@@ -1,0 +1,71 @@
+{
+  "scrape_id": "b51684a2-5897-49e8-9bc3-ff060611e6e6",
+  "timestamp": "2026-04-15T01:25:38.780821+00:00",
+  "platform": "didifood",
+  "location_id": "country_club",
+  "location_address": "Calz. de Tlalpan 2000, Country Club, Coyoacán, CDMX",
+  "location_lat": 19.3594,
+  "location_lng": -99.1534,
+  "zone_type": "medium_high_income",
+  "zone_label": "Coyoacán",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's (San Ángel)",
+    "platform_id": "",
+    "available": true,
+    "rating": 4.4,
+    "review_count": 500
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 87.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 177.0,
+      "available": true,
+      "description": "",
+      "original_name": "McTrío Big Mac"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 169.0,
+      "available": true,
+      "description": "",
+      "original_name": "McNuggets 10"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 30.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 30,
+    "estimated_time_max": 45,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 55%Combo de gran ahorroSólo nuevos usuarios",
+      "value": "55%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 55%",
+      "value": "55%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/didifood/country_club_mcdonalds_20260414_202640.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 62.27
+}

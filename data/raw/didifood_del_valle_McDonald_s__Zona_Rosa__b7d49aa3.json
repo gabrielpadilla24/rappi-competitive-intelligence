@@ -1,0 +1,71 @@
+{
+  "scrape_id": "b7d49aa3-1362-4b24-8150-da8abc2b911d",
+  "timestamp": "2026-04-15T01:21:08.340868+00:00",
+  "platform": "didifood",
+  "location_id": "del_valle",
+  "location_address": "Av. Universidad 1200, Del Valle Centro, Benito Juárez, CDMX",
+  "location_lat": 19.3846,
+  "location_lng": -99.1736,
+  "zone_type": "medium_high_income",
+  "zone_label": "Del Valle",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's (Zona Rosa)",
+    "platform_id": "",
+    "available": true,
+    "rating": 4.2,
+    "review_count": 7000
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 87.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 199.0,
+      "available": true,
+      "description": "",
+      "original_name": "McTrío Big Mac"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 159.0,
+      "available": true,
+      "description": "",
+      "original_name": "McNuggets 10"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 12.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 15,
+    "estimated_time_max": 30,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 55%Combo de gran ahorroSólo nuevos usuarios",
+      "value": "55%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 55%",
+      "value": "55%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/didifood/del_valle_mcdonalds_20260414_202156.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 48.7
+}

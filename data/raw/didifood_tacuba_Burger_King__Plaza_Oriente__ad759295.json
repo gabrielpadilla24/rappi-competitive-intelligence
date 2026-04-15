@@ -1,0 +1,65 @@
+{
+  "scrape_id": "ad759295-a37d-4cbf-b089-a3d499d52db5",
+  "timestamp": "2026-04-15T01:41:26.837911+00:00",
+  "platform": "didifood",
+  "location_id": "tacuba",
+  "location_address": "Calz. México-Tacuba 500, Tacuba, Miguel Hidalgo, CDMX",
+  "location_lat": 19.452,
+  "location_lng": -99.18,
+  "zone_type": "medium_income",
+  "zone_label": "Tacuba",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King (Plaza Oriente)",
+    "platform_id": "",
+    "available": true,
+    "rating": 4.2,
+    "review_count": 20000
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 129.0,
+      "available": true,
+      "description": "",
+      "original_name": "Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 18.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 15,
+    "estimated_time_max": 30,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 62%Combo de gran ahorroSólo nuevos usuarios",
+      "value": "62%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 62%",
+      "value": "62%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/didifood/tacuba_burger_king_20260414_204222.png",
+  "errors": [
+    "Product 'Combo Whopper Mediano' not found"
+  ],
+  "data_completeness": "partial",
+  "scrape_duration_seconds": 55.51
+}

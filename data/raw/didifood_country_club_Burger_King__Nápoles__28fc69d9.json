@@ -1,0 +1,65 @@
+{
+  "scrape_id": "28fc69d9-8dd2-4506-a11d-4f02100e4ee6",
+  "timestamp": "2026-04-15T01:26:41.073307+00:00",
+  "platform": "didifood",
+  "location_id": "country_club",
+  "location_address": "Calz. de Tlalpan 2000, Country Club, Coyoacán, CDMX",
+  "location_lat": 19.3594,
+  "location_lng": -99.1534,
+  "zone_type": "medium_high_income",
+  "zone_label": "Coyoacán",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King (Nápoles)",
+    "platform_id": "",
+    "available": true,
+    "rating": 4.2,
+    "review_count": 7000
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 129.0,
+      "available": true,
+      "description": "",
+      "original_name": "Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 18.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 15,
+    "estimated_time_max": 30,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 62%Combo de gran ahorroSólo nuevos usuarios",
+      "value": "62%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 62%",
+      "value": "62%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/didifood/country_club_burger_king_20260414_202737.png",
+  "errors": [
+    "Product 'Combo Whopper Mediano' not found"
+  ],
+  "data_completeness": "partial",
+  "scrape_duration_seconds": 56.49
+}

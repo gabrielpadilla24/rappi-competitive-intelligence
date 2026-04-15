@@ -1,0 +1,71 @@
+{
+  "scrape_id": "1623d1cb-220f-43f5-9ec3-d7692f4c473a",
+  "timestamp": "2026-04-15T01:49:47.368735+00:00",
+  "platform": "didifood",
+  "location_id": "ecatepec",
+  "location_address": "Av. Central 200, Ecatepec Centro, Ecatepec, Estado de México",
+  "location_lat": 19.6012,
+  "location_lng": -99.044,
+  "zone_type": "low_income",
+  "zone_label": "Ecatepec (Edo. Méx.)",
+  "city": "Ecatepec",
+  "restaurant": {
+    "name": "McDonald's (Ecatepec Las Americas)",
+    "platform_id": "",
+    "available": true,
+    "rating": 4.5,
+    "review_count": 10000
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 87.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 199.0,
+      "available": true,
+      "description": "",
+      "original_name": "McTrío Big Mac"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 159.0,
+      "available": true,
+      "description": "",
+      "original_name": "McNuggets 10"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 23.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 15,
+    "estimated_time_max": 30,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 55%Combo de gran ahorroSólo nuevos usuarios",
+      "value": "55%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 55%",
+      "value": "55%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/didifood/ecatepec_mcdonalds_20260414_205031.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 43.84
+}

@@ -1,0 +1,65 @@
+{
+  "scrape_id": "f2d3aec2-37d4-4267-9dc7-52b2246aea6b",
+  "timestamp": "2026-04-15T01:44:12.427543+00:00",
+  "platform": "didifood",
+  "location_id": "iztapalapa",
+  "location_address": "Av. Ermita Iztapalapa 3000, Santa Cruz Meyehualco, Iztapalapa, CDMX",
+  "location_lat": 19.3579,
+  "location_lng": -99.052,
+  "zone_type": "low_income",
+  "zone_label": "Iztapalapa",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King (Plaza Oriente)",
+    "platform_id": "",
+    "available": true,
+    "rating": 4.2,
+    "review_count": 20000
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 129.0,
+      "available": true,
+      "description": "",
+      "original_name": "Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 29.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 20,
+    "estimated_time_max": 35,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 62%Combo de gran ahorroSólo nuevos usuarios",
+      "value": "62%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 62%",
+      "value": "62%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/didifood/iztapalapa_burger_king_20260414_204506.png",
+  "errors": [
+    "Product 'Combo Whopper Mediano' not found"
+  ],
+  "data_completeness": "partial",
+  "scrape_duration_seconds": 54.2
+}

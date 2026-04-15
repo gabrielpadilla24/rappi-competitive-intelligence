@@ -1,0 +1,65 @@
+{
+  "scrape_id": "06c76219-ea15-43d4-8393-a2e71926c53f",
+  "timestamp": "2026-04-15T01:37:48.415186+00:00",
+  "platform": "didifood",
+  "location_id": "agricola_oriental",
+  "location_address": "Calz. Ignacio Zaragoza 600, Agrícola Oriental, Iztacalco, CDMX",
+  "location_lat": 19.3965,
+  "location_lng": -99.0863,
+  "zone_type": "medium_income",
+  "zone_label": "Agrícola Oriental",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "Burger King (Plaza Oriente)",
+    "platform_id": "",
+    "available": true,
+    "rating": 4.2,
+    "review_count": 20000
+  },
+  "products": [
+    {
+      "name": "Whopper",
+      "reference_id": "whopper",
+      "price_mxn": 129.0,
+      "available": true,
+      "description": "",
+      "original_name": "Whopper"
+    },
+    {
+      "name": "Combo Whopper Mediano",
+      "reference_id": "combo_whopper",
+      "price_mxn": null,
+      "available": false,
+      "description": "",
+      "original_name": ""
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 18.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 10,
+    "estimated_time_max": 25,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 62%Combo de gran ahorroSólo nuevos usuarios",
+      "value": "62%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 62%",
+      "value": "62%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/didifood/agricola_oriental_burger_king_20260414_203845.png",
+  "errors": [
+    "Product 'Combo Whopper Mediano' not found"
+  ],
+  "data_completeness": "partial",
+  "scrape_duration_seconds": 57.7
+}

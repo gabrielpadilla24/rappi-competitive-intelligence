@@ -1,0 +1,71 @@
+{
+  "scrape_id": "e5910fee-9845-4216-840e-468880707fe4",
+  "timestamp": "2026-04-15T01:32:14.457413+00:00",
+  "platform": "didifood",
+  "location_id": "narvarte",
+  "location_address": "Eje Central 500, Narvarte Poniente, Benito Juárez, CDMX",
+  "location_lat": 19.396,
+  "location_lng": -99.1496,
+  "zone_type": "medium_income",
+  "zone_label": "Narvarte",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's (San Ángel)",
+    "platform_id": "",
+    "available": true,
+    "rating": 4.4,
+    "review_count": 500
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 87.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 177.0,
+      "available": true,
+      "description": "",
+      "original_name": "McTrío Big Mac"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 169.0,
+      "available": true,
+      "description": "",
+      "original_name": "McNuggets 10"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 30.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 35,
+    "estimated_time_max": 50,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 55%Combo de gran ahorroSólo nuevos usuarios",
+      "value": "55%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 55%",
+      "value": "55%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/didifood/narvarte_mcdonalds_20260414_203314.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 59.72
+}

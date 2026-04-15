@@ -1,0 +1,71 @@
+{
+  "scrape_id": "dfd3a795-ff3e-45b6-a75f-f8c717931ac5",
+  "timestamp": "2026-04-15T01:37:05.224226+00:00",
+  "platform": "didifood",
+  "location_id": "agricola_oriental",
+  "location_address": "Calz. Ignacio Zaragoza 600, Agrícola Oriental, Iztacalco, CDMX",
+  "location_lat": 19.3965,
+  "location_lng": -99.0863,
+  "zone_type": "medium_income",
+  "zone_label": "Agrícola Oriental",
+  "city": "CDMX",
+  "restaurant": {
+    "name": "McDonald's (Ermita)",
+    "platform_id": "",
+    "available": true,
+    "rating": 4.2,
+    "review_count": 20000
+  },
+  "products": [
+    {
+      "name": "Big Mac",
+      "reference_id": "big_mac",
+      "price_mxn": 87.0,
+      "available": true,
+      "description": "",
+      "original_name": "Big Mac"
+    },
+    {
+      "name": "Combo Big Mac Mediano",
+      "reference_id": "combo_big_mac",
+      "price_mxn": 199.0,
+      "available": true,
+      "description": "",
+      "original_name": "McTrío Big Mac"
+    },
+    {
+      "name": "McNuggets 10 piezas",
+      "reference_id": "mcnuggets_10",
+      "price_mxn": 159.0,
+      "available": true,
+      "description": "",
+      "original_name": "McNuggets 10"
+    }
+  ],
+  "delivery": {
+    "fee_mxn": 31.0,
+    "service_fee_mxn": null,
+    "estimated_time_min": 30,
+    "estimated_time_max": 45,
+    "free_delivery_threshold_mxn": null,
+    "surge_active": false
+  },
+  "promotions": [
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 55%Combo de gran ahorroSólo nuevos usuarios",
+      "value": "55%",
+      "conditions": ""
+    },
+    {
+      "type": "discount",
+      "description": "Ahorra hasta un 55%",
+      "value": "55%",
+      "conditions": ""
+    }
+  ],
+  "screenshot_path": "/Users/gabrielpadilla/rappi-competitive-intelligence/data/screenshots/didifood/agricola_oriental_mcdonalds_20260414_203748.png",
+  "errors": [],
+  "data_completeness": "full",
+  "scrape_duration_seconds": 43.17
+}
