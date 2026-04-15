@@ -15,8 +15,10 @@ Authentication:
   Update _LS_TICKET and _LS_UID below with fresh values when that happens.
 
 Location:
-  Delivery coordinates are encoded as a base64 JSON string in the `pl=`
-  URL parameter, using the same approach as Uber Eats Mexico.
+  DiDi Food ignores the `pl=` URL parameter.  Instead the scraper:
+    1. Navigates to the feed (geolocation may auto-resolve location).
+    2. Clicks the header address trigger and types the address.
+    3. Falls back to injecting `pl` into localStorage and reloading.
 
 Price format:
   DiDi Food displays prices as "MX$67.00" or "$67" — both are parsed.
@@ -352,9 +354,9 @@ class DididfoodScraper(BaseScraper):
         """
         Navigate to DiDi Food and set the delivery location.
 
-        Approach 1 (preferred): Navigate directly to the feed with ?pl=<encoded>.
-          This skips any address modal entirely.
-        Approach 2 (fallback): Navigate to base, fill the address input.
+        Approach 1 (preferred): Navigate to feed, find header address trigger,
+          click it, type the address, and pick the first autocomplete suggestion.
+        Approach 2: Inject the pl= value directly into localStorage and reload.
         Approach 3 (last resort): Use browser geolocation only.
         """
         try:
@@ -370,11 +372,14 @@ class DididfoodScraper(BaseScraper):
             pl_param = self._encode_pl_param(location)
             self._pl_param = pl_param
 
-            # ── Approach 1: pl= encoded URL ──────────────────────────────
+            # ── Approach 1: UI address interaction ───────────────────────
             feed_url = PLATFORM_URLS["didifood"]["feed"]
-            pl_url = f"{feed_url}?pl={pl_param}"
-            self.logger.info(f"Navigating with pl= URL: {pl_url[:120]}…")
-            await self.page.goto(pl_url, timeout=PAGE_LOAD_TIMEOUT, wait_until="load")
+            self.logger.info(f"Navigating to DiDi Food feed: {feed_url}")
+            await self.page.goto(feed_url, timeout=PAGE_LOAD_TIMEOUT, wait_until="domcontentloaded")
+            try:
+                await self.page.wait_for_load_state("networkidle", timeout=10000)
+            except Exception:
+                pass
             await self._gauss_delay(3, 0.8, 2, 5)
 
             page_text = await self.page.text_content("body") or ""
@@ -386,28 +391,54 @@ class DididfoodScraper(BaseScraper):
             if self._is_blocked(page_text, current_url):
                 self.logger.warning("DiDi Food page is blocked — cannot set location")
                 return False
+
+            # If the feed already shows restaurants (geolocation auto-resolved), done.
             if self._feed_has_restaurants(page_text, current_url):
-                self.logger.info(f"Location set via pl= URL: {location.short_name}")
+                self.logger.info(
+                    f"Feed already has restaurants — location resolved by geolocation: "
+                    f"{location.short_name}"
+                )
                 return True
 
-            # ── Approach 2: address input ─────────────────────────────────
-            self.logger.info("pl= URL did not yield restaurant feed — trying address input")
-            base_url = PLATFORM_URLS["didifood"]["base"]
-            await self.page.goto(base_url, timeout=PAGE_LOAD_TIMEOUT, wait_until="domcontentloaded")
-            await self._gauss_delay(3, 1, 2, 5)
-
-            page_text = await self.page.text_content("body") or ""
-            if await self._is_session_expired(page_text, self.page.url):
-                return False
-
-            address_set = await self._fill_address_input(location.address)
+            # Try to find and interact with the address trigger in the header.
+            address_set = await self._set_address_via_header(location.address)
             if address_set:
-                self.logger.info(f"Location set via address input: {location.short_name}")
-                return True
+                page_text = await self.page.text_content("body") or ""
+                if self._feed_has_restaurants(page_text, self.page.url):
+                    self.logger.info(
+                        f"Location set via header address UI: {location.short_name}"
+                    )
+                    return True
+
+            # ── Approach 2: inject pl= into localStorage and reload ───────
+            self.logger.info(
+                "Header address UI failed — injecting pl= into localStorage"
+            )
+            try:
+                await self.page.evaluate(
+                    f"() => {{ localStorage.setItem('pl', '{pl_param}'); }}"
+                )
+                await self.page.reload(wait_until="domcontentloaded")
+                try:
+                    await self.page.wait_for_load_state("networkidle", timeout=10000)
+                except Exception:
+                    pass
+                await self._gauss_delay(3, 0.8, 2, 5)
+
+                page_text = await self.page.text_content("body") or ""
+                if await self._is_session_expired(page_text, self.page.url):
+                    return False
+                if self._feed_has_restaurants(page_text, self.page.url):
+                    self.logger.info(
+                        f"Location set via localStorage pl= injection: {location.short_name}"
+                    )
+                    return True
+            except Exception as e:
+                self.logger.warning(f"localStorage pl= injection failed: {e}")
 
             # ── Approach 3: geolocation only ──────────────────────────────
             self.logger.warning(
-                "Could not set address via UI — relying on browser geolocation"
+                "Could not set address via UI or localStorage — relying on browser geolocation"
             )
             page_text = await self.page.text_content("body") or ""
             if await self._is_session_expired(page_text, self.page.url):
@@ -419,6 +450,117 @@ class DididfoodScraper(BaseScraper):
 
         except Exception as e:
             self.logger.error(f"set_location failed: {e}")
+            return False
+
+    async def _set_address_via_header(self, address: str) -> bool:
+        """
+        Find the header address trigger on DiDi Food, click it, type the address,
+        and pick the first autocomplete suggestion.
+
+        Returns True if we successfully interacted with the address UI (regardless
+        of whether restaurant cards appear — the caller checks that).
+        """
+        # Selectors for the clickable address trigger in the DiDi Food header.
+        trigger_selectors = [
+            '[class*="address"]',
+            '[class*="location"]',
+            '[data-testid*="address"]',
+            '[data-testid*="location"]',
+            'input[placeholder*="dirección"]',
+            'input[placeholder*="Buscar restaurantes"]',
+            'button[class*="address"]',
+            'button[class*="location"]',
+            'span[class*="address"]',
+            'span[class*="location"]',
+        ]
+
+        trigger_el = None
+        for sel in trigger_selectors:
+            try:
+                el = await self.page.wait_for_selector(sel, timeout=4000)
+                if el:
+                    trigger_el = el
+                    self.logger.debug(f"Found address trigger: {sel}")
+                    break
+            except Exception:
+                continue
+
+        if not trigger_el:
+            self.logger.debug("No address trigger found in header")
+            return False
+
+        try:
+            await trigger_el.click()
+            await human_like_delay()
+            await random_delay(1, 2)
+
+            # After clicking, look for the address input field.
+            input_selectors = [
+                'input[placeholder*="dirección"]',
+                'input[placeholder*="Ingresar dirección"]',
+                'input[placeholder*="Buscar restaurantes"]',
+                'input[placeholder*="address"]',
+                'input[type="text"]',
+                'input[type="search"]',
+            ]
+            input_el = None
+            for sel in input_selectors:
+                try:
+                    input_el = await self.page.wait_for_selector(sel, timeout=4000)
+                    if input_el:
+                        self.logger.debug(f"Found address input after trigger click: {sel}")
+                        break
+                except Exception:
+                    continue
+
+            if not input_el:
+                # Maybe trigger_el IS the input
+                tag = await trigger_el.evaluate("el => el.tagName.toLowerCase()")
+                if tag == "input":
+                    input_el = trigger_el
+
+            if not input_el:
+                self.logger.debug("No address input appeared after trigger click")
+                return False
+
+            await input_el.fill("")
+            await self.page.keyboard.type(address, delay=80)
+            await random_delay(1.5, 2.5)
+
+            suggestion_selectors = [
+                '[role="option"]',
+                '[role="listbox"] li',
+                'ul[role="listbox"] li',
+                'li[class*="suggestion"]',
+                'div[class*="suggestion"]',
+                'div[class*="autocomplete"] li',
+            ]
+            for sel in suggestion_selectors:
+                try:
+                    sug = await self.page.wait_for_selector(sel, timeout=4000)
+                    if sug:
+                        await sug.click()
+                        await random_delay(2, 3)
+                        try:
+                            await self.page.wait_for_load_state("networkidle", timeout=10000)
+                        except Exception:
+                            pass
+                        self.logger.debug("Address autocomplete suggestion clicked")
+                        return True
+                except Exception:
+                    continue
+
+            # No suggestion dropdown — submit with Enter.
+            await self.page.keyboard.press("Enter")
+            await random_delay(2, 3)
+            try:
+                await self.page.wait_for_load_state("networkidle", timeout=10000)
+            except Exception:
+                pass
+            return True
+
+        except Exception as e:
+            self.logger.warning(f"Header address interaction failed: {e}")
             return False
 
     async def _fill_address_input(self, address: str) -> bool:
@@ -516,9 +658,7 @@ class DididfoodScraper(BaseScraper):
                 )
                 await self._gauss_delay(10, 2, 7, 15)
                 feed_url = PLATFORM_URLS["didifood"]["feed"]
-                if self._pl_param:
-                    feed_url = f"{feed_url}?pl={self._pl_param}"
-                await self.page.goto(feed_url, timeout=PAGE_LOAD_TIMEOUT, wait_until="load")
+                await self.page.goto(feed_url, timeout=PAGE_LOAD_TIMEOUT, wait_until="domcontentloaded")
                 await self._gauss_delay(3, 0.8, 2, 5)
 
                 page_text = await self.page.text_content("body") or ""
@@ -551,7 +691,10 @@ class DididfoodScraper(BaseScraper):
             'input[placeholder*="Buscar"]',
             'input[placeholder*="buscar"]',
             'input[placeholder*="restaurante"]',
+            'input[placeholder*="comida"]',
             'input[type="search"]',
+            '[class*="search"] input',
+            '[class*="search-bar"] input',
             'button[aria-label*="buscar"]',
             'button[aria-label*="Buscar"]',
         ]
@@ -599,16 +742,16 @@ class DididfoodScraper(BaseScraper):
     ) -> Optional[RestaurantResult]:
         """Scan the current page for a matching restaurant card and navigate to it."""
         card_selectors = [
-            'a[href*="/store/"]',
-            'a[href*="restaurant"]',
-            'a[href*="store"]',
-            'a[href*="tienda"]',
+            'a[href*="/food/store/"]',          # DiDi Food store pages (specific)
+            'div[class*="store-card"]',
+            'div[class*="shop-card"]',
+            'div[class*="merchant"]',
             '[data-testid*="store-card"]',
             '[data-testid*="restaurant"]',
-            'div[class*="store-card"]',
             'div[class*="restaurant-card"]',
-            'div[class*="shop-card"]',
             'li[class*="restaurant"]',
+            'a[href*="restaurant"]',
+            'a[href*="tienda"]',
         ]
 
         # Wait up to 10 s for at least one card type to appear before scanning.
