@@ -132,6 +132,11 @@ class DididfoodScraper(BaseScraper):
         self._current_restaurant_url: Optional[str] = None
         self._restaurant_search_count = 0
         self._pl_param: Optional[str] = None  # base64 location param, set in set_location
+        # Delivery info captured from the search-results card — most reliable
+        # source since DiDi Food shows "15-30 Min · MX$14" per card.
+        self._card_delivery_fee: Optional[float] = None
+        self._card_delivery_time_min: Optional[int] = None
+        self._card_delivery_time_max: Optional[int] = None
 
     # ------------------------------------------------------------------
     # Lifecycle
@@ -649,6 +654,9 @@ class DididfoodScraper(BaseScraper):
         try:
             self._restaurant_search_count += 1
             self._api_responses.clear()
+            self._card_delivery_fee = None
+            self._card_delivery_time_min = None
+            self._card_delivery_time_max = None
 
             # From the 2nd restaurant onward, add an anti-bot delay and return to
             # the feed with the pl= param so location context is preserved.
@@ -1143,6 +1151,13 @@ class DididfoodScraper(BaseScraper):
                 else:
                     self.logger.info(f"Matched DiDi Food card: {best_text[:60]}")
 
+                # Capture delivery info from the card before navigating away.
+                try:
+                    card_full_text = await best_card.text_content() or ""
+                    self._parse_card_delivery_info(card_full_text)
+                except Exception as e:
+                    self.logger.debug(f"Card delivery parse failed: {e}")
+
                 href = await best_card.get_attribute("href") or ""
                 if not href:
                     # div.shop-card has no href — look for a nested store link.
@@ -1257,10 +1272,54 @@ class DididfoodScraper(BaseScraper):
     # get_delivery_info
     # ------------------------------------------------------------------
 
+    def _parse_card_delivery_info(self, card_text: str) -> None:
+        """Parse "15-30 Min · MX$14" style info from a search-results card."""
+        time_match = re.search(
+            r'(\d+)\s*[-–]\s*(\d+)\s*Min', card_text, re.IGNORECASE
+        )
+        if time_match:
+            self._card_delivery_time_min = int(time_match.group(1))
+            self._card_delivery_time_max = int(time_match.group(2))
+
+        # Fee appears after the time range, e.g. "15-30 Min · MX$14".
+        fee_match = None
+        if time_match:
+            after_time = card_text[time_match.end():]
+            fee_match = re.search(
+                r'MX\$\s*(\d[\d,]*(?:\.\d{1,2})?)', after_time
+            )
+        if not fee_match:
+            fee_match = re.search(
+                r'MX\$\s*(\d[\d,]*(?:\.\d{1,2})?)', card_text
+            )
+        if fee_match:
+            price = parse_price(fee_match.group(1))
+            if price is not None and price <= 80:
+                self._card_delivery_fee = price
+
+        self.logger.info(
+            f"Card delivery info: fee={self._card_delivery_fee}, "
+            f"time={self._card_delivery_time_min}-{self._card_delivery_time_max} min"
+        )
+
     async def get_delivery_info(self) -> Optional[DeliveryInfo]:
         """Extract delivery fee and estimated time from the restaurant page."""
         try:
-            # Try structured API data first
+            # Card data captured during search is the most reliable source.
+            if (
+                self._card_delivery_fee is not None
+                or self._card_delivery_time_min is not None
+            ):
+                self.logger.info(
+                    "Using delivery info captured from search-results card"
+                )
+                return DeliveryInfo(
+                    fee_mxn=self._card_delivery_fee,
+                    estimated_time_min=self._card_delivery_time_min,
+                    estimated_time_max=self._card_delivery_time_max,
+                )
+
+            # Try structured API data next.
             api_delivery = self._delivery_from_api()
             if api_delivery:
                 return api_delivery
