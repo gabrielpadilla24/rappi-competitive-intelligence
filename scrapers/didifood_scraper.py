@@ -2,14 +2,17 @@
 DiDi Food scraper implementation.
 
 Scrapes restaurant data from www.didi-food.com using Playwright with
-cookie-based session authentication and pl= URL parameter for location.
+localStorage-based session authentication and pl= URL parameter for location.
 
 Authentication:
-  DiDi Food requires a valid session.  Cookies are injected into the browser
-  context before the first navigation so every request is authenticated.
+  DiDi Food stores the session in localStorage (isLogin, ticket, uid, etc.).
+  The scraper injects these values via page.evaluate() on the domain root
+  before navigating to the feed.  Basic locale/region cookies are also set
+  via context.add_cookies().
+
   If the session has expired the scraper logs a clear warning:
     "Session expired — need fresh cookies"
-  Update _SESSION_COOKIES below with fresh values when that happens.
+  Update _LS_TICKET and _LS_UID below with fresh values when that happens.
 
 Location:
   Delivery coordinates are encoded as a base64 JSON string in the `pl=`
@@ -65,34 +68,35 @@ _SUBCATEGORY_KEYWORDS = frozenset({
     "pollos de", "postres de", "desayunos de",
 })
 
-# ── Session cookies ───────────────────────────────────────────────────────────
-# Replace the values of `token` and `ttcsid` when the session expires.
-# Run `python test_didifood_quick.py` to verify — it will print a clear
-# "Session expired — need fresh cookies" warning if they are stale.
-_SESSION_COOKIES = [
+# ── localStorage session values ───────────────────────────────────────────────
+# DiDi Food stores the session in localStorage, not in cookies.
+# Update _LS_TICKET and _LS_UID when "Session expired — need fresh cookies"
+# appears in the log.  Run `python test_didifood_quick.py` to verify.
+_LS_TICKET = (
+    "XOISX2w17pOwH6qedRjImSVDbP0l65nT164G3vU6-V8kzE1KBDEQgNG7fFuLoX6"
+    "SVFJbD-Ad1FFwEUFx1fTdpZn1g3ewlSJuelOEbZQJ2ylznTGFHdTMNcxb9qFLL2-"
+    "UZY5pzUYKu1M8vyC8UjFWi-HePK0PE94pF-7Uwe_338_bnUpVtVP4eDyuK67nk-"
+    "KpZ1hMn7naQvii_PwPAAD__w=="
+)
+_LS_UID = "369436224271561"
+
+# ── Basic locale/region cookies ───────────────────────────────────────────────
+# These are set via context.add_cookies() so they survive across navigations.
+# The app may check both cookies and localStorage for locale/region.
+_BASIC_COOKIES = [
+    {"name": "locale",          "value": "es-MX",   "domain": ".didi-food.com", "path": "/"},
+    {"name": "country",         "value": "Mexico",  "domain": ".didi-food.com", "path": "/"},
+    {"name": "i18n_redirected", "value": "es-419",  "domain": ".didi-food.com", "path": "/"},
     {
-        "name": "token",
+        "name": "cto_bundle",
         "value": (
-            "XOISX2w17pOwH6qedRjImSVDbP0l65nT164G3vU6-V8kzE1KBDEQgNG7fFuLoX6"
-            "SVFJbD-Ad1FFwEUFx1fTdpZn1g3ewlSJuelOEbZQJ2ylznTGFHdTMNcxb9qFLL2-"
-            "UZY5pzUYKu1M8vyC8UjFWi-HePK0PE94pF-7Uwe_338_bnUpVtVP4eDyuK67nk-"
-            "KpZ1hMn7naQvii_PwPAAD__w=="
+            "_zkAx19VNVFHQk8lMkJUWFQlMkJVOUZiS0JhVjZaY1c5UzlWQWJEUVp5NkJZcklwUmZqRVRGVTdhQnRR"
+            "NUdHUFhMelNUTElrSiUyQkd1TUtsSWxSTXR3N3AzY2RRUzdNdWNQSUhQQVBLNHJvUGoyRFl6MDdFNVBm"
+            "aFI1N1NTTWVkQjU3U0FReEwxUWYyUSUyRjBsWGtJWFZOUElFNDZHaGxTQSUzRCUzRA=="
         ),
         "domain": ".didi-food.com",
         "path": "/",
     },
-    {
-        "name": "ttcsid",
-        "value": (
-            "1776209020930::nZ9UuPUN7wgf1z--blS6.1.1776209363220.0"
-            "::1.332164.0::345823.36.1955.423::251825.2.0"
-        ),
-        "domain": ".didi-food.com",
-        "path": "/",
-    },
-    {"name": "locale",           "value": "es-MX",   "domain": ".didi-food.com", "path": "/"},
-    {"name": "country",          "value": "Mexico",  "domain": ".didi-food.com", "path": "/"},
-    {"name": "i18n_redirected",  "value": "es-419",  "domain": ".didi-food.com", "path": "/"},
 ]
 
 
@@ -131,17 +135,52 @@ class DididfoodScraper(BaseScraper):
     # ------------------------------------------------------------------
 
     async def setup(self) -> None:
-        """Initialize browser, inject session cookies, enable API interception."""
+        """
+        Initialize browser, inject session into localStorage, enable API interception.
+
+        DiDi Food stores auth state in localStorage (isLogin, ticket, uid …),
+        not in cookies.  The injection sequence is:
+          1. Inject basic locale/region cookies (survive all navigations).
+          2. Navigate to the domain root so localStorage is scoped correctly.
+          3. Set all required localStorage keys via page.evaluate().
+          4. Reload the page so the React app reads the injected session.
+        """
         from playwright.async_api import async_playwright
         self.logger.info("Starting DiDi Food browser")
         self._playwright = await async_playwright().start()
         self.browser, self.context, self.page = await setup_stealth_browser(
             self._playwright
         )
-        # Inject session cookies before any navigation.
-        # DiDi Food returns HTTP 401 / redirects to login if these are absent or expired.
-        await self.context.add_cookies(_SESSION_COOKIES)
-        self.logger.info(f"Injected {len(_SESSION_COOKIES)} session cookies")
+
+        # Step 1 — basic locale/region cookies (set before any navigation)
+        await self.context.add_cookies(_BASIC_COOKIES)
+        self.logger.info(f"Injected {len(_BASIC_COOKIES)} basic cookies")
+
+        # Step 2 — navigate to domain root so localStorage is on the correct origin
+        self.logger.info("Navigating to domain root for localStorage injection")
+        await self.page.goto(
+            "https://www.didi-food.com/es-MX",
+            timeout=PAGE_LOAD_TIMEOUT,
+            wait_until="domcontentloaded",
+        )
+
+        # Step 3 — inject session into localStorage
+        await self.page.evaluate(f"""() => {{
+            localStorage.setItem('isLogin', 'true');
+            localStorage.setItem('ticket', '"{_LS_TICKET}"');
+            localStorage.setItem('uid', '"{_LS_UID}"');
+            localStorage.setItem('poiCityId', '52090100');
+            localStorage.setItem('countryCode', '"MX"');
+            localStorage.setItem('finalLocale', '"es-MX"');
+            localStorage.setItem('locale', 'es-MX');
+            localStorage.setItem('country', 'Mexico');
+        }}""")
+        self.logger.info("localStorage session injected")
+
+        # Step 4 — reload so the React app picks up the injected session
+        await self.page.reload(wait_until="domcontentloaded")
+        await random_delay(2, 3)
+        self.logger.info("Page reloaded — session should be active")
 
         # Capture API responses — menu and store data arrive via XHR/fetch.
         self.page.on("response", self._capture_api_response)
@@ -208,14 +247,19 @@ class DididfoodScraper(BaseScraper):
     # Session / block detection
     # ------------------------------------------------------------------
 
-    def _is_session_expired(self, page_text: str, url: str) -> bool:
+    async def _is_session_expired(self, page_text: str, url: str) -> bool:
         """
-        Return True and log a clear warning if the injected cookies have expired.
+        Return True and log a clear warning if the localStorage session has expired.
 
-        Checks both the current URL (login redirect) and page text.
-        The log message "Session expired — need fresh cookies" is the signal
-        to update _SESSION_COOKIES with new values.
+        Checks three signals in priority order:
+          1. URL redirect to a login page.
+          2. localStorage isLogin != "true" (most reliable for DiDi Food).
+          3. Page text contains a login prompt.
+
+        The log message "Session expired — need fresh cookies" is the cue to
+        update _LS_TICKET and _LS_UID in this file.
         """
+        # 1. URL-based redirect check
         url_lower = url.lower()
         for pat in _LOGIN_URL_PATTERNS:
             if pat in url_lower:
@@ -224,6 +268,22 @@ class DididfoodScraper(BaseScraper):
                     f"(redirected to login URL: {url})"
                 )
                 return True
+
+        # 2. localStorage check — DiDi Food sets isLogin="true" when authenticated
+        try:
+            is_logged = await self.page.evaluate(
+                "() => localStorage.getItem('isLogin')"
+            )
+            if is_logged != "true":
+                self.logger.warning(
+                    f"Session expired — need fresh cookies "
+                    f"(localStorage isLogin={is_logged!r}, expected 'true')"
+                )
+                return True
+        except Exception as e:
+            self.logger.debug(f"localStorage check failed (non-critical): {e}")
+
+        # 3. Page-text check
         text_lower = page_text.lower()
         for signal in _SESSION_EXPIRED_TEXT:
             if signal in text_lower:
@@ -232,6 +292,7 @@ class DididfoodScraper(BaseScraper):
                     f"(page text matched: {signal!r})"
                 )
                 return True
+
         return False
 
     def _is_blocked(self, page_text: str, url: str = "") -> bool:
@@ -320,7 +381,7 @@ class DididfoodScraper(BaseScraper):
             current_url = self.page.url
             self.logger.info(f"Landed on: {current_url}")
 
-            if self._is_session_expired(page_text, current_url):
+            if await self._is_session_expired(page_text, current_url):
                 return False
             if self._is_blocked(page_text, current_url):
                 self.logger.warning("DiDi Food page is blocked — cannot set location")
@@ -336,7 +397,7 @@ class DididfoodScraper(BaseScraper):
             await self._gauss_delay(3, 1, 2, 5)
 
             page_text = await self.page.text_content("body") or ""
-            if self._is_session_expired(page_text, self.page.url):
+            if await self._is_session_expired(page_text, self.page.url):
                 return False
 
             address_set = await self._fill_address_input(location.address)
@@ -349,7 +410,7 @@ class DididfoodScraper(BaseScraper):
                 "Could not set address via UI — relying on browser geolocation"
             )
             page_text = await self.page.text_content("body") or ""
-            if self._is_session_expired(page_text, self.page.url):
+            if await self._is_session_expired(page_text, self.page.url):
                 return False
             if self._feed_has_restaurants(page_text, self.page.url):
                 self.logger.info("Page has restaurant content — using geolocation fallback")
@@ -461,7 +522,7 @@ class DididfoodScraper(BaseScraper):
                 await self._gauss_delay(3, 0.8, 2, 5)
 
                 page_text = await self.page.text_content("body") or ""
-                if self._is_session_expired(page_text, self.page.url):
+                if await self._is_session_expired(page_text, self.page.url):
                     self.logger.error(
                         "Session expired during restaurant search — aborting"
                     )
@@ -614,7 +675,7 @@ class DididfoodScraper(BaseScraper):
                 await self._gauss_delay(2, 0.5, 1.5, 4)
 
                 page_text = await self.page.text_content("body") or ""
-                if self._is_session_expired(page_text, self.page.url):
+                if await self._is_session_expired(page_text, self.page.url):
                     self.logger.error(
                         "Session expired after navigating to restaurant — aborting"
                     )
