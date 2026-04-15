@@ -1274,12 +1274,29 @@ class DididfoodScraper(BaseScraper):
 
     def _parse_card_delivery_info(self, card_text: str) -> None:
         """Parse "15-30 Min · MX$14" style info from a search-results card."""
+        # Card text concatenates tokens without spaces (e.g. "4.115-30 MinMX$14").
+        # Split the rating from the adjacent time range so the lookbehind below
+        # has a non-digit to anchor on: "4.1 15-30 MinMX$14".
+        card_text = re.sub(r'(\d\.\d)(\d)', r'\1 \2', card_text)
+
+        # Lookbehind (?<!\d) prevents gluing onto a preceding digit,
+        # e.g. "115-30 Min" must not be parsed as 115-30.
         time_match = re.search(
-            r'(\d+)\s*[-–]\s*(\d+)\s*Min', card_text, re.IGNORECASE
+            r'(?<!\d)(\d{1,3})\s*[-–]\s*(\d{1,3})\s*Min',
+            card_text, re.IGNORECASE,
         )
         if time_match:
-            self._card_delivery_time_min = int(time_match.group(1))
-            self._card_delivery_time_max = int(time_match.group(2))
+            t_min = int(time_match.group(1))
+            t_max = int(time_match.group(2))
+            # Sanity cap — anything over 120 min is almost certainly a parse glitch.
+            if 0 < t_min <= 120 and 0 < t_max <= 120 and t_min <= t_max:
+                self._card_delivery_time_min = t_min
+                self._card_delivery_time_max = t_max
+            else:
+                self.logger.warning(
+                    f"Discarding implausible card delivery time {t_min}-{t_max} min"
+                )
+                time_match = None
 
         # Fee appears after the time range, e.g. "15-30 Min · MX$14".
         fee_match = None
