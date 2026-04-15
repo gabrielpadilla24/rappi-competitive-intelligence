@@ -686,7 +686,21 @@ class DididfoodScraper(BaseScraper):
     async def _search_via_search_bar(
         self, restaurant: TargetRestaurant
     ) -> Optional[RestaurantResult]:
-        """Try to use DiDi Food's search bar to find the restaurant."""
+        """
+        Use DiDi Food's search bar to find a restaurant.
+
+        Flow:
+          1. Locate and focus the search input.
+          2. Type the restaurant name (human-like key delays).
+          3. Wait 2-3 s for the autocomplete dropdown to render.
+          4. Attempt A — click a dropdown suggestion that fuzzy-matches the
+             restaurant's search terms.
+          5. Attempt B — if no matching suggestion, click "Buscar comida" button
+             (or press Enter) to load the full search-results page, then call
+             _find_restaurant_on_page.
+          6. After clicking a suggestion, wait up to 8 s for the URL to land on
+             a /food/store/ page and extract the restaurant info.
+        """
         search_selectors = [
             'input[placeholder*="Buscar"]',
             'input[placeholder*="buscar"]',
@@ -713,6 +727,8 @@ class DididfoodScraper(BaseScraper):
             return None
 
         try:
+            # If the matched element is a button (search icon), click it first
+            # so the actual <input> appears.
             tag = await search_el.evaluate("el => el.tagName.toLowerCase()")
             if tag == "button":
                 await search_el.click()
@@ -724,13 +740,140 @@ class DididfoodScraper(BaseScraper):
             await search_el.click()
             await search_el.fill("")
             await self.page.keyboard.type(restaurant.name, delay=80)
-            await random_delay(1.5, 2.5)
+            self.logger.debug(
+                f"Typed '{restaurant.name}' into search bar — waiting for dropdown"
+            )
+
+            # Wait a fixed 2-3 s for the autocomplete dropdown to appear.
+            await random_delay(2, 3)
+
+            # ── Attempt A: click a matching dropdown suggestion ───────────
+            dropdown_selectors = [
+                'div[class*="suggestion"]',
+                'div[class*="search-result"]',
+                'div[class*="dropdown"] a',
+                '[role="option"]',
+                '[role="listbox"] li',
+                'ul[role="listbox"] li',
+                'li[class*="suggestion"]',
+                'li[class*="result"]',
+                'ul li',                      # generic fallback
+            ]
+
+            clicked_suggestion = False
+            for sel in dropdown_selectors:
+                try:
+                    # Non-blocking: collect all currently visible items.
+                    items = await self.page.query_selector_all(sel)
+                    if not items:
+                        continue
+
+                    texts_els = []
+                    for item in items:
+                        t = (await item.text_content() or "").strip()
+                        if t:
+                            texts_els.append((t, item))
+
+                    if not texts_els:
+                        continue
+
+                    self.logger.debug(
+                        f"Dropdown selector '{sel}' gave {len(texts_els)} items: "
+                        f"{[t[:40] for t, _ in texts_els[:5]]}"
+                    )
+
+                    # Prefer items that fuzzy-match; otherwise take the first one.
+                    matching = [
+                        (t, el) for t, el in texts_els
+                        if fuzzy_match(restaurant.search_terms, t)
+                    ]
+                    chosen_text, chosen_el = (
+                        matching[0] if matching else texts_els[0]
+                    )
+                    self.logger.info(
+                        f"Clicking dropdown suggestion: '{chosen_text[:60]}'"
+                    )
+                    await chosen_el.click()
+                    clicked_suggestion = True
+                    break
+
+                except Exception as e:
+                    self.logger.debug(f"Dropdown selector '{sel}' error: {e}")
+                    continue
+
+            if clicked_suggestion:
+                # Wait up to 8 s for the browser to navigate to a store page.
+                try:
+                    await self.page.wait_for_url(
+                        lambda url: "/food/store/" in url, timeout=8000
+                    )
+                    self.logger.info(
+                        f"Navigated to store page: {self.page.url[:100]}"
+                    )
+                except Exception:
+                    self.logger.debug(
+                        "Did not land on /food/store/ after suggestion click "
+                        f"(current URL: {self.page.url[:100]})"
+                    )
+
+                await self._gauss_delay(2, 0.5, 1.5, 3)
+                current_url = self.page.url
+
+                if "/food/store/" in current_url:
+                    page_text = await self.page.text_content("body") or ""
+                    if await self._is_session_expired(page_text, current_url):
+                        return None
+                    return await self._extract_restaurant_info(restaurant)
+
+                # Landed on a search-results page instead — fall through below.
+                self.logger.debug(
+                    "Suggestion click led to search-results page — "
+                    "scanning for restaurant cards"
+                )
+                return await self._find_restaurant_on_page(restaurant)
+
+            # ── Attempt B: no dropdown hit — submit the search ────────────
+            self.logger.debug(
+                "No dropdown suggestion clicked — submitting search query"
+            )
+            submitted = False
+            for sel in [
+                'button:has-text("Buscar comida")',
+                'button:has-text("Buscar")',
+                'button[type="submit"]',
+            ]:
+                try:
+                    btn = await self.page.wait_for_selector(sel, timeout=2000)
+                    if btn:
+                        await btn.click()
+                        submitted = True
+                        self.logger.debug(f"Clicked search submit button: {sel}")
+                        break
+                except Exception:
+                    continue
+
+            if not submitted:
+                await self.page.keyboard.press("Enter")
+                self.logger.debug("Pressed Enter to submit search")
+
+            # Wait for results to load.
+            await random_delay(2, 3)
             try:
                 await self.page.wait_for_load_state("networkidle", timeout=10000)
             except Exception:
                 pass
-            await simulate_human_scroll(self.page, scrolls=1)
 
+            # If the submit navigated directly to a store page, extract there.
+            if "/food/store/" in self.page.url:
+                self.logger.info(
+                    f"Search submit navigated directly to store: {self.page.url[:100]}"
+                )
+                page_text = await self.page.text_content("body") or ""
+                if await self._is_session_expired(page_text, self.page.url):
+                    return None
+                return await self._extract_restaurant_info(restaurant)
+
+            # Otherwise scan the search-results page for restaurant cards.
             return await self._find_restaurant_on_page(restaurant)
 
         except Exception as e:
